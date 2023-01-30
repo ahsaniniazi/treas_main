@@ -7,6 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { Box } from '@mui/system';
 
 function createData(
     Network: string,
@@ -25,20 +26,27 @@ function createData(
 
 const rows = [
 
-    createData("treas beg. of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
+    createData(
+        "treas beg. of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
     createData("Inflows", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
     createData("", '', "", "Unlock your treasury with labels", " ", "",
         "", "", "", ""),
+    createData("OutFlows", '123,434', "123,434", "123,434", " 123,434", "123,434",
+        "123,434", "123,434", "123,434", "123,434"),
     createData("treas beg. of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
-    createData("Inflows", '123,434', "123,434", "123,434", " 123,434", "123,434",
+    createData("Total Fees", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
-    createData("Total transactions", '123,434', "123,434", "123,434", " 123,434", "123,434",
+    createData("Inflows", '', "", "", "", "",
+        "", "", "", ""),
+    createData("Total Transactions", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
-    createData("Total contacts", '123,434', "123,434", "123,434", " 123,434", "123,434",
+    createData("Total Contacts", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
+    createData("", '', "", "Unlock your treasury with labels", " ", "",
+        "", "", "", ""),
 ]
 export default function DenseTable() {
 
@@ -61,11 +69,12 @@ export default function DenseTable() {
                                     onChange={handleChange}
                                     displayEmpty
                                     inputProps={{ 'aria-label': 'Without label' }}
+
                                 >
                                     <MenuItem value="">
                                         <em>All Networks</em>
                                     </MenuItem>
-                                    <MenuItem value={10}>All Networks   1223,3 $US</MenuItem>
+                                    <MenuItem value={10} >All Networks   1223,3 $US</MenuItem>
                                     <MenuItem value={20}>Ethereum   1223,3 $US</MenuItem>
                                     <MenuItem value={30}>BSC   1223,3 $US</MenuItem>
                                     <MenuItem value={40}>Moonriver   1223,3 $US</MenuItem>
@@ -101,12 +110,14 @@ export default function DenseTable() {
                         >
                             <TableCell align='center' className='border-x border-y border-solid border-[#D3D3D3]'>
                                 {row.Network}
+
                             </TableCell>
                             <TableCell align='center' className='border-y border-solid border-[#D3D3D3]'>
                                 {row.JUL}
                             </TableCell>
                             <TableCell >{row.AUG}</TableCell>
-                            <TableCell align='center' className='border-y border-solid border-[#D3D3D3]'>{row.SEPT}</TableCell>
+                            <TableCell align='center' className='border-y border-solid border-[#D3D3D3]'>{row.SEPT}
+                            </TableCell>
                             <TableCell align='center' className='border-y  border-solid border-[#D3D3D3]'>{row.OCT}</TableCell>
                             <TableCell align='center' className='border-y   border-solid border-[#D3D3D3]'>{row.NOV}</TableCell>
                             <TableCell align='center' className='border-y border-x  border-solid border-[#D3D3D3]'>{row.DEC}</TableCell>
