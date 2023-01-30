@@ -52,17 +52,19 @@ function Row(props: { row: ReturnType<typeof createData> }) {
 
     return (
         <React.Fragment>
-            <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
+            <TableRow sx={{ '& > *': { borderBottom: 'unset' } }} className="text-[12px] font-light" >
 
-                <TableCell align="center" className='flex pb=[20px]'>
+                <TableCell align="center" className='flex pb=[20px] text-[18px] font-medium text-[#000000]'>
+
                     <Image src={row.image} alt="" width={30} height={30} className="mr-[20px]" />
                     {row.name}
                 </TableCell>
-                <TableCell align="center">{row.amount}</TableCell>
-                <TableCell align="center">{row.change}</TableCell>
-                <TableCell align="center">{row.total}</TableCell>
-                <TableCell align="center">{row.holdings}</TableCell>
-                <TableCell align="center">{row.price}</TableCell>
+                <TableCell align="center" className=' text-[18px] font-medium' >{row.amount}</TableCell>
+                <TableCell align="center" className=' text-[18px] font-medium'>{row.change}</TableCell>
+                <TableCell align="center" className='text-[#FF6846] text-[18px] font-medium'><KeyboardArrowDownIcon /> {row.total}
+                </TableCell>
+                <TableCell align="center" className=' text-[18px] font-medium'>{row.holdings}</TableCell>
+                <TableCell align="center" className='text-[#53A57C] text-[18px] font-medium'> <KeyboardArrowUpIcon /> {row.price}</TableCell>
                 <TableCell>
                     <IconButton
                         aria-label="expand row"
@@ -125,13 +127,27 @@ export default function CollapsibleTable() {
             <Table aria-label="collapsible table">
                 <TableHead>
                     <TableRow>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'>NAME</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'>AMOUNT</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'>PRICE</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'>24H CHANGE</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'>TOTAL</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'>CURRENT HOLDINGS P/L</TableCell>
-                        <TableCell />
+                        <TableCell align='center' className='border-y border-solid border-[#000000]
+                         text-[15px] text-[#212529]'>NAME</TableCell>
+
+                        <TableCell align='center' className='border-y border-solid border-[#000000]
+                         text-[15px] text-[#212529]'>AMOUNT</TableCell>
+
+                        <TableCell align='center' className='border-y border-solid border-[#000000]
+                         text-[15px] text-[#212529]'>PRICE</TableCell>
+
+                        <TableCell align='center' className='border-y border-solid border-[#000000]
+                         text-[15px]text-[#212529]'>24H CHANGE</TableCell>
+
+                        <TableCell align='center' className='border-y border-solid border-[#000000]
+                         text-[15px]text-[#212529]'>TOTAL</TableCell>
+
+                        <TableCell align='center' className='border-y border-solid border-[#000000] 
+                        text-[15px]text-[#212529]'>CURRENT HOLDINGS P/L</TableCell>
+
+                        <TableCell align='center' className='border-y border-solid border-[#000000]
+                         text-[15px]text-[#212529]' />
+
                     </TableRow>
                 </TableHead>
                 <TableBody>

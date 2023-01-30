@@ -1,12 +1,19 @@
 
 import * as React from 'react';
 import {
+    Box,
     FormControl, MenuItem, Select,
     Stack, Typography
 } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { WidthFull } from '@mui/icons-material';
+import { border, borderColor } from '@mui/system';
 
+const commonStyles = {
+    m: 1,
+    border: 0,
+
+};
 
 export default function Heading() {
     const [open, setOpen] = React.useState(false);
@@ -14,36 +21,37 @@ export default function Heading() {
 
 
     return (
-
-        <Stack direction='row' justifyContent='space-between' >
-            <Typography>Holdings details</Typography>
+        <Box paddingBottom="18px" marginTop="85px">
             <Stack direction='row' justifyContent='space-between' >
-                <Typography>Holdings details</Typography>
-                <KeyboardArrowUpIcon sx={{
-                    color: "#53A57C"
-                }}></KeyboardArrowUpIcon>
-                <Typography>+1,54%</Typography>
+                <Typography className='text-[25px] font-medium text-[#212529]	'>Holdings details</Typography>
+                <Stack direction='row' justifyContent='space-between' >
+                    <Typography className='text-[19px] font-medium text-[#212529] pr-[10px] '>Holdings details</Typography>
+                    <KeyboardArrowUpIcon sx={{
+                        color: "#53A57C"
+                    }}></KeyboardArrowUpIcon>
+                    <Typography className='text-[19px] font-medium text-[#212529]' >+1,54%</Typography>
 
 
-                <FormControl >
+                    <FormControl className='outline-none'>
 
-                    <Select
-                        sx={{
-                            height: 30,
-                            padding: 0
-                        }}
-                    >
-                        <MenuItem >1d</MenuItem>
-                        <MenuItem >1w</MenuItem>
-                        <MenuItem >1m</MenuItem>
-                        <MenuItem >6m</MenuItem>
-                        <MenuItem >1y</MenuItem>
-                    </Select>
-                </FormControl>
+                        <Select
+                            sx={{
+                                height: 30,
+                                padding: 0,
+                                ...commonStyles
+                            }}
+                        >
+                            <MenuItem >1d</MenuItem>
+                            <MenuItem >1w</MenuItem>
+                            <MenuItem >1m</MenuItem>
+                            <MenuItem >6m</MenuItem>
+                            <MenuItem >1y</MenuItem>
+                        </Select>
+                    </FormControl>
+
+                </Stack>
 
             </Stack>
-
-        </Stack>
-
+        </Box>
     );
 }

@@ -1,18 +1,16 @@
-import { Fullscreen } from "@mui/icons-material";
-import React from "react";
+import React, { Fragment } from "react";
 import RAdial from "./radial_cahrt";
+import NFT_Head from "./NFT_Header";
 import {
     ComposedChart,
     Line,
     Bar,
-    XAxis,
-    YAxis,
-    CartesianGrid,
     Tooltip,
-    RadialBarChart,
-    RadialBar,
-    Legend
 } from "recharts";
+import { Box, Container, Typography } from "@mui/material";
+import { UploadFile } from "@mui/icons-material";
+
+
 
 const Bardata = [
     {
@@ -83,26 +81,40 @@ const Bardata = [
 
 export default function App() {
     return (
+        <>
+            <NFT_Head />
+            <div className="flex">
 
-        <ComposedChart
-            width={1000}
-            height={400}
-            data={Bardata}
-            margin={{
-                top: 20,
-                right: 20,
-
-                left: 20
-            }}
-        >
-            <CartesianGrid stroke="#f5f5f5" />
-
-
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="uv" barSize={20} fill="#C2EED8" />
-            <Bar dataKey="uv" barSize={20} fill="#FF9781" />
-            <Line type="monotone" dataKey="uv" stroke="#000000" strokeWidth={3} />
-        </ComposedChart>
+                <RAdial />
+                <Container>
+                    <Box display="flex" justifyContent="space-around" >
+                        <Box >
+                            <Typography className="font-medium text-[22px]" > 1496,518 $US </Typography>
+                            <Typography className="font-medium text-[12px] text-[#979797]">10 nov. 2022, 03:24</Typography>
+                        </Box>
+                        <Box display="flex" justifyContent="space-between">
+                            <Typography className="mr-[8px]">treasexport</Typography>
+                            <Typography></Typography>
+                            <UploadFile></UploadFile>
+                        </Box>
+                    </Box>
+                    <ComposedChart
+                        width={860}
+                        height={400}
+                        data={Bardata}
+                        margin={{
+                            top: 20,
+                            right: 0,
+                            left: 0
+                        }}
+                    >
+                        <Tooltip />
+                        <Bar dataKey="uv" barSize={30} fill="#C2EED8" />
+                        <Bar dataKey="uv" barSize={30} fill="#FF9781" />
+                        <Line type="monotone" dataKey="uv" stroke="#000000" strokeWidth={3} />
+                    </ComposedChart>
+                </Container>
+            </div >
+        </>
     );
 }
