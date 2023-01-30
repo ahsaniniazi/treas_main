@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import Heading from './home'
+import Heading from './holding_head'
 import New from './new'
 import React from 'react'
 import Treasury_label from './Treasury_label'
+import Graph_Table from './graphe_table'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,8 +20,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Heading />
-      <New />
-      <Treasury_label/>
+      <Graph_Table />
+      <Treasury_label />
     </div>
 
   )

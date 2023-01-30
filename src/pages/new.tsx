@@ -7,7 +7,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Image from 'next/image';
-import { Box } from '@mui/material';
+import { Collapse, IconButton, Typography } from '@mui/material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import { Box } from '@mui/system';
+import { AutoGraph } from '@mui/icons-material';
+
 
 function createData(
     image: string,
@@ -18,7 +23,9 @@ function createData(
     holdings: string,
     price: string,
 ) {
-    return { image, name, amount, change, total, holdings, price };
+    return {
+        image, name, amount, change, total, holdings, price
+    };
 }
 
 const rows = [
@@ -30,6 +37,7 @@ const rows = [
 ];
 
 export default function DenseTable() {
+    const [open, setOpen] = React.useState(false);
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -61,8 +69,22 @@ export default function DenseTable() {
                             <TableCell align="center">{row.total}</TableCell>
                             <TableCell align="center">{row.holdings}</TableCell>
                             <TableCell align="center">{row.price}</TableCell>
+                            <TableCell>
+                                <IconButton
+                                    aria-label="expand row"
+                                    size="small"
+                                    onClick={() => setOpen(!open)}
+                                >
+                                    {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                                </IconButton>
+                            </TableCell>
+
                         </TableRow>
+
+
                     ))}
+
+
                 </TableBody>
             </Table>
         </TableContainer>
