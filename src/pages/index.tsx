@@ -1,14 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import Heading from './holding_head'
-import New from './new'
+import Heading from './Coin_Head'
 import React from 'react'
-import Treasury_label from './Treasury_label'
-import Graph_Table from './graphe_table'
-import Chart from './main_graph'
-import RAdial from './radial_cahrt'
+import Treasury_label from './Treasury_Flows'
+import Graph_Table from './Coin_table'
+import Chart from './Bar_graph'
 import { Container } from '@mui/material'
+import NFT_Head from './Bar_Head'
+import RAdial from './Radial_chart'
+import Footer from './Footer'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,13 +15,15 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <React.Fragment>
+
       <Container>
+        <NFT_Head />
         <Chart />
         <Treasury_label />
         <Heading />
-        {/* <RAdial /> */}
         <Graph_Table />
       </Container>
+      <Footer />
     </React.Fragment>
 
   )

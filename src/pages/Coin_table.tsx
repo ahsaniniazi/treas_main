@@ -13,6 +13,7 @@ import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Image from 'next/image';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 function createData(
     image: string,
@@ -123,39 +124,54 @@ const rows = [
 
 export default function CollapsibleTable() {
     return (
-        <TableContainer component={Paper}>
-            <Table aria-label="collapsible table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]
+        <>
+            <TableContainer component={Paper}>
+                <Table aria-label="collapsible table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell align='center' className='border-y border-solid border-[#000000]
                          text-[15px] text-[#212529]'>NAME</TableCell>
 
-                        <TableCell align='center' className='border-y border-solid border-[#000000]
+                            <TableCell align='center' className='border-y border-solid border-[#000000]
                          text-[15px] text-[#212529]'>AMOUNT</TableCell>
 
-                        <TableCell align='center' className='border-y border-solid border-[#000000]
+                            <TableCell align='center' className='border-y border-solid border-[#000000]
                          text-[15px] text-[#212529]'>PRICE</TableCell>
 
-                        <TableCell align='center' className='border-y border-solid border-[#000000]
+                            <TableCell align='center' className='border-y border-solid border-[#000000]
                          text-[15px]text-[#212529]'>24H CHANGE</TableCell>
 
-                        <TableCell align='center' className='border-y border-solid border-[#000000]
+                            <TableCell align='center' className='border-y border-solid border-[#000000]
                          text-[15px]text-[#212529]'>TOTAL</TableCell>
 
-                        <TableCell align='center' className='border-y border-solid border-[#000000] 
+                            <TableCell align='center' className='border-y border-solid border-[#000000] 
                         text-[15px]text-[#212529]'>CURRENT HOLDINGS P/L</TableCell>
 
-                        <TableCell align='center' className='border-y border-solid border-[#000000]
+                            <TableCell align='center' className='border-y border-solid border-[#000000]
                          text-[15px]text-[#212529]' />
 
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <Row key={row.name} row={row} />
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {rows.map((row) => (
+                            <Row key={row.name} row={row} />
+                        ))}
+                    </TableBody>
+                </Table>
+
+            </TableContainer>
+
+            <Box display="flex" justifyContent="center" paddingTop="375px" >
+
+                <Typography className='text-[56px]'>Empowered treasury</Typography>
+
+            </Box>
+            <Box display="flex" justifyContent="center" paddingBottom="30px" >
+                <Typography className='text-[15px] text-[#FF6846]'>Create your treas
+                    <KeyboardArrowRightIcon />
+                </Typography>
+            </Box>
+
+        </>
     );
 }
