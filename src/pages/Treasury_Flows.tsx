@@ -6,11 +6,15 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { FormControl, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material';
+import { Box, FormControl, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material';
 import PublicSharpIcon from '@mui/icons-material/PublicSharp';
 import Image from 'next/image';
+import { BorderStyleRounded } from '@mui/icons-material';
+import { borderRadius } from '@mui/system';
 
 function createData(
+    color: string,
+    background: string,
     Network: string,
     JUL: string,
     AUG: string,
@@ -21,33 +25,31 @@ function createData(
     JAN: string,
     FEB: string,
     MAR: string,
+
 ) {
-    return { Network, JUL, AUG, SEPT, OCT, NOV, DEC, JAN, FEB, MAR };
+    return { color, background, Network, JUL, AUG, SEPT, OCT, NOV, DEC, JAN, FEB, MAR };
 }
 
 const rows = [
 
     createData(
-        "treas beg. of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
+        "#000", "Green", "treas beg. of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
-    createData("Inflows", '123,434', "123,434", "123,434", " 123,434", "123,434",
+    createData("#53A57C", "", "Inflows", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
-    createData("", '', "", "Unlock your treasury with labels", " ", "",
+    createData("#FF6846", "", "OutFlows", '123,434', "123,434", "123,434", " 123,434", "123,434",
+        "123,434", "123,434", "123,434", "123,434"),
+    createData("#000", "", "treas beg. of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
+        "123,434", "123,434", "123,434", "123,434"),
+    createData("#979797", "", "Total Fees", '123,434', "123,434", "123,434", " 123,434", "123,434",
+        "123,434", "123,434", "123,434", "123,434"),
+    createData("#53A57C", "", "Inflows", '', "", "", "", "",
         "", "", "", ""),
-    createData("OutFlows", '123,434', "123,434", "123,434", " 123,434", "123,434",
+    createData("", "", "Total Transactions", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
-    createData("treas beg. of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
+    createData("", "", "Total Contacts", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
-    createData("Total Fees", '123,434', "123,434", "123,434", " 123,434", "123,434",
-        "123,434", "123,434", "123,434", "123,434"),
-    createData("Inflows", '', "", "", "", "",
-        "", "", "", ""),
-    createData("Total Transactions", '123,434', "123,434", "123,434", " 123,434", "123,434",
-        "123,434", "123,434", "123,434", "123,434"),
-    createData("Total Contacts", '123,434', "123,434", "123,434", " 123,434", "123,434",
-        "123,434", "123,434", "123,434", "123,434"),
-    createData("", '', "", "Unlock your treasury with labels", " ", "",
-        "", "", "", ""),
+
 ]
 export default function DenseTable() {
 
@@ -61,8 +63,9 @@ export default function DenseTable() {
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                 <TableHead>
-                    <TableRow sx={{ m: 1, lineHeight: 8 }}>
-                        <TableCell className='border-y border-solid border-[#000000] '>
+                    <TableRow sx={{ m: 1, lineHeight: 8 }}
+                    >
+                        <TableCell >
 
                             <FormControl sx={{ m: 1, minWidth: 250 }} className="flex justify-evenly">
                                 <Select
@@ -132,7 +135,8 @@ export default function DenseTable() {
                         </TableCell>
 
                         <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ m: 1, minWidth: 90 }}>JUL. 22</TableCell>
+                            sx={{ m: 1, minWidth: 90 }}
+                        >JUL. 22</TableCell>
                         <TableCell align='center' className='border-y border-solid border-[#000000]'
                             sx={{ m: 1, minWidth: 90 }}>AUG. 22</TableCell>
                         <TableCell align='center' className='border-y border-solid border-[#000000]'
@@ -153,29 +157,42 @@ export default function DenseTable() {
 
                     </TableRow>
                 </TableHead>
-                <TableBody className='border-x border-y border-solid border-[#D3D3D3] bg-[#f5f6f7] mt-20px leading-8'>
+                <TableBody className='leading-8'>
                     {rows.map((row) => (
                         <TableRow
                             key={row.JUL}
-                            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        // sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
 
                         >
-                            <TableCell align='center' className='border-x border-y border-solid border-[#D3D3D3]'>
+                            <TableCell align='center' className='flex border-x border-y 
+                            border-solid border-[#D3D3D3] text-left text-[13px] text-[#000] font-semibold mt-[10px] w-[290px]'>
+
+                                <Box sx={{ width: "22px", height: "22px", borderRadius: "5px" }} bgcolor={row.color} marginRight="18px">
+                                </Box>
                                 {row.Network}
 
                             </TableCell>
-                            <TableCell align='center' className='border-y border-solid border-[#D3D3D3]' >
+                            <TableCell align='center' className='border-l border-y 
+                            border-solid border-[#D3D3D3]  text-[#000]  mt-[15px]'>
                                 {row.JUL}
+
                             </TableCell>
-                            <TableCell >{row.AUG}</TableCell>
-                            <TableCell align='center' className='border-y border-solid border-[#D3D3D3]'>{row.SEPT}
+                            <TableCell align='center' className='border-y 
+                            border-solid border-[#D3D3D3]  text-[#000]'>
+                                {row.AUG}
+
                             </TableCell>
-                            <TableCell align='center' className='border-y  border-solid border-[#D3D3D3] '>{row.OCT}</TableCell>
-                            <TableCell align='center' className='border-y   border-solid border-[#D3D3D3]'>{row.NOV}</TableCell>
-                            <TableCell align='center' className='border-y border-x  border-solid border-[#D3D3D3]'>{row.DEC}</TableCell>
-                            <TableCell align='center' className='border-y   border-solid border-[#D3D3D3]'>{row.JAN}</TableCell>
-                            <TableCell align='center' className='border-y  border-solid border-[#D3D3D3]'>{row.FEB}</TableCell>
-                            <TableCell align='center' className='border-y border-x border-solid border-[#D3D3D3]'>{row.MAR}</TableCell>
+                            <TableCell align='center'>{row.SEPT}
+                            </TableCell>
+                            <TableCell align='center' >{row.OCT}</TableCell>
+                            <TableCell align='center'>{row.NOV}</TableCell>
+                            <TableCell align='center' className='border-r border-y 
+                            border-solid border-[#D3D3D3]  text-[#000]' >{row.DEC}</TableCell>
+                            <TableCell align='center' className='border-l border-y 
+                            border-solid border-[#D3D3D3]  text-[#000]' >{row.JAN}</TableCell>
+                            <TableCell align='center'>{row.FEB}</TableCell>
+                            <TableCell align='center' className='border-r border-y 
+                            border-solid border-[#D3D3D3]  text-[#000]' >{row.MAR}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

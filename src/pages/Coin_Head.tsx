@@ -6,8 +6,7 @@ import {
     Stack, Typography
 } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { WidthFull } from '@mui/icons-material';
-import { border, borderColor } from '@mui/system';
+
 
 const commonStyles = {
     m: 1,

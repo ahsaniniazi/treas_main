@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import RAdial from "./Radial_chart";
-import NFT_Head from "./Bar_Head";
 import {
     ComposedChart,
     Line,
@@ -79,7 +78,7 @@ export default function Chart() {
 
                 <RAdial />
                 <Container>
-                    <Box display="flex" justifyContent="space-around" >
+                    <Box display="flex" justifyContent="space-between" >
                         <Box >
                             <Typography className="font-medium text-[22px]" > 1496,518 $US </Typography>
                             <Typography className="font-medium text-[12px] text-[#979797]">10 nov. 2022, 0
@@ -98,7 +97,7 @@ export default function Chart() {
                         margin={{
                             top: 20,
                             right: 0,
-                            left: 0
+                            left: 12
                         }}
                     >
                         <Tooltip />

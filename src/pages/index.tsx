@@ -6,7 +6,6 @@ import Graph_Table from './Coin_table'
 import Chart from './Bar_graph'
 import { Container } from '@mui/material'
 import NFT_Head from './Bar_Head'
-import RAdial from './Radial_chart'
 import Footer from './Footer'
 
 
