@@ -17,7 +17,7 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width: 595,
     bgcolor: 'background.paper',
-    border: "1px solid #979797",
+    border: "border-double border-4 border-indigo-600",
     pt: 2,
     px: 4,
     pb: 3,
@@ -77,12 +77,13 @@ export default function NFT_Head() {
                         onClose={handleClose}
                         aria-labelledby="parent-modal-title"
                         aria-describedby="parent-modal-description"
+
                     >
-                        <Box sx={{ ...style, width: 500, height: 400 }}>
-                            <Box borderRadius="100px" borderColor="#979797" border="1px"
-                                position="absolute" color="#FFFFFF" marginTop="-20px">
+                        <Box sx={{ ...style, width: 500, height: 400 }} border="1px" borderColor="#979797">
+                            <Box border="1px"
+                                position="absolute" top="-20px" right="-20px">
                                 <Image src="image/back icon.svg" alt="Fund me" width={30} height={30} onClick={handleClose}
-                                />
+                                    className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px]" />
                             </Box>
                             <Box marginLeft={10}>
                                 <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
@@ -124,10 +125,11 @@ export default function NFT_Head() {
                         aria-labelledby="parent-modal-title"
                         aria-describedby="parent-modal-description"
                     >
-                        <Box sx={{ ...style, width: 500, height: 400 }}>
-                            <Box borderRadius="4px" borderColor="#979797" border="1px" marginLeft={55}
-                                position="absolute" padding={0} marginTop={0}>
-                                <Image src="image/back icon.svg" alt="Fund me" width={30} height={30} onClick={handleClose} />
+                        <Box sx={{ ...style, width: 500, height: 400 }} border="1px" borderColor="#979797">
+                            <Box border="1px"
+                                position="absolute" top="-20px" right="-20px">
+                                <Image src="image/back icon.svg" alt="Fund me" width={30} height={30} onClick={handleClose}
+                                    className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px]" />
                             </Box>
                             <Box marginLeft={20}>
                                 <Image src="image/NFT.svg" alt="Fund me" width={90} height={90} />
@@ -161,11 +163,13 @@ export default function NFT_Head() {
                     onClose={handleClose}
                     aria-labelledby="parent-modal-title"
                     aria-describedby="parent-modal-description"
+
                 >
-                    <Box sx={{ ...style, width: 500, height: 400 }}>
-                        <Box borderRadius="4px" borderColor="#979797" border="1px" marginLeft={55}
-                            position="absolute" padding={0} marginTop={0}>
-                            <Image src="image/back icon.svg" alt="Fund me" width={30} height={30} onClick={handleClose} />
+                    <Box sx={{ ...style, width: 500, height: 400 }} border="1px" borderColor="#979797">
+                        <Box border="1px"
+                            position="absolute" top="-22px" right="-20px" >
+                            <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
+                                className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px]" />
                         </Box>
                         <Box marginLeft={20}>
                             <Image src="image/IIcon.svg" alt="Fund me" width={90} height={90} />
