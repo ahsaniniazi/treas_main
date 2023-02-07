@@ -9,8 +9,6 @@ import Paper from '@mui/material/Paper';
 import { Box, FormControl, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material';
 import PublicSharpIcon from '@mui/icons-material/PublicSharp';
 import Image from 'next/image';
-import { BorderStyleRounded } from '@mui/icons-material';
-import { borderRadius } from '@mui/system';
 
 function createData(
     color: string,
@@ -33,15 +31,15 @@ function createData(
 const rows = [
 
     createData(
-        "#000", "Green", "treas beg. of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
+        "#000", "#F5F6F9", "treas beg. of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
-    createData("#53A57C", "", "Inflows", '123,434', "123,434", "123,434", " 123,434", "123,434",
+    createData("#53A57C", "#F5F6F9", "Inflows", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
-    createData("#FF6846", "", "OutFlows", '123,434', "123,434", "123,434", " 123,434", "123,434",
+    createData("#FF6846", "#F5F6F9", "OutFlows", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
-    createData("#000", "", "treas beg. of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
+    createData("#000", "#F5F6F9", "treas beg. of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
-    createData("#979797", "", "Total Fees", '123,434', "123,434", "123,434", " 123,434", "123,434",
+    createData("#979797", "#F5F6F9", "Total Fees", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
     createData("#53A57C", "", "Inflows", '', "", "", "", "",
         "", "", "", ""),
@@ -65,18 +63,20 @@ export default function DenseTable() {
                 <TableHead>
                     <TableRow sx={{ m: 1, lineHeight: 8 }}
                     >
-                        <TableCell >
+                        <TableCell className='pl-[0px] pr-[20px] text-[#D1D0D6]'>
 
-                            <FormControl sx={{ m: 1, minWidth: 250 }} className="flex justify-evenly">
+                            <FormControl sx={{ minWidth: 250 }} className="flex justify-evenly">
                                 <Select
                                     value={age}
                                     onChange={handleChange}
                                     displayEmpty
                                     inputProps={{ 'aria-label': 'Without label' }}
 
+
+
                                 >
-                                    <MenuItem value="">
-                                        <em><PublicSharpIcon /> All Networks</em>
+                                    <MenuItem value="" >
+                                        <PublicSharpIcon /> All Networks
                                     </MenuItem>
                                     <MenuItem value={10} className="text-[12px] text- flex justify-between ">
 
@@ -146,13 +146,13 @@ export default function DenseTable() {
                         <TableCell align='center' className='border-y border-solid border-[#000000]'
                             sx={{ m: 1, minWidth: 90 }}>NOV. 22</TableCell>
                         <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ m: 1, minWidth: 90 }}>DEC. 22</TableCell>
+                            sx={{ m: 1, minWidth: 90 }} >DEC. 22</TableCell>
                         <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ m: 1, minWidth: 90 }}>JAN. 22</TableCell>
+                            sx={{ m: 1, minWidth: 90 }} >JAN. 23</TableCell>
                         <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ m: 1, minWidth: 90 }}>FEB. 22</TableCell>
+                            sx={{ m: 1, minWidth: 90 }}>FEB. 23</TableCell>
                         <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ m: 1, minWidth: 90 }}>MAR. 22</TableCell>
+                            sx={{ m: 1, minWidth: 90 }}>MAR. 23</TableCell>
 
 
                     </TableRow>
@@ -165,38 +165,103 @@ export default function DenseTable() {
 
                         >
                             <TableCell align='center' className='flex border-x border-y 
-                            border-solid border-[#D3D3D3] text-left text-[13px] text-[#000] font-semibold mt-[10px] w-[290px]'>
+                            border-solid border-[#D3D3D3] text-left text-[13px] text-[#000]
+                             font-semibold mt-[10px]  w-[290px] '
+                                sx={{ background: row.background }} >
 
-                                <Box sx={{ width: "22px", height: "22px", borderRadius: "5px" }} bgcolor={row.color} marginRight="18px">
+                                <Box sx={{ width: "22px", height: "22px", borderRadius: "5px" }} bgcolor={row.color}
+                                    marginRight="18px" >
                                 </Box>
                                 {row.Network}
 
                             </TableCell>
-                            <TableCell align='center' className='border-l border-y 
-                            border-solid border-[#D3D3D3]  text-[#000]  mt-[15px]'>
+                            <TableCell align='center' className=' border-l border-y 
+                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                             font-light mt-[10px]  '
+                                sx={{ background: row.background }}>
+
+
                                 {row.JUL}
 
                             </TableCell>
-                            <TableCell align='center' className='border-y 
-                            border-solid border-[#D3D3D3]  text-[#000]'>
+                            <TableCell align='center' className=' border-y 
+                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                             font-light mt-[10px]  '
+                                sx={{ background: row.background }}>
+
+
                                 {row.AUG}
 
                             </TableCell>
-                            <TableCell align='center'>{row.SEPT}
+                            <TableCell align='center' className=' border-y 
+                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                             font-light mt-[10px]  '
+                                sx={{ background: row.background }}>
+
+
+                                {row.SEPT}
+
                             </TableCell>
-                            <TableCell align='center' >{row.OCT}</TableCell>
-                            <TableCell align='center'>{row.NOV}</TableCell>
+                            <TableCell align='center' className=' border-y 
+                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                             font-light mt-[10px]  '
+                                sx={{ background: row.background }}>
+
+                                {row.OCT}
+
+                            </TableCell>
+                            <TableCell align='center' className=' border-y 
+                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                             font-light mt-[10px]  '
+                                sx={{ background: row.background }}>
+
+
+                                {row.NOV}
+
+                            </TableCell>
                             <TableCell align='center' className='border-r border-y 
-                            border-solid border-[#D3D3D3]  text-[#000]' >{row.DEC}</TableCell>
+                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                             font-light mr-[20px]'
+                                sx={{
+                                    background: row.background
+                                }}>
+
+
+                                {row.DEC}
+
+                            </TableCell>
+
                             <TableCell align='center' className='border-l border-y 
-                            border-solid border-[#D3D3D3]  text-[#000]' >{row.JAN}</TableCell>
-                            <TableCell align='center'>{row.FEB}</TableCell>
+                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                             font-light mt-[10px]  '
+                                sx={{ background: row.background, marginLeft: 20 }}>
+
+
+                                {row.JAN}
+
+                            </TableCell>
+                            <TableCell align='center' className=' border-y 
+                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                             font-light mt-[10px]  '
+                                sx={{ background: row.background }}>
+
+
+                                {row.FEB}
+
+                            </TableCell>
                             <TableCell align='center' className='border-r border-y 
-                            border-solid border-[#D3D3D3]  text-[#000]' >{row.MAR}</TableCell>
+                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                             font-light mt-[10px]  '
+                                sx={{ background: row.background }}>
+
+
+                                {row.MAR}
+
+                            </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
             </Table>
-        </TableContainer>
+        </TableContainer >
     );
 }

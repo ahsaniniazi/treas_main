@@ -1,92 +1,126 @@
-import { Search } from "@mui/icons-material";
-import { Box, Container, TextField, Typography } from "@mui/material";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import InputBase from '@mui/material/InputBase';
+import { Button, Container } from '@mui/material';
+import Image from 'next/image';
 
-const Header = () => {
-    const [focus, setfocus] = useState<boolean>(false);
+const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    borderRadius: 15,
+    marginRight: theme.spacing(2),
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+        marginLeft: theme.spacing(3),
+        width: '80%',
+    },
+}));
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+}));
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: 'inherit',
+    '& .MuiInputBase-input': {
+
+        // vertical padding + font size from searchIcon
+        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+        paddingRight: `calc(0.75em)`,
+        transition: theme.transitions.create('width'),
+        width: 'full',
+        [theme.breakpoints.up('md')]: {
+
+        },
+    },
+}));
+
+export default function PrimarySearchAppBar() {
+    React.useState<null | HTMLElement>(null);
+
     return (
         <>
-            <Box className=' bg-gradient-to-r from-[#BDD9DD] via-[#C5BFEE] to-[#A4D8DD]' >
-                <nav className=' duration-300 p-0 relative flex  items-center'>
-                    <Box component="div" className='mr-auto p-0 ml-auto'>
-                        <Box component="div" className='flex items-center justify-center'>
-                            <Box component="div" className='logo'>
-                                <Link
-                                    className='p-[1px] -ml-[27rem] mt-[1rem] text-black textdecoration-nounderline whitespace-nowrap focus:text-black hover:text-black text-6xl font-serif leading-4 absolute -rotate-6 bg-[#FFDEA7] h-[35%] font-size-40px font-weight-bold'
-                                    href='#'
-                                >
-                                    <Typography
-                                        variant='h3'
-                                        gutterBottom
-                                        component='div'
-                                        className='rotate-6 -mt-[9px]'
-                                    >
-                                        treas
-                                    </Typography>
-                                </Link>
-                            </Box>
+            <Box display="flex" justifyContent="space-around" borderBottom="none"
 
-                            <Box
-                                component='form'
-                                onClick={() => setfocus(true)}
-                                className={`relative rounded-3xl ${focus ? "border-[rgb(6 100 237 / 86%)] border-2 border-solid" : ""
-                                    } pl-[30px] bg-transparent h-[50px] top-[30px] -left-[280px] p-[0 4px] flex items-center rounded-md w-[300px]`}
-                                role='search'
-                                onSubmit={(e) => {
-                                    e.preventDefault();
-                                }}
-                            >
-                                <TextField
-                                    onFocus={() => setfocus(true)}
-                                    className='outline-[none] border-transparent focus:outline-[none] hover:outline-[none] focus:border-transparent hover:border-transparent'
-                                    type='search'
-                                    placeholder='Scan any treas  ETH wallet address or ENS name'
-                                    aria-label='Search'
-                                />
-                                <Box component="div" className='absolute left-2'>
-                                    <Search onClick={() => setfocus(true)} />
-                                </Box>
-                                <button
-                                    className='btn '
-                                    type='submit'
-                                    onClick={() => setfocus(true)}
+            >
+                {/* [#ace0e6] [#d8e4e6]*/}
+                {/* className='h-60 bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#A4D8DD] */}
+                <AppBar position="static" className=' bg-gradient-to-r from-[#c7e3e6] via-[#e2dff5] to-[#b2e4e9]
+            shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#c7e6e6]  ' >
+                    <Container className="pl-[0px] pr-[0px]">
+                        <Toolbar className=''>
+                            <Box className='rotate-[-7.12deg] mt-[50px] bg-[#FFDEA7] mb-[50px]
+                         h-[53px] w-[128px] text-center'>
+                                <Typography
+                                    variant='h3'
+                                    gutterBottom
+                                    component='div'
+                                    className='text-60px font-normal text-[#000000] font-[Libre Baskerville] sticky rotate-[7.12deg]'
                                 >
-                                    <Image
-                                        src='/image/image 131.svg'
-                                        alt=''
-                                        width={25}
-                                        height={25}
-                                        style={{ marginBottom: 5 }}
-                                        onClick={() => setfocus(true)}
+                                    treas
+                                </Typography>
+                            </Box>
+                            <Box width={600}>
+                                <Search className='flex h-[40px] border border-solid border-[#ced4da] 
+                            appearance-none rounded-[0.375rem]  '>
+                                    <SearchIconWrapper>
+                                        <Image src="image/image 118.svg" alt='' width={16} height={16} />
+                                    </SearchIconWrapper>
+                                    <StyledInputBase
+                                        placeholder="Scan any treas ETH wallet address or ENS name"
+                                        inputProps={{ 'aria-label': 'search' }}
+                                        className='text-[#3B3A40] font-bold '
+                                        fullWidth
+
                                     />
-                                </button>
+                                    <Image src="image/image 131.svg" alt="" width={25} height={25} />
+                                </Search>
                             </Box>
-                        </Box>
+                            <Box />
+                            <Box display="flex" marginLeft={10}>
 
-                        <Box
 
-                            display="flex"
-                            id='navbarNavDropdown'
-                        >
-                            <ul className='navbar-nav ms-auto text-capitalize'>
-                                <Typography className='nav-link font-size-18px text-[#000000]'>
-                                    Access treas
-                                </Typography>
-                                <Typography className='nav-link font-size-18px text-[#000000]'>
-                                    Access treas
-                                </Typography>
-                                <Typography className='nav-link font-size-18px text-[#000000]'>
-                                    Access treas
-                                </Typography>
-                            </ul>
-                        </Box>
-                    </Box>
-                </nav>
+                                <Button className='text-[#000000] 
+                                text-[14px] font-bold  border-[#8E8C95] mr-[10px] '
+                                >Learn</Button>
+
+
+
+                                <Button className='text-[#000000] 
+                                text-[14px] font-bold  border-[#8E8C95] mr-[10px] '
+                                >Solutions</Button>
+
+
+
+                                <Button className='text-[#000000] 
+                                text-[14px] font-bold bg-[#FFFFFF] border-[#8E8C95] border-2 border-solid
+                                rounded border-[#8E8C95] mr-[20px] opacity-[0.48]'
+                                >Access Treas</Button>
+
+
+                            </Box>
+
+                        </Toolbar >
+                    </Container >
+                </AppBar >
+
             </Box>
+            <Typography position="static" width="100%"
+                className='h-10 bg-gradient-to-r from-[#c7e3e6] via-[#e2dff5] to-[#b2e4e9]
+         shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#499EB6]'>
+
+            </Typography>
+
         </>
     );
-};
-
-export default Header;
+}

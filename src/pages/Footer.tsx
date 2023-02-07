@@ -17,7 +17,17 @@ export default function NFT_Head() {
             <Box>
                 <Box display="flex" justifyContent="space-around" paddingTop={20} paddingBottom={20} sx={{ backgroundColor: "#000" }}>
                     <Box display="flex" flexDirection="column" >
-                        <Typography className="font-medium text-[60px] text-[#FFFFFF]" > treas </Typography>
+                        <Box className='rotate-[-7.12deg] mt-[50px] bg-[#FFFFFF] mb-[25px]
+                         h-[53px] w-[128px] text-center'>
+                            <Typography
+                                variant='h3'
+                                gutterBottom
+                                component='div'
+                                className='text-60px font-normal text-[#000000] font-[Libre Baskerville] sticky rotate-[7.12deg]'
+                            >
+                                treas
+                            </Typography>
+                        </Box>
                         <Box paddingBottom={6} paddingTop={3}>
                             <LinkedInIcon className='text-[#FFFFFF] text-[30px] p-[5px] border rounded-full mr-[16px]' />
                             <TwitterIcon className='text-[#FFFFFF] text-[30px] p-[5px] border rounded-full mr-[16px]' />

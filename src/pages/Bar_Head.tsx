@@ -1,4 +1,4 @@
-import { Box, Button, Container, FormControl, IconButton, Menu, MenuItem, Modal, Select, SelectChangeEvent, Typography } from '@mui/material';
+import { Box, FormControl, IconButton, Menu, MenuItem, Modal, Typography } from '@mui/material';
 import EastIcon from '@mui/icons-material/East';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
@@ -6,7 +6,7 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import * as React from 'react';
 import Image from 'next/image';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { RoundedCorner } from '@mui/icons-material';
+
 
 
 
@@ -17,7 +17,7 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width: 595,
     bgcolor: 'background.paper',
-    border: "border-double border-4 border-indigo-600",
+    border: "border-solid border-1 #979797",
     pt: 2,
     px: 4,
     pb: 3,
@@ -35,11 +35,18 @@ export default function NFT_Head() {
     const [opendate, setOpendate] = React.useState(false);
     const [opennft, setNft] = React.useState(false);
     const [openhistory, setHistory] = React.useState(false);
-    const handleOpen = () => {
+
+    const handleOpendate = () => {
         setOpendate(true);
-        setNft(true);
+    };
+    const handleHistory = () => {
         setHistory(true);
     };
+    const handleNft = () => {
+        setNft(true);
+    };
+
+
 
 
 
@@ -63,9 +70,22 @@ export default function NFT_Head() {
             <Box display="flex" justifyContent="space-between" borderBottom="solid" borderColor='#D1D0D6' marginTop="50px" marginBottom="38px" >
                 <Box display="flex" justifyContent="space-evenly" >
 
-                    <Box > <Typography className='  ml-[20px] p-[10px] text-[25px]'>treasury </Typography></Box>
+                    <Box display="flex">
+                        <Box className='rotate-[-7.12deg]  bg-[#FFDEA7] 
+                         h-[52px] w-[107px] '>
+                            <Typography
+                                variant='h3'
+                                gutterBottom
+                                component='div'
+                                className='text-25px font-normal text-[#000000] 
+                                font-[Libre Baskerville] sticky rotate-[7.12deg] pt-[2px]'
+                            >
+                                treas
+                            </Typography>
+                        </Box>
+                        <Typography variant='h3' className='pl-[0px] pt-[14px] p-[10px] font-[Libre Baskerville] font-normal text-[#000000] text-[32px]'>ury </Typography></Box>
                     <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
-                        height={40} width={200} onClick={handleOpen}>
+                        height={40} width={200} onClick={handleOpendate}>
                         <Typography className=' ml-[20px] p-[10px]  text-[12px]
                      font-semibold text-center'  >JUL. <br /> 2022 </Typography> <EastIcon />
 
@@ -77,17 +97,18 @@ export default function NFT_Head() {
                         onClose={handleClose}
                         aria-labelledby="parent-modal-title"
                         aria-describedby="parent-modal-description"
+                        className='bg-[#ffffffe6]'
 
                     >
-                        <Box sx={{ ...style, width: 500, height: 400 }} border="1px" borderColor="#979797">
+                        <Box sx={{ ...style, width: 594, height: 378 }} borderColor="#979797">
                             <Box border="1px"
-                                position="absolute" top="-20px" right="-20px">
-                                <Image src="image/back icon.svg" alt="Fund me" width={30} height={30} onClick={handleClose}
+                                position="absolute" top="-22px" right="-20px" >
+                                <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
                                     className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px]" />
                             </Box>
                             <Box marginLeft={10}>
                                 <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
-                                    height={40} width={200} onClick={handleOpen}>
+                                    height={40} width={200} >
 
                                     <Typography className=' ml-[20px] p-[10px]  text-[12px]
                      font-semibold text-center'  >JUL. <br /> 2022 </Typography> <EastIcon />
@@ -116,7 +137,7 @@ export default function NFT_Head() {
                         </Box>
                     </Modal>
 
-                    <Box onClick={handleOpen}><Typography className='  ml-[20px] p-[10px] text-[#979797] text-[20px]'> NFTs
+                    <Box onClick={handleNft}><Typography className='  ml-[20px] p-[10px] text-[#979797] text-[20px]'> NFTs
                     </Typography></Box>
 
                     <Modal
@@ -124,11 +145,12 @@ export default function NFT_Head() {
                         onClose={handleClose}
                         aria-labelledby="parent-modal-title"
                         aria-describedby="parent-modal-description"
+                        className='bg-[#ffffffe6]'
                     >
-                        <Box sx={{ ...style, width: 500, height: 400 }} border="1px" borderColor="#979797">
+                        <Box sx={{ ...style, width: 500, height: 400 }} borderColor="#979797">
                             <Box border="1px"
-                                position="absolute" top="-20px" right="-20px">
-                                <Image src="image/back icon.svg" alt="Fund me" width={30} height={30} onClick={handleClose}
+                                position="absolute" top="-22px" right="-20px" >
+                                <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
                                     className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px]" />
                             </Box>
                             <Box marginLeft={20}>
@@ -155,7 +177,7 @@ export default function NFT_Head() {
                     </Modal>
 
 
-                    <Box onClick={handleOpen}><Typography className='   ml-[20px] p-[10px] text-[#979797] text-[20px]'> History </Typography></Box>
+                    <Box onClick={handleHistory}><Typography className='   ml-[20px] p-[10px] text-[#979797] text-[20px]'> History </Typography></Box>
                 </Box>
 
                 <Modal
@@ -163,9 +185,10 @@ export default function NFT_Head() {
                     onClose={handleClose}
                     aria-labelledby="parent-modal-title"
                     aria-describedby="parent-modal-description"
+                    className='bg-[#ffffffe6]'
 
                 >
-                    <Box sx={{ ...style, width: 500, height: 400 }} border="1px" borderColor="#979797">
+                    <Box sx={{ ...style, width: 500, height: 400 }} borderColor="#979797">
                         <Box border="1px"
                             position="absolute" top="-22px" right="-20px" >
                             <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
