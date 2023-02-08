@@ -369,7 +369,7 @@ export default function CollapsibleTable() {
     // setShowResult(true);
     const initilaizeMorallis = async () => {
         await Moralis.start({
-            apiKey: process.env.NEXT_PUBLIC_MORALIS_API_KEY,
+            apiKey: "IKOjk5iKeUSeiiA0ZtO5Yp7QIULfszWqnudfZesEl0SCz743iH7tHH7dxnM1RwkB",
         });
     }
 
