@@ -22,7 +22,6 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 import styles from "src/styles/Token.module.css";
-import { getPrice } from './helper'
 import Web3 from "web3";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -306,6 +305,19 @@ export default function CollapsibleTable() {
     const [result, setResult] = React.useState<any>([]);
     const [address, setAddress] = React.useState("");
 
+    const getPrice = async (item, Moralis, chain) => {
+        return new Promise((resp, rej) => {
+            const response = Moralis.EvmApi.token
+                .getTokenPrice({
+                    address: item.token_address,
+                    chain,
+                })
+                .then((res) => {
+                    setTimeout(() => resp(res), 2000);
+                })
+                .catch((err) => rej(err));
+        });
+    };
 
     const handleSubmit = async () => {
         const chain = EvmChain.ETHEREUM;
