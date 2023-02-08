@@ -83,7 +83,8 @@ export default function NFT_Head() {
                                 treas
                             </Typography>
                         </Box>
-                        <Typography variant='h3' className='pl-[0px] pt-[14px] p-[10px] font-[Libre Baskerville] font-normal text-[#000000] text-[32px]'>ury </Typography></Box>
+                        <Typography variant='h3' className='pl-[0px] pt-[14px] p-[10px] font-[Libre Baskerville] font-normal text-[#000000] text-[32px]'>
+                            ury </Typography></Box>
                     <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
                         height={40} width={200} onClick={handleOpendate}>
                         <Typography className=' ml-[20px] p-[10px]  text-[12px]

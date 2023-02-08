@@ -30,8 +30,9 @@ export default function Home() {
         <Heading />
         <Graph_Table />
       </Container>
-      {/* <Token />
-      <Date_fetch /> */}
+
+      {/* <Date_fetch /> */}
+      {/* <Token /> */}
       <Footer />
     </React.Fragment>
 

@@ -19,6 +19,11 @@ import Grid from "@mui/material/Grid";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
+import styles from "src/styles/Token.module.css";
+import { getPrice } from './helper'
+import Web3 from "web3";
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -105,28 +110,32 @@ const data = [
     },
 ];
 
-function Row(props: { row: ReturnType<typeof createData> }) {
-    const { row } = props;
+function Row({ row }: any) {
     const [open, setOpen] = React.useState(false);
 
     return (
         <React.Fragment>
-            <TableRow sx={{ '& > *': { borderBottom: 'unset' } }} className="text-[12px] font-light" >
+            <TableRow className="text-[12px] font-light" >
 
-                <TableCell align="center" className='flex pb=[20px] text-[18px] font-medium text-[#000000]'>
+                <TableCell align="left" className='flex pb=[20px] text-[18px] font-medium text-[#000000]'>
 
-                    <Image src={row.image} alt="" width={30} height={30} className="mr-[20px]" />
-                    {row.name}
+                    <Image src={row.token.thumbnail} alt="" width={30} height={30} className="mr-[10px]" />
+                    <Typography className="mr-[10px] text-[18px] font-thin text-[#000000]">
+                        {row.token.name}
+                    </Typography>
+                    <Typography className="mr-[10px] text-[#8A8A8A] text-[13px] font-thin">
+                        {row.token.symbol}
+                    </Typography>
                 </TableCell>
-                <TableCell align="center" className=' text-[18px] font-medium' >{row.amount}</TableCell>
-                <TableCell align="center" className=' text-[18px] font-medium'>{row.change}</TableCell>
-                <TableCell align="center" className='text-[#FF6846] text-[18px] font-medium'>
-                    <KeyboardArrowDownIcon /> {row.total}
+                <TableCell align="left" className=' text-[18px] font-medium' >{row.token.balance}</TableCell>
+                <TableCell align="left" className=' text-[18px] font-medium'>{(row.price.usdPrice).toFixed(3)}</TableCell>
+                <TableCell align="left" className='text-[#FF6846] text-[18px] font-medium'>
+                    <KeyboardArrowDownIcon /> {((1673.78 - 1617.14) / 1617.14 * 100).toFixed(3)}
                 </TableCell>
-                <TableCell align="center" className=' text-[18px] font-medium'>{row.holdings}
+                <TableCell align="left" className=' text-[18px] font-medium'>{(Number(row.token.balance) * Number(row.price.usdPrice)).toFixed(3)}
                 </TableCell>
-                <TableCell align="center" className='text-[#53A57C] text-[18px] font-medium'>
-                    <KeyboardArrowUpIcon /> {row.price}</TableCell>
+                <TableCell align="left" className='text-[#53A57C] text-[18px] font-medium'>
+                    <KeyboardArrowUpIcon /> {row.balance?.slice(0, 5)}</TableCell>
                 <TableCell>
                     <IconButton
                         aria-label="expand row"
@@ -137,6 +146,7 @@ function Row(props: { row: ReturnType<typeof createData> }) {
                     </IconButton>
                 </TableCell>
             </TableRow>
+
             <TableRow>
                 <TableCell
                     style={{ paddingBottom: 0, paddingTop: 0 }}
@@ -291,6 +301,74 @@ const rows = [
 ];
 
 export default function CollapsibleTable() {
+
+    const [showResult, setShowResult] = React.useState(false);
+    const [result, setResult] = React.useState<any>([]);
+    const [address, setAddress] = React.useState("");
+
+
+    const handleSubmit = async () => {
+        const chain = EvmChain.ETHEREUM;
+
+
+
+        const response = await Moralis.EvmApi.token.getWalletTokenBalances({
+            address,
+            chain,
+        });
+
+        const res = await response.toJSON();
+        console.log(res);
+        const symbol = res.filter(item => item.thumbnail && (item.symbol === "BTC"
+            || item.symbol === "WETH" || item.symbol === "USDT" || item.symbol === "USDC" || item.symbol === "ETH" || item.symbol === "BSC" || item.symbol === "LINK"));
+        let finalResult = []
+        const promises = symbol.map(el => getPrice(el, Moralis, chain));
+        const pr = Promise.all(promises).then(data => {
+            const resp = data.map((item, index) => {
+                return { token: symbol[index], price: item.jsonResponse }
+
+            })
+            console.log(resp)
+            setResult(resp)
+            return finalResult = [...resp]
+        })
+            .catch(err => {
+                console.log(err)
+            })
+        const all = await pr
+        console.log(all)
+        console.log({ data: finalResult });
+
+        console.log(response.toJSON());
+        // setResult(response.toJSON());
+        setShowResult(true);
+
+    }
+
+    // const request =
+    //     await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,Tether,bsc,ethereum&vs_currencies=usd")
+    //         .then(response => response.json()).then(data => {
+
+    //             const merge = { tokens: [...symbol], price: data }
+
+
+    //         }
+    //         )
+    // setShowResult(true);
+    const initilaizeMorallis = async () => {
+        await Moralis.start({
+            apiKey: process.env.NEXT_PUBLIC_MORALIS_API_KEY,
+        });
+    }
+
+    React.useEffect(() => {
+        // handleSubmit();
+        // tokenprice();
+        initilaizeMorallis()
+    });
+
+    console.log(result)
+
     return (
         <>
             <TableContainer component={Paper}>
@@ -298,55 +376,84 @@ export default function CollapsibleTable() {
                     <TableHead>
                         <TableRow>
                             <TableCell
-                                align='center'
+                                align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
                                 NAME
                             </TableCell>
                             <TableCell
-                                align='center'
+                                align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
                                 AMOUNT
                             </TableCell>
                             <TableCell
-                                align='center'
+                                align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
                                 PRICE
                             </TableCell>
                             <TableCell
-                                align='center'
+                                align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
                                 24H CHANGE
                             </TableCell>
                             <TableCell
-                                align='center'
+                                align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
                                 TOTAL
                             </TableCell>
                             <TableCell
-                                align='center'
+                                align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
                                 CURRENT HOLDINGS P/L
                             </TableCell>
-                            <TableCell align='center'
+                            <TableCell align='left'
                                 className='border-y border-solid border-[#000000]' />
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map((row) => (
-                            <Row
-                                key={row.name}
-                                row={row}
-                            />
-                        ))}
+                        {
+                            result.length && result?.map((row) => (
+                                <Row
+                                    key={row.name}
+                                    row={row}
+                                />
+                            ))}
+
                     </TableBody>
                 </Table>
+
             </TableContainer>
+            <Box marginTop="300px">
+                <section className={styles.main}>
+                    <form
+                        className={styles.getTokenForm}
+                        name="create-profile-form"
+                        method="POST"
+                        action="#"
+                    >
+                        <label className={styles.label} htmlFor="walletAddress">
+                            Add ERC20 Wallet Address
+                        </label>
+                        <input
+                            className={styles.walletAddress}
+                            type="text"
+                            id="walletAddress"
+                            name="walletAddress"
+                            onChange={(e) => setAddress(e.target.value)}
+                            value={address}
+                            required
+                        />
+                    </form>
+                    <button className={styles.form_btn} onClick={handleSubmit}>
+                        Submit
+                    </button>
+                </section>
+            </Box>
 
             <Box display="flex" justifyContent="center" paddingTop="375px" >
 

@@ -6,17 +6,17 @@ import styles from "src/styles/Token.module.css";
 export default function Header() {
   const [showResult, setShowResult] = useState(false);
   const [result, setResult] = useState([]);
-  let address;
+  // let address;
 
   const handleSubmit = async () => {
-    address = document.querySelector("#walletAddress").value;
+    const address = "0x6887246668a3b87F54DeB3b94Ba47a6f63F32985";
     const chain = EvmChain.ETHEREUM;
 
     await Moralis.start({
       apiKey: process.env.NEXT_PUBLIC_MORALIS_API_KEY,
     });
 
-    const response = await Moralis.EvmApi.token.getWalletTokenBalances({
+    const response = await Moralis.EvmApi.token.getTokenPrice({
       address,
       chain,
     });
