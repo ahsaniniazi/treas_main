@@ -23,6 +23,7 @@ const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 import styles from "src/styles/Token.module.css";
 import Web3 from "web3";
+import TablePagination from '@mui/material/TablePagination';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -305,6 +306,23 @@ export default function CollapsibleTable() {
     const [result, setResult] = React.useState<any>([]);
     const [address, setAddress] = React.useState("");
 
+    const [page, setPage] = React.useState(2);
+    const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+    const handleChangePage = (
+        event: React.MouseEvent<HTMLButtonElement> | null,
+        newPage: number,
+    ) => {
+        setPage(newPage);
+    };
+
+    const handleChangeRowsPerPage = (
+        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    ) => {
+        setRowsPerPage(parseInt(event.target.value, 2));
+        setPage(0);
+    };
+
     const getPrice = async (item, Moralis, chain) => {
         return new Promise((resp, rej) => {
             const response = Moralis.EvmApi.token
@@ -331,8 +349,9 @@ export default function CollapsibleTable() {
 
         const res = await response.toJSON();
         console.log(res);
-        const symbol = res.filter(item => item.thumbnail && (item.symbol === "BTC"
-            || item.symbol === "WETH" || item.symbol === "USDT" || item.symbol === "USDC" || item.symbol === "ETH" || item.symbol === "BSC" || item.symbol === "LINK"));
+        const symbol = (res.slice(0, 15))
+        // res.filter(item => item.thumbnail && (item.symbol === "BTC"
+        //     || item.symbol === "WETH" || item.symbol === "USDT" || item.symbol === "USDC" || item.symbol === "ETH" || item.symbol === "BSC" || item.symbol === "LINK"));
         let finalResult = []
         const promises = symbol.map(el => getPrice(el, Moralis, chain));
         const pr = Promise.all(promises).then(data => {
@@ -372,6 +391,7 @@ export default function CollapsibleTable() {
             apiKey: "IKOjk5iKeUSeiiA0ZtO5Yp7QIULfszWqnudfZesEl0SCz743iH7tHH7dxnM1RwkB",
         });
     }
+    console.log(result)
 
     React.useEffect(() => {
         // handleSubmit();
@@ -379,7 +399,7 @@ export default function CollapsibleTable() {
         initilaizeMorallis()
     });
 
-    console.log(result)
+
 
     return (
         <>
@@ -438,7 +458,14 @@ export default function CollapsibleTable() {
 
                     </TableBody>
                 </Table>
-
+                <TablePagination
+                    component="div"
+                    count={100}
+                    page={page}
+                    onPageChange={handleChangePage}
+                    rowsPerPage={rowsPerPage}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                />
             </TableContainer>
             <Box marginTop="300px">
                 <section className={styles.main}>
