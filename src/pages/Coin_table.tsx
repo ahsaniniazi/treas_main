@@ -22,8 +22,11 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 import styles from "src/styles/Token.module.css";
-import Web3 from "web3";
-import TablePagination from '@mui/material/TablePagination';
+import { useRouter } from "next/router";
+// import curencylogo from "@/public/image/currency_icon/new_currency.jpg";
+
+let barchartdata: any[];
+
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -113,29 +116,47 @@ const data = [
 function Row({ row }: any) {
     const [open, setOpen] = React.useState(false);
 
+    // console.log(curencylogo)
+
+
+    const balance = Number(row.userToken?.balance)
+    const price = row.prices?.quotes?.USD?.price;
+    const thumbnail = row?.userToken?.thumbnail
     return (
         <React.Fragment>
             <TableRow className="text-[12px] font-light" >
 
                 <TableCell align="left" className='flex pb=[20px] text-[18px] font-medium text-[#000000]'>
+                    <Image src={thumbnail || "/image/currency_icon/new_currency.jpg"} alt="" width={56} height={40} className="mr-[10px]" />
+                    <Typography className="mr-[10px] text-[18px] font-medium text-[#000000] mt-[15px]">
+                        {row?.userToken?.name}
+                    </Typography>
+                    <Typography className="mr-[10px] text-[#8A8A8A] text-[13px] font-thin mt-[17px]">
+                        {row?.userToken?.symbol}
+                    </Typography>
+                </TableCell>
+                <TableCell align="left" className=' text-[18px] font-medium' >{balance.toFixed(3)}</TableCell>
+                <TableCell align="left" className=' text-[18px] font-medium'>{(price)?.toFixed(3) || 0}</TableCell>
+                <TableCell align="left" className='text-[#FF6846] text-[18px] font-medium ' >
+                    <Typography display="flex">
 
-                    <Image src={row.token.thumbnail} alt="" width={30} height={30} className="mr-[10px]" />
-                    <Typography className="mr-[10px] text-[18px] font-thin text-[#000000]">
-                        {row.token.name}
+                        {(row?.prices?.quotes?.USD?.percent_change_24h) <= 0 ? <KeyboardArrowDownIcon /> :
+                            <KeyboardArrowUpIcon />
+                        }
+
+                        {(row?.prices?.quotes?.USD?.percent_change_24h)?.toFixed(3) || 0}
+
                     </Typography>
-                    <Typography className="mr-[10px] text-[#8A8A8A] text-[13px] font-thin">
-                        {row.token.symbol}
-                    </Typography>
+
                 </TableCell>
-                <TableCell align="left" className=' text-[18px] font-medium' >{row.token.balance}</TableCell>
-                <TableCell align="left" className=' text-[18px] font-medium'>{(row.price.usdPrice).toFixed(3)}</TableCell>
-                <TableCell align="left" className='text-[#FF6846] text-[18px] font-medium'>
-                    <KeyboardArrowDownIcon /> {((1673.78 - 1617.14) / 1617.14 * 100).toFixed(3)}
-                </TableCell>
-                <TableCell align="left" className=' text-[18px] font-medium'>{(Number(row.token.balance) * Number(row.price.usdPrice)).toFixed(3)}
+                <TableCell align="left" className=' text-[18px] font-medium'>{(Number(balance) * Number(price)).toFixed(3)}
                 </TableCell>
                 <TableCell align="left" className='text-[#53A57C] text-[18px] font-medium'>
-                    <KeyboardArrowUpIcon /> {row.balance?.slice(0, 5)}</TableCell>
+                    <Typography display="flex">
+                        <KeyboardArrowUpIcon /> {balance}
+                    </Typography>
+                </TableCell>
+
                 <TableCell>
                     <IconButton
                         aria-label="expand row"
@@ -224,7 +245,7 @@ function Row({ row }: any) {
                                         component='div'
                                         className='text-[16px] -mt-3 mb-4'
                                     >
-                                        $180B
+                                        {row?.prices?.quotes?.USD?.market_cap}
                                     </Typography>
                                     <Typography
                                         variant='h6'
@@ -240,7 +261,7 @@ function Row({ row }: any) {
                                         component='div'
                                         className='text-[16px] -mt-3 mb-4'
                                     >
-                                        121M ETH
+                                        {row?.prices?.circulating_supply}
                                     </Typography>
 
                                     <Typography
@@ -257,7 +278,7 @@ function Row({ row }: any) {
                                         component='div'
                                         className='text-[16px] -mt-3 mb-4'
                                     >
-                                        $18B
+                                        {row?.prices?.quotes?.USD?.volume_24h}
                                     </Typography>
                                     <Typography
                                         variant='h6'
@@ -306,41 +327,13 @@ export default function CollapsibleTable() {
     const [result, setResult] = React.useState<any>([]);
     const [address, setAddress] = React.useState("");
 
-    const [page, setPage] = React.useState(2);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
-    const handleChangePage = (
-        event: React.MouseEvent<HTMLButtonElement> | null,
-        newPage: number,
-    ) => {
-        setPage(newPage);
-    };
-
-    const handleChangeRowsPerPage = (
-        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    ) => {
-        setRowsPerPage(parseInt(event.target.value, 2));
-        setPage(0);
-    };
-
-    const getPrice = async (item, Moralis, chain) => {
-        return new Promise((resp, rej) => {
-            const response = Moralis.EvmApi.token
-                .getTokenPrice({
-                    address: item.token_address,
-                    chain,
-                })
-                .then((res) => {
-                    setTimeout(() => resp(res), 2000);
-                })
-                .catch((err) => rej(err));
-        });
-    };
+    const router = useRouter()
+    // console.log(router?.query.id)
 
     const handleSubmit = async () => {
         const chain = EvmChain.ETHEREUM;
 
-
+        let address = router?.query.id || "0x391716d440c151c42cdf1c95c1d83a5427bca52c"
 
         const response = await Moralis.EvmApi.token.getWalletTokenBalances({
             address,
@@ -349,55 +342,41 @@ export default function CollapsibleTable() {
 
         const res = await response.toJSON();
         console.log(res);
-        const symbol = (res.slice(0, 15))
-        // res.filter(item => item.thumbnail && (item.symbol === "BTC"
-        //     || item.symbol === "WETH" || item.symbol === "USDT" || item.symbol === "USDC" || item.symbol === "ETH" || item.symbol === "BSC" || item.symbol === "LINK"));
-        let finalResult = []
-        const promises = symbol.map(el => getPrice(el, Moralis, chain));
-        const pr = Promise.all(promises).then(data => {
-            const resp = data.map((item, index) => {
-                return { token: symbol[index], price: item.jsonResponse }
 
-            })
-            console.log(resp)
-            setResult(resp)
-            return finalResult = [...resp]
+        const api_price = await fetch("https://api.coinpaprika.com/v1/tickers")
+        const priceData = await api_price.json()
+
+        const tokenWithPrice = res.map((token: any) => {
+            const isFind = priceData.find(tokenPrice => tokenPrice.symbol === token.symbol)
+            if (isFind) {
+
+                return { userToken: token, prices: isFind }
+            }
+            else {
+                return { userToken: token, prices: undefined }
+            }
+
         })
-            .catch(err => {
-                console.log(err)
-            })
-        const all = await pr
-        console.log(all)
-        console.log({ data: finalResult });
+        console.log({ data: tokenWithPrice });
 
-        console.log(response.toJSON());
-        // setResult(response.toJSON());
-        setShowResult(true);
+        setResult(tokenWithPrice);
+
+
+
 
     }
 
-    // const request =
-    //     await fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,Tether,bsc,ethereum&vs_currencies=usd")
-    //         .then(response => response.json()).then(data => {
-
-    //             const merge = { tokens: [...symbol], price: data }
-
-
-    //         }
-    //         )
-    // setShowResult(true);
     const initilaizeMorallis = async () => {
         await Moralis.start({
             apiKey: "IKOjk5iKeUSeiiA0ZtO5Yp7QIULfszWqnudfZesEl0SCz743iH7tHH7dxnM1RwkB",
         });
     }
-    console.log(result)
 
     React.useEffect(() => {
-        // handleSubmit();
-        // tokenprice();
+
         initilaizeMorallis()
-    });
+        handleSubmit()
+    }, [router?.query.id]);
 
 
 
@@ -411,37 +390,43 @@ export default function CollapsibleTable() {
                                 align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
-                                NAME
+                                <Typography className="ml-[40px]">   NAME </Typography>
                             </TableCell>
                             <TableCell
                                 align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
-                                AMOUNT
+                                <Typography>   AMOUNT </Typography>
+
                             </TableCell>
                             <TableCell
                                 align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
-                                PRICE
+                                <Typography>   PRICE </Typography>
+
+                            </TableCell>
+                            <TableCell
+                                align='left'
+                                className='border-y border-solid border-[#000000] '
+                            >
+                                <Typography>   24H CHANGE </Typography>
+
                             </TableCell>
                             <TableCell
                                 align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
-                                24H CHANGE
+                                <Typography>  TOTAL</Typography>
+
                             </TableCell>
                             <TableCell
                                 align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
-                                TOTAL
-                            </TableCell>
-                            <TableCell
-                                align='left'
-                                className='border-y border-solid border-[#000000]'
-                            >
-                                CURRENT HOLDINGS P/L
+                                <Typography>  CURRENT HOLDINGS P/L</Typography>
+
+
                             </TableCell>
                             <TableCell align='left'
                                 className='border-y border-solid border-[#000000]' />
@@ -458,16 +443,9 @@ export default function CollapsibleTable() {
 
                     </TableBody>
                 </Table>
-                <TablePagination
-                    component="div"
-                    count={100}
-                    page={page}
-                    onPageChange={handleChangePage}
-                    rowsPerPage={rowsPerPage}
-                    onRowsPerPageChange={handleChangeRowsPerPage}
-                />
+
             </TableContainer>
-            <Box marginTop="300px">
+            {/* <Box marginTop="300px">
                 <section className={styles.main}>
                     <form
                         className={styles.getTokenForm}
@@ -492,7 +470,7 @@ export default function CollapsibleTable() {
                         Submit
                     </button>
                 </section>
-            </Box>
+            </Box> */}
 
             <Box display="flex" justifyContent="center" paddingTop="375px" >
 
@@ -522,10 +500,11 @@ export default function CollapsibleTable() {
 
             </Box>
             <Box display="flex" justifyContent="center" paddingBottom="30px" >
-                <Typography className='text-[15px] text-[#FF6846]'>Create your treas
-                    <KeyboardArrowRightIcon />
+                <Typography className='text-[15px] text-[#FF6846] cursor-pointer'>Create your treas
+                    <KeyboardArrowRightIcon className="cursor-pointer" />
                 </Typography>
             </Box>
         </>
     );
 }
+

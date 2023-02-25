@@ -11,6 +11,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 const commonStyles = {
     m: 1,
     border: 0,
+    boxShadow: 'none', '.MuiOutlinedInput-notchedOutline': { border: 0 }
 
 };
 
@@ -38,6 +39,7 @@ export default function Heading() {
                                 height: 30,
                                 padding: 0,
                                 ...commonStyles
+
                             }}
                         >
                             <MenuItem >1d</MenuItem>

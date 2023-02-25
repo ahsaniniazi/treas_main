@@ -68,7 +68,7 @@ export default function NFT_Head() {
         <React.Fragment>
 
             <Box display="flex" justifyContent="space-between" borderBottom="solid" borderColor='#D1D0D6' marginTop="50px" marginBottom="38px" >
-                <Box display="flex" justifyContent="space-evenly" >
+                <Box display="flex" justifyContent="space-evenly">
 
                     <Box display="flex">
                         <Box className='rotate-[-7.12deg]  bg-[#FFDEA7] 
@@ -86,12 +86,12 @@ export default function NFT_Head() {
                         <Typography variant='h3' className='pl-[0px] pt-[14px] p-[10px] font-[Libre Baskerville] font-normal text-[#000000] text-[32px]'>
                             ury </Typography></Box>
                     <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
-                        height={40} width={200} onClick={handleOpendate}>
-                        <Typography className=' ml-[20px] p-[10px]  text-[12px]
-                     font-semibold text-center'  >JUL. <br /> 2022 </Typography> <EastIcon />
+                        height={40} width={220} onClick={handleOpendate} >
+                        <Typography className=' ml-[10px] pr-[10px]  text-[12px]
+                     font-semibold text-center cursor-pointer'  >JUL.  2022 </Typography> <EastIcon className='cursor-pointer' />
 
-                        <Typography className=' ml-[20px] p-[10px] text-[12px] text-center
-                     font-semibold'  >MAR.<br /> 2023   </Typography> <KeyboardArrowDownIcon className='pr-[5px]' />
+                        <Typography className=' ml-[20px] pr-[10px]  text-[12px] text-center
+                     font-semibold cursor-pointer'  >MAR.  2023   </Typography> <KeyboardArrowDownIcon className='pr-[5px] cursor-pointer' />
                     </Box>
                     <Modal
                         open={opendate}
@@ -101,15 +101,15 @@ export default function NFT_Head() {
                         className='bg-[#ffffffe6]'
 
                     >
-                        <Box sx={{ ...style, width: 594, height: 378 }} borderColor="#979797">
+                        <Box sx={{ ...style, width: 700, height: 500 }} borderColor="#979797">
                             <Box border="1px"
                                 position="absolute" top="-22px" right="-20px" >
                                 <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
-                                    className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px]" />
+                                    className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
                             </Box>
-                            <Box marginLeft={10}>
+                            <Box marginLeft={20} marginBottom={5} marginTop={5}>
                                 <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
-                                    height={40} width={200} >
+                                    height={40} width={230} >
 
                                     <Typography className=' ml-[20px] p-[10px]  text-[12px]
                      font-semibold text-center'  >JUL. <br /> 2022 </Typography> <EastIcon />
@@ -118,7 +118,7 @@ export default function NFT_Head() {
                      font-semibold'  >MAR.<br /> 2023   </Typography> <KeyboardArrowDownIcon className='pr-[5px]' />
                                 </Box>
                             </Box>
-                            <Typography className='text-[30px] pt-[45px] pl-[45px] '>
+                            <Typography className='text-[30px] pt-[45px] pl-[45px] font-[Libre Baskerville] '>
                                 Your treas over time
                             </Typography>
                             <Typography className='text-[20px] pt-[12px] pl-[45px] text-[#64626A]'>
@@ -129,16 +129,17 @@ export default function NFT_Head() {
                                 If you want to scan other blockchains, add and manage multiple wallets create your account for free.
                             </Typography>
 
-                            <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846]'>
+                            <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846] cursor-pointer'>
                                 Create your treas
-                                <KeyboardArrowRightIcon className='text-[#FF6846]' onClick={handleClose} />
+                                <KeyboardArrowRightIcon className='text-[#FF6846] cursor-pointer' onClick={handleClose} />
                             </Typography>
 
 
                         </Box>
                     </Modal>
 
-                    <Box onClick={handleNft}><Typography className='  ml-[20px] p-[10px] text-[#979797] text-[20px]'> NFTs
+                    <Box onClick={handleNft}><Typography className='  
+                    ml-[20px] p-[10px] text-[#979797] text-[20px] cursor-pointer'> NFTs
                     </Typography></Box>
 
                     <Modal
@@ -148,13 +149,13 @@ export default function NFT_Head() {
                         aria-describedby="parent-modal-description"
                         className='bg-[#ffffffe6]'
                     >
-                        <Box sx={{ ...style, width: 500, height: 400 }} borderColor="#979797">
+                        <Box sx={{ ...style, width: 700, height: 500 }} borderColor="#979797">
                             <Box border="1px"
                                 position="absolute" top="-22px" right="-20px" >
                                 <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
-                                    className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px]" />
+                                    className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
                             </Box>
-                            <Box marginLeft={20}>
+                            <Box marginLeft={30} marginBottom={5} marginTop={5}>
                                 <Image src="image/NFT.svg" alt="Fund me" width={90} height={90} />
                             </Box>
                             <Typography className='text-[30px] pt-[45px] pl-[45px] '>
@@ -168,9 +169,9 @@ export default function NFT_Head() {
                                 If you want to scan other blockchains, add and manage multiple wallets create your account for free.
                             </Typography>
 
-                            <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846]'>
+                            <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846] cursor-pointer'>
                                 Create your treas
-                                <KeyboardArrowRightIcon className='text-[#FF6846]' onClick={handleClose} />
+                                <KeyboardArrowRightIcon className='text-[#FF6846] cursor-pointer' onClick={handleClose} />
                             </Typography>
 
 
@@ -178,7 +179,8 @@ export default function NFT_Head() {
                     </Modal>
 
 
-                    <Box onClick={handleHistory}><Typography className='   ml-[20px] p-[10px] text-[#979797] text-[20px]'> History </Typography></Box>
+                    <Box onClick={handleHistory}><Typography className='  
+                     ml-[20px] p-[10px] text-[#979797] text-[20px] font-normal cursor-pointer'> History </Typography></Box>
                 </Box>
 
                 <Modal
@@ -189,13 +191,13 @@ export default function NFT_Head() {
                     className='bg-[#ffffffe6]'
 
                 >
-                    <Box sx={{ ...style, width: 500, height: 400 }} borderColor="#979797">
+                    <Box sx={{ ...style, width: 700, height: 500 }} borderColor="#979797">
                         <Box border="1px"
                             position="absolute" top="-22px" right="-20px" >
                             <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
-                                className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px]" />
+                                className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
                         </Box>
-                        <Box marginLeft={20}>
+                        <Box marginLeft={30} marginBottom={5} marginTop={5}>
                             <Image src="image/IIcon.svg" alt="Fund me" width={90} height={90} />
                         </Box>
                         <Typography className='text-[30px] pt-[45px] pl-[45px] '>
@@ -209,9 +211,9 @@ export default function NFT_Head() {
                             If you want to scan other blockchains, add and manage multiple wallets create your account for free.
                         </Typography>
 
-                        <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846]'>
+                        <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846] cursor-pointer'>
                             Create your treas
-                            <KeyboardArrowRightIcon className='text-[#FF6846]' onClick={handleClose} />
+                            <KeyboardArrowRightIcon className='text-[#FF6846] cursor-pointer' onClick={handleClose} />
                         </Typography>
 
 
@@ -219,7 +221,7 @@ export default function NFT_Head() {
                 </Modal>
 
 
-                <Box display="flex" justifyContent="space-around" alignItems="center">
+                <Box display="flex" justifyContent="space-around" alignItems="center"  >
                     <ShareOutlinedIcon className='mr-[20px]' />
 
                     <FormControl sx={{ minWidth: 5 }} className="flex justify-between p-[0px]  border border-none">
@@ -243,6 +245,7 @@ export default function NFT_Head() {
                             anchorEl={anchorEl}
                             open={open}
                             onClose={handleClose}
+                            className="absolute left-0"
 
 
                         >

@@ -5,72 +5,133 @@ import {
     Line,
     Bar,
     Tooltip,
+    XAxis,
 } from "recharts";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Modal, Typography } from "@mui/material";
 import { UploadFile } from "@mui/icons-material";
+import Image from "next/image";
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { useRouter } from "next/router";
 
 
-
-const Bardata = [
-    {
-        name: "JUL. 22",
-        uv: 200,
-        pv: 800,
-
-    },
-    {
-        name: "AUG. 22",
-        uv: 300,
-        pv: 967,
-
-    },
-    {
-        name: "SEPT. 22",
-        uv: 400,
-        pv: 1098,
-
-    },
-    {
-        name: "OCT. 22",
-        uv: 1000,
-        pv: 1200,
-
-    },
-    {
-        name: "NOV. 22",
-        uv: 700,
-        pv: 1108,
-
-    },
-    {
-        name: "DEC. 22",
-        uv: 900,
-        pv: 680,
-
-    },
-    {
-        name: "JAN. 22",
-        uv: 500,
-        pv: 680,
-
-    },
-    {
-        name: "FEB. 22",
-        uv: 800,
-        pv: 680,
-
-    },
-    {
-        name: "MAR. 22",
-        uv: 1000,
-        pv: 680,
-
-    }
-];
-
+const style = {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 595,
+    bgcolor: 'background.paper',
+    border: "border-solid border-1 #979797",
+    pt: 2,
+    px: 4,
+    pb: 3,
+};
 
 export default function Chart() {
-    // const [bardata, setBardata] = React.useState([]);
+    const [dateresult, setDateresult] = React.useState([]);
+    const [openhistory, setHistory] = React.useState(false);
+
+    const router = useRouter()
+    // console.log(router?.query.id || "hahah")
+
+    const handleHistory = () => {
+        setHistory(true);
+    };
+
+    const handleClose = () => {
+        setHistory(false)
+
+    };
+
+    const handleSubmit = async () => {
+        const query = new URLSearchParams({ pageSize: "50", offset: "5" }).toString();
+        // const address = localStorage.getItem("data")
+
+        let address = router?.query.id || "0x391716d440c151c42cdf1c95c1d83a5427bca52c";
+
+        const resp = await fetch(
+            `https://api.tatum.io/v3/ethereum/account/transaction/internal/${address}?${query}`,
+            {
+                method: "GET",
+                headers: {
+                    "x-api-key": "32813fbc-a6c7-40c7-b71e-e53d0eef4fd8",
+                },
+            }
+        );
+
+        const jsonn = await resp.json();
+        const result = await jsonn;
+        console.log("result");
+        const arr = [];
+        // console.log(arr);
+        const getValues = (data, month) => {
+            console.log({ data });
+            const idx = arr.findIndex((item) => item.month === month);
+            const add = Number(address);
+
+            if (idx === -1) {
+                arr.push({
+                    inflow: Number(data.to) === add ? Number(data.value) : 0,
+                    outflow: Number(data.from) === add ? Number(data.value) : 0,
+                    balance: Number(data.balance === add) ? Number(data.value) : 0,
+                    month,
+                    value: Number(data.value),
+                    fees: Number(data.gas),
+                });
+
+            } else {
+                if (arr.length) {
+                    // console.log(data.from, Number(data.to) === add);
+                    if (Number(data.from) === add) arr[idx].outflow += Number(data.value);
+                    else if (Number(data.to) === add) {
+                        // console.log(address);
+                        arr[idx].inflow += Number(data.value);
+                        console.log(arr)
+                    } else {
+                        // console.log(address);
+                        arr[idx].fees += Number(data.value);
+                    }
+                }
+            }
+        };
+
+        const monthNames = [
+            "January ",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
+
+        result.forEach((data) => {
+            const time = data.timeStamp;
+            const d = new Date();
+
+            d.setTime(time * 1000);
+
+            const month = monthNames[d.getMonth()];
+
+            getValues(data, month);
+        });
+
+        setDateresult(arr)
+
+    };
+
+
+    React.useEffect(() => {
+        if (router.query.id) {
+            handleSubmit();
+        }
+    }, [router?.query.id]);
+    console.log(dateresult)
     return (
         <React.Fragment>
 
@@ -85,15 +146,66 @@ export default function Chart() {
                                 3:24</Typography>
                         </Box>
                         <Box display="flex" justifyContent="space-between">
-                            <Typography className="mr-[8px]">treasexport</Typography>
+                            <Box className='rotate-[-7.12deg]  bg-[#C2EED8] 
+                         h-[27px]  w-[50px] '>
+                                <Typography
+
+                                    gutterBottom
+                                    component='div'
+                                    className='text-[21px] font-normal text-[#000000] 
+                                font-[Libre Baskerville] sticky rotate-[7.12deg] pt-[2px]'
+                                >
+                                    treas
+                                </Typography>
+                            </Box>
+                            <Typography variant='h3' className='pl-[0px] mr-[10px] pt-[4px] font-[Libre Baskerville] font-normal text-[#000000] text-[21px]'>
+                                export </Typography>
                             <Typography></Typography>
-                            <UploadFile></UploadFile>
+                            <UploadFile onClick={handleHistory} ></UploadFile>
                         </Box>
+                        <Modal
+                            open={openhistory}
+                            onClose={handleClose}
+                            aria-labelledby="parent-modal-title"
+                            aria-describedby="parent-modal-description"
+                            className='bg-[#ffffffe6]'
+
+                        >
+                            <Box sx={{ ...style, width: 700, height: 500 }} borderColor="#979797">
+                                <Box border="1px"
+                                    position="absolute" top="-22px" right="-20px" >
+                                    <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
+                                        className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px]" />
+                                </Box>
+                                <Box display="flex" flexDirection="row" marginLeft={20} marginBottom={5}>
+                                    <Typography className='text-[34px] pt-[45px] pl-[45px] flex '>
+                                        treas export
+                                        <Typography className="ml-[20px] mt-[8px]"> <UploadFile /> </Typography>
+                                    </Typography>
+
+                                </Box>
+                                <Typography className='text-[30px] pt-[12px] pl-[45px] text-[#64626A]'>
+                                    Export your treas
+                                </Typography>
+
+                                <Typography className='text-[20px] pl-[45px] text-[#64626A]'>
+                                    If you want to scan other blockchains, add and manage multiple wallets create your account for free.
+                                </Typography>
+
+                                <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846]'>
+                                    Create your treas
+                                    <KeyboardArrowRightIcon className='text-[#FF6846]' onClick={handleClose} />
+                                </Typography>
+
+
+                            </Box>
+                        </Modal>
                     </Box>
+
                     <ComposedChart
                         width={860}
                         height={400}
-                        data={Bardata}
+                        data={dateresult}
                         margin={{
                             top: 20,
                             right: 0,
@@ -101,12 +213,15 @@ export default function Chart() {
                         }}
                     >
                         <Tooltip />
-                        <Bar dataKey="uv" barSize={30} fill="#C2EED8" />
-                        <Bar dataKey="uv" barSize={30} fill="#FF9781" />
-                        <Line type="monotone" dataKey="uv" stroke="#000000" strokeWidth={3} />
+                        <XAxis dataKey="month" scale="auto" />
+                        <Bar dataKey="inflow" barSize={30} fill="#C2EED8" />
+                        <Bar dataKey="outflow" barSize={30} fill="#FF9781" />
+                        <Line type="monotone" dataKey="inflow" stroke="#000000" strokeWidth={3} />
                     </ComposedChart>
                 </Container>
             </Box >
-        </React.Fragment>
+        </React.Fragment >
     );
 }
+
+

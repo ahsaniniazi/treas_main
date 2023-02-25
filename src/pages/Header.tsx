@@ -55,26 +55,29 @@ export default function PrimarySearchAppBar() {
             >
                 {/* [#ace0e6] [#d8e4e6]*/}
                 {/* className='h-60 bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#A4D8DD] */}
-                <AppBar position="static" className=' bg-gradient-to-r from-[#c7e3e6] via-[#e2dff5] to-[#b2e4e9]
-            shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#c7e6e6]  ' >
+                {/* <AppBar position="static" className=' bg-gradient-to-r from-[#c7e3e6] via-[#e2dff5] to-[#b2e4e9]
+            shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#A4D8DD]  ' > */}
+                <AppBar position="static" className=' bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#b2e4e9]
+            shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#A4D8DD]  ' >
                     <Container className="pl-[0px] pr-[0px]">
                         <Toolbar className=''>
                             <Box className='rotate-[-7.12deg] mt-[50px] bg-[#FFDEA7] mb-[50px]
-                         h-[53px] w-[128px] text-center'>
+                         h-[53px] w-[128px] text-center mr-[-5px]'>
                                 <Typography
                                     variant='h3'
                                     gutterBottom
                                     component='div'
-                                    className='text-60px font-normal text-[#000000] font-[Libre Baskerville] sticky rotate-[7.12deg]'
+                                    className='text-60px font-normal text-[#000000]
+                                     font-[Libre Baskerville] sticky rotate-[7.12deg] cursor-pointer '
                                 >
                                     treas
                                 </Typography>
                             </Box>
                             <Box width={600}>
-                                <Search className='flex h-[40px] border border-solid border-[#ced4da] 
-                            appearance-none rounded-[0.375rem]  '>
-                                    <SearchIconWrapper>
-                                        <Image src="image/image 118.svg" alt='' width={16} height={16} />
+                                <Search className='flex h-[40px] 
+                            appearance-none rounded-[15px] bg-[#ffffff38] '>
+                                    <SearchIconWrapper className=' appearance-none'>
+                                        <Image src="image/image 118.svg" alt='' width={20} height={20} />
                                     </SearchIconWrapper>
                                     <StyledInputBase
                                         placeholder="Scan any treas ETH wallet address or ENS name"
@@ -83,28 +86,28 @@ export default function PrimarySearchAppBar() {
                                         fullWidth
 
                                     />
-                                    <Image src="image/image 131.svg" alt="" width={25} height={25} />
+                                    <Image src="image/image 131.svg" alt="" width={30} height={30} className="cursor-pointer mr-[15px]" />
                                 </Search>
                             </Box>
                             <Box />
-                            <Box display="flex" marginLeft={10}>
+                            <Box display="flex" marginLeft={5}>
 
 
                                 <Button className='text-[#000000] 
-                                text-[14px] font-bold  border-[#8E8C95] mr-[10px] '
+                                text-[16px] font-bold  border-[#8E8C95] mr-[10px] '
                                 >Learn</Button>
 
 
 
                                 <Button className='text-[#000000] 
-                                text-[14px] font-bold  border-[#8E8C95] mr-[10px] '
+                                text-[16px] font-bold  border-[#8E8C95] mr-[10px] '
                                 >Solutions</Button>
 
 
 
                                 <Button className='text-[#000000] 
-                                text-[14px] font-bold bg-[#FFFFFF] border-[#8E8C95] border-2 border-solid
-                                rounded border-[#8E8C95] mr-[20px] opacity-[0.48]'
+                                text-[16px] font-bold bg-[white] border-[#8E8C95] border-2 border-solid
+                                rounded border-[#8E8C95] mr-[10px] px-[15px] '
                                 >Access Treas</Button>
 
 
@@ -117,9 +120,10 @@ export default function PrimarySearchAppBar() {
             </Box>
             <Typography position="static" width="100%"
                 className='h-10 bg-gradient-to-r from-[#c7e3e6] via-[#e2dff5] to-[#b2e4e9]
-         shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#499EB6]'>
+         shadow-2xl shadow-[#c7e6e6] md:shadow-2xl md:shadow-[#499EB6] blur'>
 
             </Typography>
+
 
         </>
     );

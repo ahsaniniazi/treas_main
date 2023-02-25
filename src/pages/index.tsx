@@ -9,8 +9,8 @@ import NFT_Head from './Bar_Head'
 import Footer from './Footer'
 import Header from './Header'
 import SearchResult from './Account_Details'
-import Token from './token'
 import Date_fetch from './Date_fetch'
+
 
 
 
@@ -21,7 +21,6 @@ export default function Home() {
     <React.Fragment>
 
       <Header />
-
       <Container >
         <SearchResult />
         <NFT_Head />
@@ -30,9 +29,7 @@ export default function Home() {
         <Heading />
         <Graph_Table />
       </Container>
-
-      {/* <Date_fetch /> */}
-      {/* <Token /> */}
+      <Date_fetch />
       <Footer />
     </React.Fragment>
 
