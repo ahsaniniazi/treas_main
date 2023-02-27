@@ -165,7 +165,7 @@ export default function Chart() {
                             </Box>
                             <Typography
                                 variant="h5"
-                                className='pl-[0px] mr-[10px] pt-[4px] font-[Libre Baskerville] font-normal text-[#000000] text-[21px]'>
+                                className='pl-[0px] mx-[10px] pt-[4px] font-[Libre Baskerville] font-normal text-[#000000] text-[21px]'>
                                 export </Typography>
                             <Typography></Typography>
                             <UploadFile onClick={handleHistory} ></UploadFile>

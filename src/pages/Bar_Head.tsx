@@ -84,7 +84,7 @@ export default function NFT_Head() {
                             </Typography>
                         </Box>
                         <Typography
-                            variant='h6'
+                            variant='h3'
                             className='pl-[0px]  font-[Libre Baskerville] font-normal text-[#000000] text-[32px]'>
                             ury </Typography></Box>
                     <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
