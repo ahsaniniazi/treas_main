@@ -120,7 +120,7 @@ export default function DenseTable() {
             <TableHead>
                 <TableRow sx={{ m: 1, lineHeight: 8 }}
                 >
-                    <TableCell sx={{ borderBottom: "0" }} className='pl-[0px] text-[#D1D0D6]  w-[290px] border-solid rounded-md bb-[0px]'>
+                    <TableCell sx={{ borderBottom: "0" }} className='p-[0] text-[#D1D0D6]  w-[290px] border-solid rounded-md bb-[0px]'>
 
                         <FormControl sx={{ minWidth: 270 }}>
                             <Select
@@ -214,7 +214,7 @@ export default function DenseTable() {
                     <TableCell align="left" className='flex border-x border-y 
                             border-solid border-[#D3D3D3] text-left text-[13px] text-[#000]
                              font-semibold mt-[10px] mr-[10px]  w-[290px] rounded-md'
-                        sx={{ background: "#F5F6F9" }} >
+                        sx={{ background: "#F5F6F9", display: "flex" }} >
                         <Box sx={{ width: "25px", height: "25px", borderRadius: "5px", backgroundColor: "#000" }}
                             marginRight="18px" >
                         </Box>
@@ -237,7 +237,7 @@ export default function DenseTable() {
                     <TableCell align="left" className='flex border-x border-y 
                             border-solid border-[#D3D3D3] text-left text-[13px] text-[#000]
                              font-semibold mt-[10px] mr-[10px] w-[290px] rounded-md'
-                        sx={{ background: "#F5F6F9" }}
+                        sx={{ background: "#F5F6F9", display: "flex" }}
                     >
                         <Typography sx={{ width: "25px", height: "25px", borderRadius: "5px", backgroundColor: "#53A57C" }}
                             marginRight="18px" >
@@ -259,7 +259,7 @@ export default function DenseTable() {
                     <TableCell align="left" className='flex border-x border-y 
                             border-solid border-[#D3D3D3] text-left text-[13px] text-[#000]
                              font-semibold mt-[10px] mr-[10px]  w-[290px] rounded-md'
-                        sx={{ background: "#F5F6F9" }}>
+                        sx={{ background: "#F5F6F9", display: "flex" }}>
                         <Typography sx={{ width: "25px", height: "25px", borderRadius: "5px", backgroundColor: "#FF6846" }}
                             marginRight="18px" >
                         </Typography>
@@ -276,10 +276,10 @@ export default function DenseTable() {
                 </TableRow>
                 <TableRow sx={{ display: "flex", marginBottom: '8px' }}>
 
-                    <TableCell align="left" className='flex border-x border-y 
+                    <TableCell align="left" className=' border-x border-y 
                             border-solid border-[#D3D3D3] text-left text-[13px] text-[#000]
                              font-semibold mt-[10px] mr-[10px]  w-[290px] rounded-md'
-                        sx={{ background: "#F5F6F9" }}>
+                        sx={{ background: "#F5F6F9", display: "flex" }}>
                         <Typography sx={{ width: "25px", height: "25px", borderRadius: "5px", backgroundColor: "#000" }}
                             marginRight="18px" >
                         </Typography>
@@ -300,7 +300,7 @@ export default function DenseTable() {
                     <TableCell align="left" className='flex border-x border-y 
                             border-solid border-[#D3D3D3] text-left text-[13px] text-[#000]
                              font-semibold mt-[10px] mr-[10px]  w-[290px] rounded-md'
-                        sx={{ background: "#F5F6F9" }}>
+                        sx={{ background: "#F5F6F9", display: "flex" }}>
                         <Typography sx={{ width: "25px", height: "25px", borderRadius: "5px", backgroundColor: "#979797" }}
                             marginRight="18px" >
                         </Typography>
@@ -322,7 +322,7 @@ export default function DenseTable() {
                     <TableCell align="left" className='flex border-x border-y 
                             border-solid border-[#D3D3D3] text-left text-[13px] text-[#000]
                              font-semibold mt-[10px] mr-[10px]  w-[290px] rounded-md'
-                        sx={{ background: "#F5F6F9" }}>
+                        sx={{ background: "#F5F6F9", display: "flex" }}>
                         <Typography sx={{ width: "25px", height: "25px", borderRadius: "5px", backgroundColor: "#53A57C" }}
                             marginRight="18px" >
                         </Typography>
@@ -348,7 +348,7 @@ export default function DenseTable() {
                     < TableCell align="left" className='flex border-x border-y 
                             border- solid border-[#D3D3D3] text-left text-[13px] text-[#000]
                 font-semibold mt-[10px] mr-[10px]  w-[290px] rounded-md'
-                    >
+                        sx={{ display: "flex" }}>
                         <Typography sx={{ width: "25px", height: "25px", borderRadius: "5px" }}
                             marginRight="18px" >
                         </Typography>
@@ -368,7 +368,7 @@ export default function DenseTable() {
                     <TableCell align="left" className='flex border-x border-y 
                             border-solid border-[#D3D3D3] text-left text-[13px] text-[#000]
                              font-semibold mt-[10px] mr-[10px]  w-[290px] rounded-md'
-                    >
+                        sx={{ display: "flex" }}>
                         <Typography sx={{ width: "25px", height: "25px", borderRadius: "5px" }}
                             marginRight="18px" >
                         </Typography>

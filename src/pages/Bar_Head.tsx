@@ -77,13 +77,15 @@ export default function NFT_Head() {
                                 variant='h3'
                                 gutterBottom
                                 component='div'
-                                className='text-25px font-normal text-[#000000] 
+                                className='text-[25px] font-normal text-[#000000] 
                                 font-[Libre Baskerville] sticky rotate-[7.12deg] pt-[2px]'
                             >
                                 treas
                             </Typography>
                         </Box>
-                        <Typography className='pl-[0px]  font-[Libre Baskerville] font-normal text-[#000000] text-[32px]'>
+                        <Typography
+                            variant='h6'
+                            className='pl-[0px]  font-[Libre Baskerville] font-normal text-[#000000] text-[32px]'>
                             ury </Typography></Box>
                     <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
                         height={40} width={220} onClick={handleOpendate} >

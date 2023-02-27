@@ -156,14 +156,16 @@ export default function Chart() {
                                 <Typography
 
                                     gutterBottom
-                                    component='div'
+                                    variant="h5"
                                     className='text-[21px] font-normal text-[#000000] 
                                 font-[Libre Baskerville] sticky rotate-[7.12deg] pt-[2px]'
                                 >
                                     treas
                                 </Typography>
                             </Box>
-                            <Typography className='pl-[0px] mr-[10px] pt-[4px] font-[Libre Baskerville] font-normal text-[#000000] text-[21px]'>
+                            <Typography
+                                variant="h5"
+                                className='pl-[0px] mr-[10px] pt-[4px] font-[Libre Baskerville] font-normal text-[#000000] text-[21px]'>
                                 export </Typography>
                             <Typography></Typography>
                             <UploadFile onClick={handleHistory} ></UploadFile>
