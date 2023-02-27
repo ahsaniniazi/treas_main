@@ -35,7 +35,7 @@ function Row({ row }: any) {
         <React.Fragment>
 
             <TableCell sx={{ backgroundColor: "#F5F6F9" }} align="center" className=' pb=[20px] text-[18px]
-             font-medium text-[#000000] w-[290px] h-[40px] mt-[10px] border border-x bordey-y
+             font-medium text-[#000000] w-[200px] h-[40px] mt-[10px] border border-x bordey-y
               border-[#D1D0D6] ml-[2px] mr-[2px] rounded-md'>
 
                 <Typography className="p-[0px] text-[18px] font-thin text-[#000000]">
@@ -223,7 +223,7 @@ export default function DenseTable() {
                                 result?.length && result?.map((row) => (
                                     <Row
                                         key={row.name}
-                                        row={row?.inflow}
+                                        row={row?.inflow.toFixed(2)}
                                     />
                                 ))}
                         </Typography>
