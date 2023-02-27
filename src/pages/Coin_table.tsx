@@ -23,6 +23,7 @@ const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
 import styles from "src/styles/Token.module.css";
 import { useRouter } from "next/router";
+import { Result } from "postcss";
 // import curencylogo from "@/public/image/currency_icon/new_currency.jpg";
 
 let barchartdata: any[];
@@ -211,7 +212,6 @@ function Row({ row }: any) {
                                     item
                                     xs={10}
                                 >
-                                    {/* <Item> */}
                                     <LineChart
                                         width={800}
                                         height={250}
@@ -224,7 +224,6 @@ function Row({ row }: any) {
                                             strokeWidth={2}
                                         />
                                     </LineChart>
-                                    {/* </Item> */}
                                 </Grid>
                                 <Grid
                                     item
@@ -347,7 +346,7 @@ export default function CollapsibleTable() {
         const priceData = await api_price.json()
 
         const tokenWithPrice = res.map((token: any) => {
-            const isFind = priceData.find(tokenPrice => tokenPrice.symbol === token.symbol)
+            const isFind = priceData.find((tokenPrice: any) => tokenPrice.symbol === token.symbol)
             if (isFind) {
 
                 return { userToken: token, prices: isFind }
@@ -381,96 +380,71 @@ export default function CollapsibleTable() {
 
 
     return (
-        <>
-            <TableContainer component={Paper}>
-                <Table aria-label='collapsible table'>
-                    <TableHead>
-                        <TableRow>
-                            <TableCell
-                                align='left'
-                                className='border-y border-solid border-[#000000]'
-                            >
-                                <Typography className="ml-[40px]">   NAME </Typography>
-                            </TableCell>
-                            <TableCell
-                                align='left'
-                                className='border-y border-solid border-[#000000]'
-                            >
-                                <Typography>   AMOUNT </Typography>
+        <Box>
 
-                            </TableCell>
-                            <TableCell
-                                align='left'
-                                className='border-y border-solid border-[#000000]'
-                            >
-                                <Typography>   PRICE </Typography>
+            {result.length > 0 && <Table aria-label='collapsible table'>
+                <TableHead>
+                    <TableRow>
+                        <TableCell
+                            align='left'
+                            className='border-y border-solid border-[#000000]'
+                        >
+                            <Typography className="ml-[40px]">   NAME </Typography>
+                        </TableCell>
+                        <TableCell
+                            align='left'
+                            className='border-y border-solid border-[#000000]'
+                        >
+                            <Typography>   AMOUNT </Typography>
 
-                            </TableCell>
-                            <TableCell
-                                align='left'
-                                className='border-y border-solid border-[#000000] '
-                            >
-                                <Typography>   24H CHANGE </Typography>
+                        </TableCell>
+                        <TableCell
+                            align='left'
+                            className='border-y border-solid border-[#000000]'
+                        >
+                            <Typography>   PRICE </Typography>
 
-                            </TableCell>
-                            <TableCell
-                                align='left'
-                                className='border-y border-solid border-[#000000]'
-                            >
-                                <Typography>  TOTAL</Typography>
+                        </TableCell>
+                        <TableCell
+                            align='left'
+                            className='border-y border-solid border-[#000000] '
+                        >
+                            <Typography>   24H CHANGE </Typography>
 
-                            </TableCell>
-                            <TableCell
-                                align='left'
-                                className='border-y border-solid border-[#000000]'
-                            >
-                                <Typography>  CURRENT HOLDINGS P/L</Typography>
+                        </TableCell>
+                        <TableCell
+                            align='left'
+                            className='border-y border-solid border-[#000000]'
+                        >
+                            <Typography>  TOTAL</Typography>
+
+                        </TableCell>
+                        <TableCell
+                            align='left'
+                            className='border-y border-solid border-[#000000]'
+                        >
+                            <Typography>  CURRENT HOLDINGS P/L</Typography>
 
 
-                            </TableCell>
-                            <TableCell align='left'
-                                className='border-y border-solid border-[#000000]' />
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {
-                            result.length && result?.map((row) => (
-                                <Row
-                                    key={row.name}
-                                    row={row}
-                                />
-                            ))}
+                        </TableCell>
+                        <TableCell align='left'
+                            className='border-y border-solid border-[#000000]' />
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {
+                        result.length && result?.map((row: any) => (
+                            <Row
+                                key={row.name}
+                                row={row}
+                            />
+                        ))}
 
-                    </TableBody>
-                </Table>
+                </TableBody>
+            </Table>}
 
-            </TableContainer>
-            {/* <Box marginTop="300px">
-                <section className={styles.main}>
-                    <form
-                        className={styles.getTokenForm}
-                        name="create-profile-form"
-                        method="POST"
-                        action="#"
-                    >
-                        <label className={styles.label} htmlFor="walletAddress">
-                            Add ERC20 Wallet Address
-                        </label>
-                        <input
-                            className={styles.walletAddress}
-                            type="text"
-                            id="walletAddress"
-                            name="walletAddress"
-                            onChange={(e) => setAddress(e.target.value)}
-                            value={address}
-                            required
-                        />
-                    </form>
-                    <button className={styles.form_btn} onClick={handleSubmit}>
-                        Submit
-                    </button>
-                </section>
-            </Box> */}
+
+
 
             <Box display="flex" justifyContent="center" paddingTop="375px" >
 
@@ -504,7 +478,7 @@ export default function CollapsibleTable() {
                     <KeyboardArrowRightIcon className="cursor-pointer" />
                 </Typography>
             </Box>
-        </>
+        </Box>
     );
 }
 

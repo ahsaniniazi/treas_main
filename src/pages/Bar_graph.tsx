@@ -26,9 +26,15 @@ const style = {
     px: 4,
     pb: 3,
 };
-
+interface ArrProps {
+    inflow: number,
+    outflow: number,
+    month: string,
+    value: number,
+    fees: number,
+}
 export default function Chart() {
-    const [dateresult, setDateresult] = React.useState([]);
+    const [dateresult, setDateresult] = React.useState<ArrProps[]>([]);
     const [openhistory, setHistory] = React.useState(false);
 
     const router = useRouter()
@@ -62,9 +68,9 @@ export default function Chart() {
         const jsonn = await resp.json();
         const result = await jsonn;
         console.log("result");
-        const arr = [];
+        const arr: ArrProps[] = [];
         // console.log(arr);
-        const getValues = (data, month) => {
+        const getValues = (data: { [val: string]: string }, month: string) => {
             console.log({ data });
             const idx = arr.findIndex((item) => item.month === month);
             const add = Number(address);
@@ -73,7 +79,6 @@ export default function Chart() {
                 arr.push({
                     inflow: Number(data.to) === add ? Number(data.value) : 0,
                     outflow: Number(data.from) === add ? Number(data.value) : 0,
-                    balance: Number(data.balance === add) ? Number(data.value) : 0,
                     month,
                     value: Number(data.value),
                     fees: Number(data.gas),
@@ -94,7 +99,7 @@ export default function Chart() {
                 }
             }
         };
-
+        console.log(result)
         const monthNames = [
             "January ",
             "February",
@@ -110,7 +115,7 @@ export default function Chart() {
             "December",
         ];
 
-        result.forEach((data) => {
+        result.forEach((data: { [val: string]: any }) => {
             const time = data.timeStamp;
             const d = new Date();
 

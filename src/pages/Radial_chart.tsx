@@ -93,7 +93,7 @@ export default function RAdial() {
             // console.log(convert)
 
 
-            const isFind = priceData.find(tokenPrice => tokenPrice.symbol === token.symbol)
+            const isFind = priceData.find((tokenPrice: any) => tokenPrice.symbol === token.symbol)
             if (isFind) {
                 const mergedPrice = { ...token, ...isFind, balance }
                 return mergedPrice
@@ -116,11 +116,11 @@ export default function RAdial() {
             apiKey: "IKOjk5iKeUSeiiA0ZtO5Yp7QIULfszWqnudfZesEl0SCz743iH7tHH7dxnM1RwkB",
         });
     }
-    React.useEffect(() => {
 
+    React.useEffect(() => {
         initilaizeMorallis()
         handleSubmit()
-    }, [router?.query.id]);
+    }, [])
 
     return (
         <React.Fragment>
@@ -138,7 +138,7 @@ export default function RAdial() {
 
 
                     data={
-                        result.slice(0, 4).map((item, idx) => {
+                        result.slice(0, 4).map((item: any, idx: number) => {
                             return { ...item, fill: Data[idx].fill }
                         })}
 
