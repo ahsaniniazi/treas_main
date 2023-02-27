@@ -163,7 +163,7 @@ export default function Chart() {
                                     treas
                                 </Typography>
                             </Box>
-                            <Typography variant='h3' className='pl-[0px] mr-[10px] pt-[4px] font-[Libre Baskerville] font-normal text-[#000000] text-[21px]'>
+                            <Typography className='pl-[0px] mr-[10px] pt-[4px] font-[Libre Baskerville] font-normal text-[#000000] text-[21px]'>
                                 export </Typography>
                             <Typography></Typography>
                             <UploadFile onClick={handleHistory} ></UploadFile>

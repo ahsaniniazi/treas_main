@@ -70,7 +70,7 @@ export default function NFT_Head() {
             <Box display="flex" justifyContent="space-between" borderBottom="solid" borderColor='#D1D0D6' marginTop="50px" marginBottom="38px" >
                 <Box display="flex" justifyContent="space-evenly">
 
-                    <Box display="flex">
+                    <Box display="flex" marginBottom="10px" >
                         <Box className='rotate-[-7.12deg]  bg-[#FFDEA7] 
                          h-[52px] w-[107px] '>
                             <Typography
@@ -83,7 +83,7 @@ export default function NFT_Head() {
                                 treas
                             </Typography>
                         </Box>
-                        <Typography variant='h3' className='pl-[0px] pt-[14px] p-[10px] font-[Libre Baskerville] font-normal text-[#000000] text-[32px]'>
+                        <Typography className='pl-[0px]  font-[Libre Baskerville] font-normal text-[#000000] text-[32px]'>
                             ury </Typography></Box>
                     <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
                         height={40} width={220} onClick={handleOpendate} >
