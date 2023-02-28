@@ -136,7 +136,7 @@ export default function PrimarySearchAppBar() {
          shadow-2xl shadow-[#c7e6e6] md:shadow-2xl md:shadow-[#499EB6] blur appearance-none'>
                 </Typography> */}
             </Box>
-            <Typography sx={{ border: "none" }} width="100%"
+            <Typography sx={{ border: "none", marginTop: "-16px" }} width="100%"
                 className='h-10 bg-gradient-to-r from-[#c7e3e6] via-[#e2dff5] to-[#b2e4e9]
          shadow-2xl shadow-[#c7e6e6] md:shadow-2xl md:shadow-[#499EB6] blur appearance-none'>
 
