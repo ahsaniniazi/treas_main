@@ -209,7 +209,7 @@ export default function Chart() {
 
                     <ComposedChart
                         // width={860}
-                        width={1200}
+                        width={1000}
                         height={400}
                         data={dateresult}
                         margin={{
