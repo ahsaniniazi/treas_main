@@ -93,21 +93,34 @@ export default function PrimarySearchAppBar() {
                             <Box display="flex" marginLeft={5}>
 
 
-                                <Button className='text-[#000000] 
-                                text-[16px] font-bold  border-[#8E8C95] mr-[10px] '
+                                <Button sx={{
+                                    fontSize: "16px",
+                                    color: "#000000", borderColor: "#8E8C95",
+                                    borderBlockColor: "#8E8C95", borderRadius: "rounded", marginRight: "10px",
+                                    fontStyle: "bold"
+                                }}
                                 >Learn</Button>
 
 
 
-                                <Button className='text-[#000000] 
+                                <Button sx={{
+                                    fontSize: "16px",
+                                    color: "#000000", borderColor: "#8E8C95",
+                                    borderBlockColor: "#8E8C95", borderRadius: "rounded", marginRight: "10px",
+                                    fontStyle: "bold"
+                                }}
+                                    className='text-[#000000] 
                                 text-[16px] font-bold  border-[#8E8C95] mr-[10px] '
                                 >Solutions</Button>
 
 
 
-                                <Button className='text-[#000000] 
-                                text-[16px] font-bold bg-[white] border-[#8E8C95] border-2 border-solid
-                                rounded border-[#8E8C95] mr-[10px] px-[15px] '
+                                <Button sx={{
+                                    fontSize: "16px", backgroundColor: "white",
+                                    color: "#000000", borderColor: "#8E8C95", borderStyle: "solid",
+                                    borderBlockColor: "#8E8C95]", borderRadius: "rounded", marginRight: "10px",
+                                    paddingX: "15px", fontStyle: "bold"
+                                }}
                                 >Access Treas</Button>
 
 

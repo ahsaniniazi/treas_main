@@ -88,8 +88,8 @@ export default function NFT_Head() {
                             className='pl-[0px]  font-[Libre Baskerville] font-normal text-[#000000] text-[32px]'>
                             ury </Typography></Box>
                     <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
-                        height={40} width={220} onClick={handleOpendate} >
-                        <Typography className=' ml-[10px] pr-[10px]  text-[12px]
+                        height={40} width={245} onClick={handleOpendate} >
+                        <Typography className='pl-[8px] ml-[10px] pr-[10px]  text-[12px]
                      font-semibold text-center cursor-pointer'  >JUL.  2022 </Typography> <EastIcon className='cursor-pointer' />
 
                         <Typography className=' ml-[20px] pr-[10px]  text-[12px] text-center
@@ -140,8 +140,8 @@ export default function NFT_Head() {
                         </Box>
                     </Modal>
 
-                    <Box onClick={handleNft}><Typography className='  
-                    ml-[20px] p-[10px] text-[#979797] text-[20px] cursor-pointer'> NFTs
+                    <Box marginLeft={20} marginTop={8} onClick={handleNft}><Typography className='  
+                     p-[10px] text-[#979797] text-[20px] cursor-pointer'> NFTs
                     </Typography></Box>
 
                     <Modal
@@ -181,8 +181,8 @@ export default function NFT_Head() {
                     </Modal>
 
 
-                    <Box onClick={handleHistory}><Typography className='  
-                     ml-[20px] p-[10px] text-[#979797] text-[20px] font-normal cursor-pointer'> History </Typography></Box>
+                    <Box marginLeft={20} marginTop={8} onClick={handleHistory}><Typography className='  
+                     p-[10px] text-[#979797] text-[20px] font-normal cursor-pointer'> History </Typography></Box>
                 </Box>
 
                 <Modal

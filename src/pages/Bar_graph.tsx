@@ -152,7 +152,7 @@ export default function Chart() {
                         </Box>
                         <Box display="flex" justifyContent="space-between">
                             <Box className='rotate-[-7.12deg]  bg-[#C2EED8] 
-                         h-[27px]  w-[50px] '>
+                         h-[27px]  w-[56px] '>
                                 <Typography
 
                                     gutterBottom
@@ -165,7 +165,7 @@ export default function Chart() {
                             </Box>
                             <Typography
                                 variant="h5"
-                                className='pl-[0px] mx-[10px] pt-[4px] font-[Libre Baskerville] font-normal text-[#000000] text-[21px]'>
+                                className='pl-[0px] mx-[10px]  font-[Libre Baskerville] font-normal text-[#000000] text-[21px]'>
                                 export </Typography>
                             <Typography></Typography>
                             <UploadFile onClick={handleHistory} ></UploadFile>
