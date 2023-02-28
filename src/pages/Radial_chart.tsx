@@ -170,10 +170,10 @@ export default function RAdial() {
                 </RadialBarChart>
 
                 <Box marginTop="300px" textAlign="center" >
-                    <Typography className="text-[15px] text-[#383874] font-semibold	">32.0%</Typography>
-                    <Typography className="text-[15px] text-[#383874] font-semibold	">44.0%</Typography>
-                    <Typography className="text-[15px] text-[#383874] font-semibold	">16.0%</Typography>
-                    <Typography className="text-[15px] text-[#383874] font-semibold	">8.0%</Typography>
+                    <Typography sx={{ color: "#383874", fontSize: "15px", fontWeight: "600" }}>32.0%</Typography>
+                    <Typography sx={{ color: "#383874", fontSize: "15px", fontWeight: "600" }}>44.0%</Typography>
+                    <Typography sx={{ color: "#383874", fontSize: "15px", fontWeight: "600" }}>16.0%</Typography>
+                    <Typography sx={{ color: "#383874", fontSize: "15px", fontWeight: "600" }}>8.0%</Typography>
                 </Box>
 
             </Box>

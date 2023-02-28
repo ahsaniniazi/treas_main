@@ -43,10 +43,13 @@ export default function NFT_Head() {
 
 
 
-                    <Box display="flex" flexDirection="column" marginLeft="28px"><Typography className='  text-[#000000] text-[Libre Baskerville] font-bold text-[25px]'>
-                        0x391716d440c151c42cdf1c95c1d83a5427bca52c
-                    </Typography>
-                        <Typography className='flex text-[16px] text-[#979797]  mt-[1px] mr-[7px]'>
+                    <Box display="flex" flexDirection="column" marginLeft="28px">
+                        <Typography sx={{ color: "#000000", fontFamily: "Libre Baskerville", fontWeight: "700", fontSize: "25px" }}
+                        >
+                            0x391716d440c151c42cdf1c95c1d83a5427bca52c
+                        </Typography>
+                        <Typography display="flex" sx={{ color: "#979797", fontFamily: "Libre Baskerville", fontWeight: "700", fontSize: "16px" }}
+                        >
                             0xc407...fcc9
                             <Image src="image/image 55.svg" alt='fund me' width={15} height={15} />
                         </Typography>
