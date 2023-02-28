@@ -117,7 +117,7 @@ export default function DenseTable() {
 
     return (
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-            <TableHead>
+            <TableHead sx={{ paddingLeft: "0px" }}>
                 <TableRow sx={{ m: 1, lineHeight: 8 }}
                 >
                     <TableCell sx={{ borderBottom: "0" }} className='p-[0] text-[#D1D0D6]  w-[290px] border-solid rounded-md bb-[0px]'>

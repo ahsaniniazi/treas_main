@@ -225,7 +225,7 @@ function Row({ row }: any) {
                                         />
                                     </LineChart>
                                 </Grid>
-                                <Grid
+                                <Grid display="flex" flexDirection="column"
                                     item
                                     xs={2}
                                     className='flex flex-col'
@@ -452,7 +452,7 @@ export default function CollapsibleTable() {
                     variant='h3'
                     className='text-[56px]'>Empowered
                 </Typography>
-                <Box display="flex" marginLeft={2} marginTop={2}>
+                <Box display="flex" marginLeft={2}>
                     <Box className='rotate-[-7.12deg]  bg-[#FF9781] 
          h-[52px] w-[107px] '>
                         <Typography

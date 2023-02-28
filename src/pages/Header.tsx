@@ -57,8 +57,8 @@ export default function PrimarySearchAppBar() {
                 {/* className='h-60 bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#A4D8DD] */}
                 {/* <AppBar position="static" className=' bg-gradient-to-r from-[#c7e3e6] via-[#e2dff5] to-[#b2e4e9]
             shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#A4D8DD]  ' > */}
-                <AppBar sx={{ borderBottom: "none" }} position="static" className=' bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#b2e4e9]
-            shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#A4D8DD]  ' >
+                <AppBar sx={{ border: "none" }} position="static" className=' bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#b2e4e9]
+            shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#A4D8DD] appearance-none ' >
                     <Container className="pl-[0px] pr-[0px]">
                         <Toolbar className=''>
                             <Box className='rotate-[-7.12deg] mt-[50px] bg-[#FFDEA7] mb-[50px]
@@ -132,9 +132,9 @@ export default function PrimarySearchAppBar() {
                 </AppBar >
 
             </Box>
-            <Typography position="static" width="100%"
+            <Typography sx={{ border: "none" }} position="static" width="100%"
                 className='h-10 bg-gradient-to-r from-[#c7e3e6] via-[#e2dff5] to-[#b2e4e9]
-         shadow-2xl shadow-[#c7e6e6] md:shadow-2xl md:shadow-[#499EB6] blur'>
+         shadow-2xl shadow-[#c7e6e6] md:shadow-2xl md:shadow-[#499EB6] blur appearance-none'>
 
             </Typography>
 
