@@ -136,56 +136,76 @@ export default function DenseTable() {
                                         <Typography marginLeft="10px"> All Networks </Typography>
                                     </Box>
                                 </MenuItem>
-                                <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={10} >
+                                <MenuItem sx={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "700" }} value={10} >
 
-                                    <Typography className='text-[14px] font-bold'> All Networks </Typography>
-                                    <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > All Networks </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > 1223,3 $US </Typography>
                                 </MenuItem>
-                                <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={20} >
+                                <MenuItem sx={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "700" }} value={20} >
                                     <Image src="image/currency_icon/Ethereum.svg" alt="fun me" width={30} height={30} />
-                                    <Typography className='text-[14px] font-bold'> Etehreum </Typography>
-                                    <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > Etehreum </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > 1223,3 $US </Typography>
                                 </MenuItem>
-                                <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={20}>
+                                <MenuItem sx={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "700" }} value={20}>
                                     <Image src="image/currency_icon/BSC.svg" alt="fun me" width={30} height={30} />
-                                    <Typography className='text-[14px] font-bold'> BSC </Typography>
-                                    <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > BSC </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > 1223,3 $US </Typography>
                                 </MenuItem>
-                                <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={40}>
+                                <MenuItem sx={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "700" }} value={40}>
                                     <Image src="image/currency_icon/Moonriver.svg" alt="fun me" width={30} height={30} />
-                                    <Typography className='text-[14px] font-bold'> Moonriver </Typography>
-                                    <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > Moonriver </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > 1223,3 $US </Typography>
                                 </MenuItem>
 
-                                <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={50} >
+                                <MenuItem sx={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "700" }} value={50} >
                                     <Image src="image/currency_icon/Polygon.svg" alt="fun me" width={30} height={30} />
-                                    <Typography className='text-[14px] font-bold'> Polygon </Typography>
-                                    <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > Polygon </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > 1223,3 $US </Typography>
                                 </MenuItem>
-                                <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={60} >
+                                <MenuItem sx={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "700" }} value={60} >
                                     <Image src="image/currency_icon/Avalanche.svg" alt="fun me" width={30} height={30} />
-                                    <Typography className='text-[14px] font-bold'> Avalanche </Typography>
-                                    <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > Avalanche </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > 1223,3 $US </Typography>
                                 </MenuItem>
-                                <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={70} >
+                                <MenuItem sx={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "700" }} value={70} >
                                     <Image src="image/currency_icon/Fantom.svg" alt="fun me" width={30} height={30} />
-                                    <Typography className='text-[14px] font-bold'> Fantom </Typography>
-                                    <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > Fantom </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > 1223,3 $US </Typography>
                                 </MenuItem>
-                                <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={80} >
+                                <MenuItem sx={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "700" }} value={80} >
                                     <Image src="image/currency_icon/Arbitrum.svg" alt="fun me" width={30} height={30} />
-                                    <Typography className='text-[14px] font-bold'> Arbitrum </Typography>
-                                    <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > Arbitrum </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > 1223,3 $US </Typography>
                                 </MenuItem>
-                                <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={90} >
+                                <MenuItem sx={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "700" }} value={90} >
                                     <Image src="image/currency_icon/Gnosis Chain.svg" alt="fun me" width={30} height={30} />
-                                    <Typography className='text-[14px] font-bold'> Gnosis Chain </Typography>
-                                    <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > Gnosis Chain </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > 1223,3 $US </Typography>
                                 </MenuItem>
-                                <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={99} >
+                                <MenuItem sx={{ display: "flex", justifyContent: "space-between", fontSize: "12px", fontWeight: "700" }} value={99} >
                                     <Image src="image/currency_icon/Aurora.svg" alt="fun me" width={30} height={30} />
-                                    <Typography className='text-[14px] font-bold'>Aurora</Typography>
-                                    <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    >Aurora</Typography>
+                                    <Typography sx={{ fontSize: "14px", fontWeight: "700" }}
+                                    > 1223,3 $US </Typography>
                                 </MenuItem>
                             </Select>
                         </FormControl>

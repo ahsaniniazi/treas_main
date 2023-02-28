@@ -254,64 +254,84 @@ export default function NFT_Head() {
 
                             <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={20} onClick={handleClose}>
                                 <Image src="image/flags/usd.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[30px] pl-[10px]'> USD </Typography>
+                                <Typography sx={{ marginRight: "30px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > USD </Typography>
                                 <Image src="image/flags/cny.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[10px] pl-[10px]'> CNY </Typography>
+                                <Typography sx={{ marginRight: "10px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > CNY </Typography>
                             </MenuItem>
                             <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={20} onClick={handleClose}>
                                 <Image src="image/flags/cad.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[30px] pl-[10px]'> CAD </Typography>
+                                <Typography sx={{ marginRight: "30px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > CAD </Typography>
                                 <Image src="image/flags/jpy.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[10px] pl-[10px]'> JPY </Typography>
+                                <Typography sx={{ marginRight: "10px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > JPY </Typography>
                             </MenuItem>
                             <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={40} onClick={handleClose}>
                                 <Image src="image/flags/mxn.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[30px] pl-[10px]'> MXN </Typography>
+                                <Typography sx={{ marginRight: "30px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > MXN </Typography>
                                 <Image src="image/flags/krw.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[10px] pl-[10px]'> KRW </Typography>
+                                <Typography sx={{ marginRight: "10px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > KRW </Typography>
                             </MenuItem>
 
                             <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={50} onClick={handleClose}>
                                 <Image src="image/flags/brl.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[30px] pl-[10px]'> BRL </Typography>
+                                <Typography sx={{ marginRight: "30px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > BRL </Typography>
                                 <Image src="image/flags/hkd.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[10px] pl-[10px]'> HKD </Typography>
+                                <Typography sx={{ marginRight: "10px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > HKD </Typography>
                             </MenuItem>
                             <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={60} onClick={handleClose}>
                                 <Image src="image/flags/aud.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[30px] pl-[10px]'> AUD </Typography>
+                                <Typography sx={{ marginRight: "30px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > AUD </Typography>
                                 <Image src="image/flags/sgd.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[10px] pl-[10px]'> SGD </Typography>
+                                <Typography sx={{ marginRight: "10px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > SGD </Typography>
                             </MenuItem>
                             <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={70} onClick={handleClose}>
                                 <Image src="image/flags/eur.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[30px] pl-[10px]'> EUR </Typography>
+                                <Typography sx={{ marginRight: "30px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > EUR </Typography>
                                 <Image src="image/flags/inr.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[10px] pl-[10px]'> INR </Typography>
+                                <Typography sx={{ marginRight: "10px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > INR </Typography>
                             </MenuItem>
                             <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={80} onClick={handleClose}>
                                 <Image src="image/flags/gbp.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[30px] pl-[10px]'> GBP </Typography>
+                                <Typography sx={{ marginRight: "30px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > GBP </Typography>
                                 <Image src="image/flags/rub.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[10px] pl-[10px]'> RUB </Typography>
+                                <Typography sx={{ marginRight: "10px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > RUB </Typography>
                             </MenuItem>
                             <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={90} onClick={handleClose}>
                                 <Image src="image/flags/chf.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[30px] pl-[10px]'> CHF </Typography>
+                                <Typography sx={{ marginRight: "30px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > CHF </Typography>
                                 <Image src="image/flags/try.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[10px] pl-[10px]'> TRY </Typography>
+                                <Typography sx={{ marginRight: "10px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > TRY </Typography>
                             </MenuItem>
                             <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={99} onClick={handleClose}>
                                 <Image src="image/flags/sek.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[30px] pl-[10px]'> SEK </Typography>
+                                <Typography sx={{ marginRight: "30px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > SEK </Typography>
                                 <Image src="image/flags/eth.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[10px] pl-[10px]'> ETH </Typography>
+                                <Typography sx={{ marginRight: "10px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > ETH </Typography>
                             </MenuItem>
                             <MenuItem sx={{ display: "flex", justifyContent: "justify-between", fontSize: "12px", fontWeight: "700" }} value={99} onClick={handleClose}>
                                 <Image src="image/flags/nok.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[30px] pl-[10px]'> NOK </Typography>
+                                <Typography sx={{ marginRight: "30px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > NOK </Typography>
                                 <Image src="image/flags/btc.svg" alt="fun me" width={20} height={20} />
-                                <Typography className='text-[12px] font-bold mr-[10px] pl-[10px]'> BTC </Typography>
+                                <Typography sx={{ marginRight: "10px", paddingLeft: "10px", fontSize: "12px", fontWeight: "700" }}
+                                > BTC </Typography>
                             </MenuItem>
                         </Menu>
                     </FormControl>
