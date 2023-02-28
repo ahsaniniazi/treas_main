@@ -116,7 +116,7 @@ export default function RAdial() {
     React.useEffect(() => {
         initilaizeMorallis()
         handleSubmit()
-    }, [])
+    }, [router?.query.id])
 
     return (
         <React.Fragment>

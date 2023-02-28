@@ -138,7 +138,7 @@ export default function Chart() {
     return (
         <React.Fragment>
 
-            <Box display="flex">
+            <Box marginBottom={2} display="flex">
 
                 <RAdial />
                 <Container>
@@ -208,7 +208,8 @@ export default function Chart() {
                     </Box>
 
                     <ComposedChart
-                        width={860}
+                        // width={860}
+                        width={1200}
                         height={400}
                         data={dateresult}
                         margin={{

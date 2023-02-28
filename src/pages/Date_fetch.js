@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export const handleSubmit = async (id) => {
-  const query = new URLSearchParams({ pageSize: "50", offset: 5 }).toString();
+  const query = new URLSearchParams({ pageSize: "50", offset: 4 }).toString();
   // const address = "0xbe0eb53f46cd790cd13851d5eff43d12404d33e8";
 
   let address = id;
@@ -22,7 +22,7 @@ export const handleSubmit = async (id) => {
   const arr = [];
   // console.log(arr);
   const getValues = (data, month) => {
-    // console.log({ month });
+    console.log({ month });
     const idx = arr.findIndex((item) => item.month === month);
     const add = Number(address);
     // console.log(add);
