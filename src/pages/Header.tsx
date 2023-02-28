@@ -57,7 +57,7 @@ export default function PrimarySearchAppBar() {
                 {/* className='h-60 bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#A4D8DD] */}
                 {/* <AppBar position="static" className=' bg-gradient-to-r from-[#c7e3e6] via-[#e2dff5] to-[#b2e4e9]
             shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#A4D8DD]  ' > */}
-                <AppBar position="static" className=' bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#b2e4e9]
+                <AppBar sx={{ borderBottom: "none" }} position="static" className=' bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#b2e4e9]
             shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#A4D8DD]  ' >
                     <Container className="pl-[0px] pr-[0px]">
                         <Toolbar className=''>
@@ -90,14 +90,14 @@ export default function PrimarySearchAppBar() {
                                 </Search>
                             </Box>
                             <Box />
-                            <Box display="flex" marginLeft={5}>
+                            <Box display="flex">
 
 
                                 <Button sx={{
                                     fontSize: "16px",
                                     color: "#000000", borderColor: "#8E8C95",
                                     borderBlockColor: "#8E8C95", borderRadius: "rounded", marginRight: "10px",
-                                    fontStyle: "bold"
+                                    fontWeight: "700"
                                 }}
                                 >Learn</Button>
 
@@ -107,7 +107,8 @@ export default function PrimarySearchAppBar() {
                                     fontSize: "16px",
                                     color: "#000000", borderColor: "#8E8C95",
                                     borderBlockColor: "#8E8C95", borderRadius: "rounded", marginRight: "10px",
-                                    fontStyle: "bold"
+                                    fontWeight: "700"
+
                                 }}
                                     className='text-[#000000] 
                                 text-[16px] font-bold  border-[#8E8C95] mr-[10px] '
@@ -119,7 +120,7 @@ export default function PrimarySearchAppBar() {
                                     fontSize: "16px", backgroundColor: "white",
                                     color: "#000000", borderColor: "#8E8C95", borderStyle: "solid",
                                     borderBlockColor: "#8E8C95]", borderRadius: "rounded", marginRight: "10px",
-                                    paddingX: "15px", fontStyle: "bold"
+                                    paddingX: "15px", fontWeight: "700"
                                 }}
                                 >Access Treas</Button>
 

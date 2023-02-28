@@ -127,12 +127,12 @@ function Row({ row }: any) {
         <React.Fragment>
             <TableRow className="text-[12px] font-light" >
 
-                <TableCell align="left" className='flex pb=[20px] text-[18px] font-medium text-[#000000]'>
+                <TableCell sx={{ display: "flex", alignItems: "center" }} align="left" className=' pb=[20px] text-[18px] font-medium text-[#000000]'>
                     <Image src={thumbnail || "/image/currency_icon/new_currency.jpg"} alt="" width={56} height={40} className="mr-[10px]" />
-                    <Typography className="mr-[10px] text-[18px] font-medium text-[#000000] mt-[15px]">
+                    <Typography className="mr-[10px] text-[18px] font-medium text-[#000000] ">
                         {row?.userToken?.name}
                     </Typography>
-                    <Typography className="mr-[10px] text-[#8A8A8A] text-[13px] font-thin mt-[17px]">
+                    <Typography className="mr-[10px] text-[#8A8A8A] text-[13px] font-thin ">
                         {row?.userToken?.symbol}
                     </Typography>
                 </TableCell>
@@ -448,7 +448,9 @@ export default function CollapsibleTable() {
 
             <Box display="flex" justifyContent="center" paddingTop="375px" >
 
-                <Typography className='text-[56px]'>Empowered
+                <Typography
+                    variant='h3'
+                    className='text-[56px]'>Empowered
                 </Typography>
                 <Box display="flex" marginLeft={2} marginTop={2}>
                     <Box className='rotate-[-7.12deg]  bg-[#FF9781] 

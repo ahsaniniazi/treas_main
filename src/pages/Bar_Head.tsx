@@ -140,7 +140,7 @@ export default function NFT_Head() {
                         </Box>
                     </Modal>
 
-                    <Box marginLeft={20} marginTop={8} onClick={handleNft}><Typography className='  
+                    <Box sx={{ marginLeft: "20px", marginTop: "8px" }} onClick={handleNft}><Typography className='  
                      p-[10px] text-[#979797] text-[20px] cursor-pointer'> NFTs
                     </Typography></Box>
 
@@ -181,7 +181,7 @@ export default function NFT_Head() {
                     </Modal>
 
 
-                    <Box marginLeft={20} marginTop={8} onClick={handleHistory}><Typography className='  
+                    <Box sx={{ marginLeft: "20px", marginTop: "8px" }} onClick={handleHistory}><Typography className='  
                      p-[10px] text-[#979797] text-[20px] font-normal cursor-pointer'> History </Typography></Box>
                 </Box>
 
