@@ -1,16 +1,13 @@
-import * as React from 'react';
+import { Box, FormControl, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import { Box, FormControl, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material';
-import PublicSharpIcon from '@mui/icons-material/PublicSharp';
 import Image from 'next/image';
-import { handleSubmit } from './Date_fetch';
 import { useRouter } from 'next/router';
+import * as React from 'react';
+import { handleSubmit } from './Date_fetch';
 
 function createData(
     color: string,
@@ -109,10 +106,10 @@ export default function DenseTable() {
     }
 
     React.useEffect(() => {
-        if (router.query.id) {
-            const id: any = router.query.id;
-            retrive(id);
-        }
+
+        const id: any = router.query.id || "0x391716d440c151c42cdf1c95c1d83a5427bca52c";
+        retrive(id);
+
     }, [router?.query.id]);
 
     return (
@@ -120,7 +117,7 @@ export default function DenseTable() {
             <TableHead sx={{ paddingLeft: "0px" }}>
                 <TableRow sx={{ m: 1, lineHeight: 8 }}
                 >
-                    <TableCell sx={{ borderBottom: "0" }} className='p-[0] text-[#D1D0D6]  w-[290px] border-solid rounded-md bb-[0px]'>
+                    <TableCell sx={{ borderBottom: "0", padding: "0", width: "290px" }} className=' text-[#D1D0D6] border-solid rounded-md bb-[0px]'>
 
                         <FormControl sx={{ minWidth: 270 }}>
                             <Select

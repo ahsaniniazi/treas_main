@@ -132,9 +132,9 @@ export default function Chart() {
 
 
     React.useEffect(() => {
-        if (router.query.id) {
-            handleSubmit();
-        }
+
+        handleSubmit();
+
     }, [router?.query.id]);
     console.log(dateresult)
     return (

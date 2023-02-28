@@ -5,7 +5,6 @@ import IconButton from "@mui/material/IconButton";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Typography from "@mui/material/Typography";
@@ -21,12 +20,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
-import styles from "src/styles/Token.module.css";
 import { useRouter } from "next/router";
-import { Result } from "postcss";
-// import curencylogo from "@/public/image/currency_icon/new_currency.jpg";
-
-let barchartdata: any[];
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -136,9 +130,9 @@ function Row({ row }: any) {
                         {row?.userToken?.symbol}
                     </Typography>
                 </TableCell>
-                <TableCell align="left" className=' text-[18px] font-medium' >{balance.toFixed(3)}</TableCell>
-                <TableCell align="left" className=' text-[18px] font-medium'>{(price)?.toFixed(3) || 0}</TableCell>
-                <TableCell align="left" className='text-[#FF6846] text-[18px] font-medium ' >
+                <TableCell sx={{ fontSize: "18px" }} align="left" className=' font-medium' >{balance.toFixed(3)}</TableCell>
+                <TableCell sx={{ fontSize: "18px" }} align="left" className='  font-medium'>{(price)?.toFixed(3) || 0}</TableCell>
+                <TableCell sx={{ color: "#FF6846", fontSize: "18px" }} align="left" className='font-medium ' >
                     <Typography display="flex">
 
                         {(row?.prices?.quotes?.USD?.percent_change_24h) <= 0 ? <KeyboardArrowDownIcon /> :
@@ -152,7 +146,7 @@ function Row({ row }: any) {
                 </TableCell>
                 <TableCell align="left" className=' text-[18px] font-medium'>{(Number(balance) * Number(price)).toFixed(3)}
                 </TableCell>
-                <TableCell align="left" className='text-[#53A57C] text-[18px] font-medium'>
+                <TableCell sx={{ color: "#53A57C", fontSize: "18px" }} align="left" className=' font-medium'>
                     <Typography display="flex">
                         <KeyboardArrowUpIcon /> {balance}
                     </Typography>
