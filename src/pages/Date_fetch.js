@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import styles from "src/styles/Token.module.css";
 
 export const handleSubmit = async (id) => {
   const query = new URLSearchParams({ pageSize: "50", offset: 5 }).toString();
@@ -36,6 +35,7 @@ export const handleSubmit = async (id) => {
         value: Number(data.value),
         fees: Number(data.gas),
       });
+      // 0xE0b4dE18fc0AEB769Fcc438B74109e1c62C5B23A
       // console.log(outflow);
     } else {
       if (arr.length) {

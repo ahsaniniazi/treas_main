@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import { Button, Container } from '@mui/material';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -46,17 +47,17 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+
     React.useState<null | HTMLElement>(null);
+    const [walletaddress, setWalletAddress] = React.useState('');
+    const router = useRouter()
 
     return (
         <>
             <Box display="flex" justifyContent="space-around"
 
             >
-                {/* [#ace0e6] [#d8e4e6]*/}
-                {/* className='h-60 bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#A4D8DD] */}
-                {/* <AppBar position="static" className=' bg-gradient-to-r from-[#c7e3e6] via-[#e2dff5] to-[#b2e4e9]
-            shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#A4D8DD]  ' > */}
+
                 <AppBar position="static" className=' bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#b2e4e9]
             shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#A4D8DD] appearance-none ' >
                     <Container>
@@ -84,9 +85,13 @@ export default function PrimarySearchAppBar() {
                                         placeholder="Scan any treas ETH wallet address or ENS name"
                                         inputProps={{ 'aria-label': 'search' }}
                                         fullWidth
+                                        value={walletaddress}
+                                        onChange={(e) => setWalletAddress(e.target.value)}
 
                                     />
-                                    <Image src="image/image 131.svg" alt="" width={30} height={30} className="cursor-pointer mr-[15px]" />
+                                    <Image
+                                        onClick={() => router.push(`/${walletaddress}`)}
+                                        src="image/image 131.svg" alt="" width={30} height={30} className="cursor-pointer mr-[15px]" />
                                 </Search>
                             </Box>
                             <Box />

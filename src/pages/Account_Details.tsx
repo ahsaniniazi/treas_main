@@ -2,6 +2,7 @@ import * as React from 'react';
 import Image from 'next/image';
 import { Box, Modal, Typography } from '@mui/material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { useRouter } from 'next/router';
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -19,6 +20,8 @@ const style = {
 export default function NFT_Head() {
 
     const [freshData, setFreshData] = React.useState(false);
+
+    const router = useRouter()
 
     const handleOpen = () => {
         setFreshData(true);
@@ -46,7 +49,7 @@ export default function NFT_Head() {
                     <Box display="flex" flexDirection="column" marginLeft="28px">
                         <Typography sx={{ color: "#000000", fontFamily: "Libre Baskerville", fontWeight: "700", fontSize: "25px" }}
                         >
-                            0x391716d440c151c42cdf1c95c1d83a5427bca52c
+                            {router?.query.id}
                         </Typography>
                         <Typography display="flex" sx={{ color: "#979797", fontFamily: "Libre Baskerville", fontWeight: "700", fontSize: "16px" }}
                         >

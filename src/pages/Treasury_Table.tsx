@@ -107,7 +107,7 @@ export default function DenseTable() {
 
     React.useEffect(() => {
 
-        const id: any = router.query.id || "0x391716d440c151c42cdf1c95c1d83a5427bca52c";
+        const id: any = router.query.id;
         retrive(id);
 
     }, [router?.query.id]);
@@ -240,7 +240,7 @@ export default function DenseTable() {
 
 
                     {
-                        result?.length && result?.map((row: any, id: number) => (
+                        result?.map((row: any, id: number) => (
                             <Row
                                 key={row.name}
                                 row={""}
@@ -262,12 +262,14 @@ export default function DenseTable() {
                         <Typography >{(rows[1].Network)}</Typography></TableCell>
 
                     {
-                        result?.length && result?.map((row: any) => (
+
+                        result?.map((row: any) => (
                             <Row
                                 key={row.name}
                                 row={convertToInternationalCurrencySystem(row?.inflow)}
                             />
-                        ))}
+                        ))
+                    }
 
 
                 </TableRow>
@@ -283,7 +285,7 @@ export default function DenseTable() {
                         <Typography>{rows[2].Network}</Typography></TableCell>
 
                     {
-                        result?.length && result?.map((row: any) => (
+                        result?.map((row: any) => (
                             <Row
                                 key={row.name}
                                 row={convertToInternationalCurrencySystem(row?.outflow)}
@@ -303,7 +305,7 @@ export default function DenseTable() {
                         <Typography>{rows[3].Network}</Typography></TableCell>
 
                     {
-                        result?.length && result?.map((row: any) => (
+                        result?.map((row: any) => (
                             <Row
                                 key={row.name}
                                 row={""}
@@ -325,7 +327,7 @@ export default function DenseTable() {
 
 
                     {
-                        result?.length && result?.map((row: any) => (
+                        result?.map((row: any) => (
                             <Row
                                 key={row.name}
                                 row={row?.fees}
@@ -347,7 +349,7 @@ export default function DenseTable() {
 
 
                     {
-                        result?.length && result?.map((row: any) => (
+                        result?.map((row: any) => (
 
                             <Row
                                 key={row.name}
@@ -372,7 +374,7 @@ export default function DenseTable() {
                         <Typography>{rows[6].Network}</Typography></TableCell>
 
                     {
-                        result?.length && result?.map((row: any) => (
+                        result?.map((row: any) => (
                             <Row
                                 key={row.name}
                                 row={""}
@@ -392,7 +394,7 @@ export default function DenseTable() {
                         <Typography >{rows[7].Network}</Typography></TableCell>
 
                     {
-                        result?.length && result?.map((row: any) => (
+                        result?.map((row: any) => (
                             <Row
                                 key={row.name}
                                 row={""}

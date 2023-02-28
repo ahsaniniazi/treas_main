@@ -1,12 +1,10 @@
-import { RoundedCorner } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
+import { useRouter } from "next/router";
 import React from "react";
+import { Legend, RadialBar, RadialBarChart } from "recharts";
 import Web3 from "web3";
-import { RadialBarChart, RadialBar, Legend } from "recharts";
 const Moralis = require("moralis").default;
 const { EvmChain } = require("@moralisweb3/common-evm-utils");
-import styles from "src/styles/Token.module.css";
-import { useRouter } from "next/router";
 
 
 const Data = [
@@ -67,9 +65,7 @@ export default function RAdial() {
     const [result, setResult] = React.useState<any>([]);
     // const [address, setAddress] = React.useState("");
 
-    let address = router?.query.id || "0x391716d440c151c42cdf1c95c1d83a5427bca52c";
-
-
+    let address = router?.query.id;
 
     const handleSubmit = async () => {
         const chain = EvmChain.ETHEREUM;

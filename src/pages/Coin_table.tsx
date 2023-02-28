@@ -326,7 +326,7 @@ export default function CollapsibleTable() {
     const handleSubmit = async () => {
         const chain = EvmChain.ETHEREUM;
 
-        let address = router?.query.id || "0x391716d440c151c42cdf1c95c1d83a5427bca52c"
+        let address = router?.query.id;
 
         const response = await Moralis.EvmApi.token.getWalletTokenBalances({
             address,

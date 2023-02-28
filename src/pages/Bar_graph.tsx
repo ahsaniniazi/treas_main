@@ -1,17 +1,15 @@
-import React, { Fragment } from "react";
-import RAdial from "./Radial_chart";
-import {
-    ComposedChart,
-    Line,
-    Bar,
-    Tooltip,
-    XAxis,
-} from "recharts";
-import { Box, Container, Modal, Typography } from "@mui/material";
 import { UploadFile } from "@mui/icons-material";
-import Image from "next/image";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { Box, Container, Modal, Typography } from "@mui/material";
+import Image from "next/image";
 import { useRouter } from "next/router";
+import React from "react";
+import {
+    Bar, ComposedChart,
+    Line, Tooltip,
+    XAxis
+} from "recharts";
+import RAdial from "./Radial_chart";
 
 
 const style = {
@@ -53,7 +51,7 @@ export default function Chart() {
         const query = new URLSearchParams({ pageSize: "50", offset: "5" }).toString();
         // const address = localStorage.getItem("data")
 
-        let address = router?.query.id || "0x391716d440c151c42cdf1c95c1d83a5427bca52c";
+        let address = router?.query.id;
 
         const resp = await fetch(
             `https://api.tatum.io/v3/ethereum/account/transaction/internal/${address}?${query}`,
