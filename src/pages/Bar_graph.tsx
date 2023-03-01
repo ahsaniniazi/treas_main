@@ -148,7 +148,7 @@ export default function Chart() {
                             <Typography className="font-medium text-[12px] text-[#979797]">10 nov. 2022, 0
                                 3:24</Typography>
                         </Box>
-                        <Box display="flex" justifyContent="space-between">
+                        <Box marginRight={5} display="flex" justifyContent="space-between">
                             <Box className='rotate-[-7.12deg]  bg-[#C2EED8] 
                          h-[27px]  w-[56px] '>
                                 <Typography
@@ -214,8 +214,7 @@ export default function Chart() {
                         data={dateresult}
                         margin={{
                             top: 20,
-                            right: 0,
-                            left: 12
+
                         }}
                     >
                         <Tooltip />
