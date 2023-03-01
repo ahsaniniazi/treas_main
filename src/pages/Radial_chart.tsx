@@ -130,9 +130,6 @@ export default function RAdial() {
                     innerRadius={100}
                     outerRadius={30}
                     barSize={2}
-
-
-
                     data={
                         result.slice(0, 4).map((item: any, idx: number) => {
                             return { ...item, fill: Data[idx].fill }
@@ -144,18 +141,18 @@ export default function RAdial() {
 
                     <RadialBar
 
-                        label={{ position: "insideStart" }}
+                        label={{ position: "insideStart", fill: "transparent" }}
                         background
-                        //  clockWise
+                        // clockWise
                         dataKey="balance"
-
+                        fill="balance"
                     />
 
                     <Legend
                         iconSize={10}
                         width={120}
                         height={140}
-                        layout="radial"
+                        layout="vertical"
                         verticalAlign="middle"
                         wrapperStyle={style}
 

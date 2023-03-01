@@ -31,14 +31,17 @@ function Row({ row }: any) {
     return (
         <React.Fragment>
 
-            <TableCell sx={{ backgroundColor: "#F5F6F9" }} align="center" className=' pb=[20px] text-[18px]
-             font-medium text-[#000000] w-[100px] h-[40px] mt-[10px] border border-x bordey-y
-              border-[#D1D0D6] rounded-md'>
 
-                <Typography className="p-[0px] text-[18px] font-thin text-[#000000]">
+            <TableCell sx={{ backgroundColor: "#F5F6F9" }} align="center" className=' pb=[20px] text-[18px]
+             font-medium text-[#000000] w-[100px] h-[40px] mt-[10px] 
+             border-[#D1D0D6] border-y rounded-md'>
+
+                <Typography className=" text-[18px] font-thin text-[#000000]">
                     {row !== "" ? row : "-"}
                 </Typography>
             </TableCell>
+
+
 
         </React.Fragment>
     );
