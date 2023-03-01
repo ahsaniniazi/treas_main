@@ -11,22 +11,29 @@ const Data = [
     {
         name: "BTC",
         uv: 32,
-        fill: "purple"
+        fill: "purple",
+        bj: "#000000"
     },
     {
         name: "ETH",
         uv: 44.0,
-        fill: "#fd7e14"
+        fill: "#fd7e14",
+        bj: "#000000"
+
     },
     {
         name: "USDT",
         uv: 16.0,
-        fill: "#45B39D"
+        fill: "#45B39D",
+        bj: "#000000"
+
     },
     {
         name: "Other",
         uv: 8.0,
-        fill: "#dc3545"
+        fill: "#dc3545",
+        bj: "#000000"
+
     },
 ];
 
@@ -123,36 +130,38 @@ export default function RAdial() {
             <Box sx={{ display: "flex", direction: "column" }}>
 
                 <RadialBarChart
-                    width={225}
+                    width={250}
                     height={300}
                     cx={130}
                     cy={150}
-                    innerRadius={100}
-                    outerRadius={30}
-                    barSize={2}
+                    innerRadius={125}
+                    outerRadius={70}
+                    barSize={1.5}
                     data={
                         result.slice(0, 4).map((item: any, idx: number) => {
                             return { ...item, fill: Data[idx].fill }
                         })}
 
 
-                >
 
+
+                >
 
                     <RadialBar
 
                         label={{ position: "insideStart", fill: "transparent" }}
-                        background
+
                         // clockWise
                         dataKey="balance"
                         fill="balance"
-                    />
+                        background={{ fill: "black" }}
 
+                    />
                     <Legend
                         iconSize={10}
                         width={120}
                         height={140}
-                        layout="vertical"
+                        layout="radial"
                         verticalAlign="middle"
                         wrapperStyle={style}
 
