@@ -12,27 +12,27 @@ const Data = [
         name: "BTC",
         uv: 32,
         fill: "purple",
-        bj: "#000000"
+        bj: "green"
     },
     {
         name: "ETH",
         uv: 44.0,
         fill: "#fd7e14",
-        bj: "#000000"
+        bj: "yellow"
 
     },
     {
         name: "USDT",
         uv: 16.0,
         fill: "#45B39D",
-        bj: "#000000"
+        bj: "pink"
 
     },
     {
         name: "Other",
         uv: 8.0,
         fill: "#dc3545",
-        bj: "#000000"
+        bj: "indigo"
 
     },
 ];
@@ -142,26 +142,30 @@ export default function RAdial() {
                             return { ...item, fill: Data[idx].fill }
                         })}
 
-
-
-
                 >
 
                     <RadialBar
 
                         label={{ position: "insideStart", fill: "transparent" }}
-
+                        // background={result.slice(0, 4).map((item: any, idx: number) => {
+                        //     return { ...item, fill: Data[idx].fill }
+                        // })}
                         // clockWise
                         dataKey="balance"
                         fill="balance"
-                        background={{ fill: "black" }}
+                        background={{
+                            fill: Data[2].bj
+                            // Data.length == 1 ? Data[0].bj : Data.length == 2 ?
+                            //     Data[0].bj && Data[1].bj : Data.length == 3 ? Data[0].bj && Data[1].bj && Data[2].bj
+                            //         : Data[0].bj && Data[1].bj && Data[2].bj && Data[3].bj
+                        }}
 
                     />
                     <Legend
                         iconSize={10}
                         width={120}
                         height={140}
-                        layout="radial"
+                        layout="vertical"
                         verticalAlign="middle"
                         wrapperStyle={style}
 
