@@ -1,68 +1,22 @@
-
-import * as React from "react";
-import Box from "@mui/material/Box";
-import Collapse from "@mui/material/Collapse";
-import IconButton from "@mui/material/IconButton";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Typography from "@mui/material/Typography";
-import Paper from "@mui/material/Paper";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Image from "next/image";
-import { LineChart, Line } from "recharts";
-import { styled } from "@mui/material/styles";
-import Grid from "@mui/material/Grid";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-const Moralis = require("moralis").default;
-const { EvmChain } = require("@moralisweb3/common-evm-utils");
-import { useRouter } from "next/router";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Box from '@mui/material/Box';
+import Collapse from '@mui/material/Collapse';
+import Grid from "@mui/material/Grid";
+import IconButton from '@mui/material/IconButton';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Typography from '@mui/material/Typography';
+import Image from 'next/image';
+import * as React from 'react';
+import { Line, LineChart } from "recharts";
 
-
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-}));
-
-function createData(
-    image: string,
-    name: string,
-    amount: string,
-    change: string,
-    total: string,
-    holdings: string,
-    price: string
-) {
-    return {
-        image,
-        name,
-        amount,
-        change,
-        total,
-        holdings,
-        price,
-        history: [
-            {
-                date: "2020-01-05",
-                customerId: "11091700",
-                amount: 3,
-            },
-            {
-                date: "2020-01-02",
-                customerId: "Anonymous",
-                amount: 1,
-            },
-        ],
-    };
-}
 
 const data = [
     {
@@ -109,61 +63,76 @@ const data = [
     },
 ];
 
-function Row({ row }: any) {
+function createData(
+    image: string,
+    name: string,
+    symbol: string,
+    amount: string,
+    price: string,
+    change: string,
+    total: string,
+    holdings: string,
+) {
+    return {
+        image,
+        name,
+        symbol,
+        amount,
+        price,
+        change,
+        total,
+        holdings,
+
+        history: [
+            {
+                date: '2020-01-05',
+                customerId: '11091700',
+                amount: 3,
+            },
+            {
+                date: '2020-01-02',
+                customerId: 'Anonymous',
+                amount: 1,
+            },
+        ],
+    };
+}
+
+function Row(props: { row: ReturnType<typeof createData> }) {
+    const { row } = props;
     const [open, setOpen] = React.useState(false);
 
-    // console.log(curencylogo)
-
-
-    const balance = Number(row.userToken?.balance)
-    const price = row.prices?.quotes?.USD?.price;
-    const thumbnail = row?.userToken?.thumbnail
     return (
         <React.Fragment>
-            <TableRow className="text-[12px] font-light" >
+            <TableRow>
 
-                <TableCell sx={{ display: "flex", alignItems: "center" }} align="left" className=' pb=[20px] text-[18px] font-medium text-[#000000]'>
-                    <Image src={thumbnail || "/image/currency_icon/new_currency.jpg"} alt="" width={56} height={40} className="mr-[10px]" />
-                    <Typography className="mr-[10px] text-[18px] font-medium text-[#000000] ">
-                        {row?.userToken?.name}
-                    </Typography>
-                    <Typography className="mr-[10px] text-[#8A8A8A] text-[13px] font-thin ">
-                        {row?.userToken?.symbol}
-                    </Typography>
+                <TableCell component="th" scope="row" >
+                    <Box display="flex" alignItems="center">
+                        <Image src={row.image} alt="fund me" width={40} height={40} />
+                        <Typography marginLeft="10px" className=" text-[18px] font-medium text-[#000000] ">{row.name}</Typography>
+                        <Typography marginLeft="5px" marginTop="4px" className=" text-[#8A8A8A] text-[13px] font-thin ">
+                            {row.symbol}</Typography>
+                    </Box>
                 </TableCell>
-                <TableCell sx={{ fontSize: "18px" }} align="left" className=' font-medium' >{balance.toFixed(3)}</TableCell>
-                <TableCell sx={{ fontSize: "18px" }} align="left" className='  font-medium'>{(price)?.toFixed(3) || 0}</TableCell>
-                <TableCell sx={{ color: "#FF6846", fontSize: "18px" }} align="left" className='font-medium ' >
-                    <Typography display="flex">
-
-                        {(row?.prices?.quotes?.USD?.percent_change_24h) <= 0 ? <KeyboardArrowDownIcon /> :
-                            <KeyboardArrowUpIcon />
-                        }
-
-                        {(row?.prices?.quotes?.USD?.percent_change_24h)?.toFixed(3) || 0}
-
-                    </Typography>
-
-                </TableCell>
-                <TableCell align="left" className=' text-[18px] font-medium'>{(Number(balance) * Number(price)).toFixed(3)}
-                </TableCell>
-                <TableCell sx={{ color: "#53A57C", fontSize: "18px" }} align="left" className=' font-medium'>
-                    <Typography display="flex">
-                        <KeyboardArrowUpIcon /> {balance}
-                    </Typography>
-                </TableCell>
-
-                <TableCell>
+                <TableCell sx={{ fontSize: "16px", fontWeight: "400" }} align="center">{row.amount}</TableCell>
+                <TableCell align="center">{row.price}</TableCell>
+                <TableCell sx={{ color: "#FF6846", fontSize: "16px", fontWeight: "500" }} align="center"> <KeyboardArrowDownIcon />
+                    {row.change}</TableCell>
+                <TableCell sx={{ fontSize: "16px", fontWeight: "400" }} align="center">{row.total}</TableCell>
+                <TableCell sx={{ color: "#53A57C", fontSize: "16px", fontWeight: "400" }} align="center"><KeyboardArrowUpIcon />
+                    {row.holdings}</TableCell>
+                <TableCell >
                     <IconButton
+                        sx={{ color: "black" }}
                         aria-label="expand row"
                         size="small"
+
                         onClick={() => setOpen(!open)}
                     >
                         {open ? <MoreVertIcon /> : <MoreHorizIcon />}
                     </IconButton>
                 </TableCell>
             </TableRow>
-
             <TableRow>
                 <TableCell
                     style={{ paddingBottom: 0, paddingTop: 0 }}
@@ -239,7 +208,7 @@ function Row({ row }: any) {
                                         component='div'
                                         className='text-[16px] -mt-3 mb-4'
                                     >
-                                        {row?.prices?.quotes?.USD?.market_cap}
+                                        $180B
                                     </Typography>
                                     <Typography
                                         variant='h6'
@@ -255,7 +224,8 @@ function Row({ row }: any) {
                                         component='div'
                                         className='text-[16px] -mt-3 mb-4'
                                     >
-                                        {row?.prices?.circulating_supply}
+                                        121M ETH
+
                                     </Typography>
 
                                     <Typography
@@ -272,7 +242,7 @@ function Row({ row }: any) {
                                         component='div'
                                         className='text-[16px] -mt-3 mb-4'
                                     >
-                                        {row?.prices?.quotes?.USD?.volume_24h}
+                                        $18B
                                     </Typography>
                                     <Typography
                                         variant='h6'
@@ -309,75 +279,16 @@ function Row({ row }: any) {
 }
 
 const rows = [
-    createData("image/Bit coin.svg", "Bitcoin", "3.00", "$19,275.48", " - 0,54%", "$57,827.55", "+ $345 + 1,54%"),
-    createData("image/etereum.svg", "Ethereum", "3.00", "$19,275.48", " - 0,54%", "$57,827.55", "+ $345 + 1,54%"),
-    createData("image/thether.svg", "Thether", "3.00", "$19,275.48", " - 0,54%", "$57,827.55", "+ $345 + 1,54%"),
-    createData("image/USD.svg", "USD", "3.00", "$19,275.48", " - 0,54%", "$57,827.55", "+ $345 + 1,54%"),
+    createData("image/Bit coin.svg", "Bitcoin", "BTC", "3.00", "$19,275.48", " - 0,54%", "$57,827.55", "+ $345 + 1,54%"),
+    createData("image/etereum.svg", "Ethereum", "ETH", "3.00", "$19,275.48", " - 0,54%", "$57,827.55", "+ $345 + 1,54%"),
+    createData("image/thether.svg", "Thether", "USDT", "3.00", "$19,275.48", " - 0,54%", "$57,827.55", "+ $345 + 1,54%"),
+    createData("image/USD.svg", "USD", "USDC", "3.00", "$19,275.48", " - 0,54%", "$57,827.55", "+ $345 + 1,54%"),
 ];
 
 export default function CollapsibleTable() {
-
-    const [showResult, setShowResult] = React.useState(false);
-    const [result, setResult] = React.useState<any>([]);
-    const [address, setAddress] = React.useState("");
-
-    const router = useRouter()
-    // console.log(router?.query.id)
-
-    const handleSubmit = async () => {
-        const chain = EvmChain.ETHEREUM;
-
-        let address = "0x391716d440c151c42cdf1c95c1d83a5427bca52c"
-
-        const response = await Moralis.EvmApi.token.getWalletTokenBalances({
-            address,
-            chain,
-        });
-
-        const res = await response.toJSON();
-        console.log(res);
-
-        const api_price = await fetch("https://api.coinpaprika.com/v1/tickers")
-        const priceData = await api_price.json()
-
-        const tokenWithPrice = res.map((token: any) => {
-            const isFind = priceData.find((tokenPrice: any) => tokenPrice.symbol === token.symbol)
-            if (isFind) {
-
-                return { userToken: token, prices: isFind }
-            }
-            else {
-                return { userToken: token, prices: undefined }
-            }
-
-        })
-        console.log({ data: tokenWithPrice });
-
-        setResult(tokenWithPrice);
-
-
-
-
-    }
-
-    const initilaizeMorallis = async () => {
-        await Moralis.start({
-            apiKey: "IKOjk5iKeUSeiiA0ZtO5Yp7QIULfszWqnudfZesEl0SCz743iH7tHH7dxnM1RwkB",
-        });
-    }
-
-    React.useEffect(() => {
-
-        initilaizeMorallis()
-        handleSubmit()
-    }, [router?.query.id]);
-
-
-
     return (
         <Box>
-
-            {result.length > 0 && <Table aria-label='collapsible table'>
+            <Table aria-label="collapsible table">
                 <TableHead>
                     <TableRow>
                         <TableCell
@@ -387,35 +298,35 @@ export default function CollapsibleTable() {
                             <Typography className="ml-[40px]">   NAME </Typography>
                         </TableCell>
                         <TableCell
-                            align='left'
+                            align='center'
                             className='border-y border-solid border-[#000000]'
                         >
                             <Typography>   AMOUNT </Typography>
 
                         </TableCell>
                         <TableCell
-                            align='left'
+                            align='center'
                             className='border-y border-solid border-[#000000]'
                         >
                             <Typography>   PRICE </Typography>
 
                         </TableCell>
                         <TableCell
-                            align='left'
+                            align='center'
                             className='border-y border-solid border-[#000000] '
                         >
                             <Typography>   24H CHANGE </Typography>
 
                         </TableCell>
                         <TableCell
-                            align='left'
+                            align='center'
                             className='border-y border-solid border-[#000000]'
                         >
                             <Typography>  TOTAL</Typography>
 
                         </TableCell>
                         <TableCell
-                            align='left'
+                            align='center'
                             className='border-y border-solid border-[#000000]'
                         >
                             <Typography>  CURRENT HOLDINGS P/L</Typography>
@@ -427,19 +338,11 @@ export default function CollapsibleTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {
-                        result.length && result?.map((row: any) => (
-                            <Row
-                                key={row.name}
-                                row={row}
-                            />
-                        ))}
-
+                    {rows.map((row) => (
+                        <Row key={row.name} row={row} />
+                    ))}
                 </TableBody>
-            </Table>}
-
-
-
+            </Table>
 
             <Box display="flex" justifyContent="center" paddingTop="375px" >
 
@@ -447,35 +350,28 @@ export default function CollapsibleTable() {
                     variant='h3'
                     className='text-[56px]'>Empowered
                 </Typography>
-                <Box display="flex" marginLeft={2}>
-                    <Box className='rotate-[-7.12deg]  bg-[#FF9781]
-         h-[52px] w-[107px] '>
+                <Box display="flex" marginLeft={2} >
+                    <Box className='rotate-[-6.12deg]  bg-[#FF9781] 
+                         h-[38px] w-[107px] mt-[12px] '>
                         <Typography
                             variant='h3'
                             gutterBottom
                             component='div'
-                            className='text-56px font-normal text-[#000000]
-                font-[Libre Baskerville] sticky rotate-[7.12deg] pt-[2px]'
+                            className='text-25px font-normal text-[#000000] 
+                                font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-12px]'
                         >
                             treas
                         </Typography>
                     </Box>
-
-                    <Typography
-                        variant='h3'
-                        className='text-56px font-[Libre Baskerville] font-normal text-[#000000]
-                 '>
-                        ury
-                    </Typography>
-                </Box>
-
+                    <Typography variant='h3' className='pl-[0px] pt-[5px] font-[Libre Baskerville] font-normal text-[#000000] text-[40px]'>
+                        ury </Typography></Box>
             </Box>
-            <Box display="flex" justifyContent="center" paddingBottom="30px" >
+            <Box display="flex" justifyContent="center" paddingBottom="30px" marginTop="20px" >
                 <Typography className='text-[15px] text-[#FF6846] cursor-pointer'>Create your treas
                     <KeyboardArrowRightIcon className="cursor-pointer" />
                 </Typography>
             </Box>
-        </Box>
+        </Box >
+
     );
 }
-

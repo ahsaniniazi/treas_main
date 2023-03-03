@@ -2,7 +2,6 @@ import * as React from 'react';
 import Image from 'next/image';
 import { Box, Modal, Typography } from '@mui/material';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import { useRouter } from 'next/router';
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -21,8 +20,6 @@ export default function NFT_Head() {
 
     const [freshData, setFreshData] = React.useState(false);
 
-    const router = useRouter()
-
     const handleOpen = () => {
         setFreshData(true);
 
@@ -37,7 +34,7 @@ export default function NFT_Head() {
     return (
         <React.Fragment>
 
-            <Box display="flex" justifyContent="space-between" marginTop="5px" marginBottom="38px" >
+            <Box display="flex" justifyContent="space-between" marginBottom="38px" >
                 <Box display="flex" justifyContent="space-evenly" >
 
                     <Box >
@@ -46,13 +43,10 @@ export default function NFT_Head() {
 
 
 
-                    <Box display="flex" flexDirection="column" marginLeft="28px">
-                        <Typography sx={{ color: "#000000", fontFamily: "Libre Baskerville", fontWeight: "700", fontSize: "25px" }}
-                        >
-                            {router?.query.id}
-                        </Typography>
-                        <Typography display="flex" sx={{ color: "#979797", fontFamily: "Libre Baskerville", fontWeight: "700", fontSize: "16px" }}
-                        >
+                    <Box display="flex" flexDirection="column" marginLeft="28px"><Typography className='  text-[#000000] text-[Libre Baskerville] font-bold text-[25px]'>
+                        0x9c5083dd4838e120dbeac44c052179692aa5dac5
+                    </Typography>
+                        <Typography className='flex text-[16px] text-[#979797]  mt-[1px] mr-[7px]'>
                             0xc407...fcc9
                             <Image src="image/image 55.svg" alt='fund me' width={15} height={15} />
                         </Typography>
@@ -63,7 +57,7 @@ export default function NFT_Head() {
 
                 <Box display="flex" justifyContent="space-around" alignItems="center">
 
-                    <Image src="image/image 132.svg" alt='Fund Me' width={25} height={25} className="cursor-pointer"
+                    <Image src="image/image 132.svg" alt='Fund Me' width={25} height={25}
                         onClick={handleOpen} />
                 </Box>
                 <Modal
@@ -73,13 +67,13 @@ export default function NFT_Head() {
 
 
                 >
-                    <Box sx={{ ...style, width: 700, height: 500 }} borderColor="#979797">
+                    <Box sx={{ ...style, width: 500, height: 400 }} borderColor="#979797">
                         <Box border="1px"
                             position="absolute" top="-22px" right="-20px" >
                             <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
-                                className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
+                                className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px]" />
                         </Box>
-                        <Box marginLeft={20} marginBottom={5} marginTop={5} >
+                        <Box marginLeft={10}>
                             <Box alignItems="center" marginLeft={14} marginTop={2}
                                 height={40} width={200} onClick={handleOpen}>
 
@@ -97,9 +91,9 @@ export default function NFT_Head() {
                             If you want to scan other blockchains, add and manage multiple wallets create your account for free.
                         </Typography>
 
-                        <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846] cursor-pointer'>
+                        <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846]'>
                             Create your treas
-                            <KeyboardArrowRightIcon className='text-[#FF6846] cursor-pointer' onClick={handleClose} />
+                            <KeyboardArrowRightIcon className='text-[#FF6846]' onClick={handleClose} />
                         </Typography>
 
 

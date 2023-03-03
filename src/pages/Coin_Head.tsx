@@ -1,8 +1,8 @@
-
 import * as React from 'react';
 import {
     Box,
     FormControl, MenuItem, Select,
+    SelectChangeEvent,
     Stack, Typography
 } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -16,7 +16,6 @@ const commonStyles = {
 };
 
 export default function Heading() {
-    const [open, setOpen] = React.useState(false);
 
 
 
@@ -25,11 +24,11 @@ export default function Heading() {
             <Stack direction='row' justifyContent='space-between' >
                 <Typography className='text-[25px] font-medium text-[#212529]	'>Holdings details</Typography>
                 <Stack direction='row' justifyContent='space-between' >
-                    <Typography className='text-[19px] font-medium text-[#212529] pr-[10px] '>Holdings details</Typography>
+                    <Typography className='text-[19px] font-medium text-[#212529] pr-[10px] '>Holdings variation</Typography>
                     <KeyboardArrowUpIcon sx={{
                         color: "#53A57C"
                     }}></KeyboardArrowUpIcon>
-                    <Typography className='text-[19px] font-medium text-[#212529]' >+1,54%</Typography>
+                    <Typography className='text-[19px] font-medium text-[#53A57C]' >+1,54%</Typography>
 
 
                     <FormControl className='outline-none'>
@@ -39,9 +38,9 @@ export default function Heading() {
                                 height: 30,
                                 padding: 0,
                                 ...commonStyles
-
                             }}
                         >
+                            <MenuItem value="" >1d</MenuItem>
                             <MenuItem >1d</MenuItem>
                             <MenuItem >1w</MenuItem>
                             <MenuItem >1m</MenuItem>
@@ -53,6 +52,6 @@ export default function Heading() {
                 </Stack>
 
             </Stack>
-        </Box>
+        </Box >
     );
 }

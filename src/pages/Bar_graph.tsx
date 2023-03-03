@@ -2,15 +2,12 @@ import { UploadFile } from "@mui/icons-material";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Box, Container, Modal, Typography } from "@mui/material";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import React from "react";
 import {
     Bar, ComposedChart,
-    Line, Tooltip,
-    XAxis
+    Line, Tooltip
 } from "recharts";
 import RAdial from "./Radial_chart";
-
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -24,19 +21,70 @@ const style = {
     px: 4,
     pb: 3,
 };
-interface ArrProps {
-    inflow: number,
-    outflow: number,
-    month: string,
-    value: number,
-    fees: number,
-}
+
+
+const Bardata = [
+    {
+        name: "JUL. 22",
+        uv: 200,
+        pv: 800,
+
+    },
+    {
+        name: "AUG. 22",
+        uv: 300,
+        pv: 967,
+
+    },
+    {
+        name: "SEPT. 22",
+        uv: 400,
+        pv: 1098,
+
+    },
+    {
+        name: "OCT. 22",
+        uv: 1000,
+        pv: 1200,
+
+    },
+    {
+        name: "NOV. 22",
+        uv: 700,
+        pv: 1108,
+
+    },
+    {
+        name: "DEC. 22",
+        uv: 900,
+        pv: 680,
+
+    },
+    {
+        name: "JAN. 22",
+        uv: 500,
+        pv: 680,
+
+    },
+    {
+        name: "FEB. 22",
+        uv: 800,
+        pv: 680,
+
+    },
+    {
+        name: "MAR. 22",
+        uv: 1000,
+        pv: 680,
+
+    }
+];
+
+
 export default function Chart() {
-    const [dateresult, setDateresult] = React.useState<ArrProps[]>([]);
+
     const [openhistory, setHistory] = React.useState(false);
 
-    const router = useRouter()
-    // console.log(router?.query.id || "hahah")
 
     const handleHistory = () => {
         setHistory(true);
@@ -47,98 +95,10 @@ export default function Chart() {
 
     };
 
-    const handleSubmit = async () => {
-        const query = new URLSearchParams({ pageSize: "50", offset: "5" }).toString();
-        // const address = localStorage.getItem("data")
-
-        let address = router?.query.id;
-
-        const resp = await fetch(
-            `https://api.tatum.io/v3/ethereum/account/transaction/internal/${address}?${query}`,
-            {
-                method: "GET",
-                headers: {
-                    "x-api-key": "32813fbc-a6c7-40c7-b71e-e53d0eef4fd8",
-                },
-            }
-        );
-
-        const jsonn = await resp.json();
-        const result = await jsonn;
-        console.log("result");
-        const arr: ArrProps[] = [];
-        // console.log(arr);
-        const getValues = (data: { [val: string]: string }, month: string) => {
-            console.log({ data });
-            const idx = arr.findIndex((item) => item.month === month);
-            const add = Number(address);
-
-            if (idx === -1) {
-                arr.push({
-                    inflow: Number(data.to) === add ? Number(data.value) : 0,
-                    outflow: Number(data.from) === add ? Number(data.value) : 0,
-                    month,
-                    value: Number(data.value),
-                    fees: Number(data.gas),
-                });
-
-            } else {
-                if (arr.length) {
-                    // console.log(data.from, Number(data.to) === add);
-                    if (Number(data.from) === add) arr[idx].outflow += Number(data.value);
-                    else if (Number(data.to) === add) {
-                        // console.log(address);
-                        arr[idx].inflow += Number(data.value);
-                        console.log(arr)
-                    } else {
-                        // console.log(address);
-                        arr[idx].fees += Number(data.value);
-                    }
-                }
-            }
-        };
-        console.log(result)
-        const monthNames = [
-            "January ",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December",
-        ];
-
-        result.forEach((data: { [val: string]: any }) => {
-            const time = data.timeStamp;
-            const d = new Date();
-
-            d.setTime(time * 1000);
-
-            const month = monthNames[d.getMonth()];
-
-            getValues(data, month);
-        });
-
-        setDateresult(arr)
-
-    };
-
-
-    React.useEffect(() => {
-
-        handleSubmit();
-
-    }, [router?.query.id]);
-    console.log(dateresult)
     return (
         <React.Fragment>
 
-            <Box marginBottom={2} display="flex">
+            <Box display="flex">
 
                 <RAdial />
                 <Container>
@@ -148,24 +108,22 @@ export default function Chart() {
                             <Typography className="font-medium text-[12px] text-[#979797]">10 nov. 2022, 0
                                 3:24</Typography>
                         </Box>
-                        <Box marginRight={5} display="flex" justifyContent="space-between">
-                            <Box className='rotate-[-7.12deg]  bg-[#C2EED8] 
-                         h-[27px]  w-[56px] '>
-                                <Typography
+                        <Box display="flex" flexDirection="row" >
 
+                            <Box className='rotate-[-6.12deg]  bg-[#C2EED8] 
+     h-[20px] w-[55px] '>
+                                <Typography
+                                    variant='h5'
                                     gutterBottom
-                                    variant="h5"
-                                    className='text-[21px] font-normal text-[#000000] 
-                                font-[Libre Baskerville] sticky rotate-[7.12deg] pt-[2px]'
+                                    component='div'
+                                    className='text-14px font-normal text-[#000000] 
+    font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-6px]'
                                 >
                                     treas
                                 </Typography>
                             </Box>
-                            <Typography
-                                variant="h5"
-                                className='pl-[0px] mx-[10px]  font-[Libre Baskerville] font-normal text-[#000000] text-[21px]'>
+                            <Typography variant='h3' className='pl-[2px] mt-[-4px] mr-[10px] font-[Libre Baskerville] font-normal text-[#000000] text-[24px]'>
                                 export </Typography>
-                            <Typography></Typography>
                             <UploadFile onClick={handleHistory} ></UploadFile>
                         </Box>
                         <Modal
@@ -206,27 +164,22 @@ export default function Chart() {
                             </Box>
                         </Modal>
                     </Box>
-
                     <ComposedChart
-                        // width={860}
-                        width={950}
+                        width={820}
                         height={400}
-                        data={dateresult}
+                        data={Bardata}
                         margin={{
                             top: 20,
-
                         }}
+
                     >
                         <Tooltip />
-                        <XAxis dataKey="month" scale="auto" />
-                        <Bar dataKey="inflow" barSize={30} fill="#C2EED8" />
-                        <Bar dataKey="outflow" barSize={30} fill="#FF9781" />
-                        <Line type="monotone" dataKey="inflow" stroke="#000000" strokeWidth={3} />
+                        <Bar dataKey="uv" barSize={30} fill="#C2EED8" />
+                        <Bar dataKey="uv" barSize={30} fill="#FF9781" />
+                        <Line type="monotone" dataKey="uv" stroke="#000000" strokeWidth={3} />
                     </ComposedChart>
                 </Container>
             </Box >
-        </React.Fragment >
+        </React.Fragment>
     );
 }
-
-

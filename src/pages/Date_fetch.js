@@ -1,140 +1,99 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import styles from "src/styles/Token.module.css";
 
-export const handleSubmit = async (id) => {
-  const query = new URLSearchParams({ pageSize: "50", offset: 4 }).toString();
-  // const address = "0xbe0eb53f46cd790cd13851d5eff43d12404d33e8";
+const Moralis = require("moralis").default;
+const { EvmChain } = require("@moralisweb3/common-evm-utils");
 
-  let address = id;
-  const resp = await fetch(
-    `https://api.tatum.io/v3/ethereum/account/transaction/internal/${address}?${query}`,
-    {
-      method: "GET",
-      headers: {
-        "x-api-key": "32813fbc-a6c7-40c7-b71e-e53d0eef4fd8",
-      },
-    }
-  );
-
-  const jsonn = await resp.json();
-  const result = await jsonn;
-  console.log(result);
-  const arr = [];
-  // console.log(arr);
-  const getValues = (data, month) => {
-    console.log({ month });
-    const idx = arr.findIndex((item) => item.month === month);
-    const add = Number(address);
-    // console.log(add);
-    if (idx === -1) {
-      arr.push({
-        inflow: Number(data.to) === add ? Number(data.value) : 0,
-        outflow: Number(data.from) === add ? Number(data.value) : 0,
-        balance: Number(data.balance === add) ? Number(data.value) : 0,
-        month,
-        value: Number(data.value),
-        fees: Number(data.gas),
-      });
-      // 0xE0b4dE18fc0AEB769Fcc438B74109e1c62C5B23A
-      // console.log(outflow);
-    } else {
-      if (arr.length) {
-        // console.log(data.from, Number(data.to) === add);
-        // console.log("outflow");
-        if (Number(data.from) === add) arr[idx].outflow += Number(data.value);
-        else if (Number(data.to) === add) {
-          // console.log(address);
-          arr[idx].inflow += Number(data.value);
-          // console.log("inflow");
-        } else {
-          // console.log(address);
-          arr[idx].fees += Number(data.value);
-          // console.log("vLUE");
-        }
-      }
-    }
-  };
-  const monthNames = [
-    "January ",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  result?.forEach((data) => {
-    const time = data.timeStamp;
-    const d = new Date();
-
-    d.setTime(time * 1000);
-
-    const month = monthNames[d.getMonth()];
-    // console.log(d);
-    // console.log(day);
-    // console.log(month);
-    getValues(data, month);
-  });
-
-  return arr;
-  // console.loga(arr);
-  // console.log(response);
-};
-
-export default function Fetch() {
+export default function Header() {
   const [showResult, setShowResult] = useState([]);
   const [result, setResult] = useState([]);
 
-  const router = useRouter();
+  // let address;
 
-  useEffect(() => {
-    console.log(router?.query.id);
-    if (router.query.id) {
-      handleSubmit(router.query.id);
-    }
-  }, [router?.query.id]);
+  const handleSubmit = async () => {
+    const address = "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984";
+    const chain = EvmChain.ETHEREUM;
+
+    const topic =
+      "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef";
+
+    await Moralis.start({
+      apiKey: process.env.NEXT_PUBLIC_MORALIS_API_KEY,
+    });
+
+    const abi = {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "to",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "uint256",
+          name: "amount",
+          type: "uint256",
+        },
+      ],
+      name: "Transfer",
+      type: "event",
+    };
+
+    const response = await Moralis.EvmApi.events.getContractEvents({
+      address,
+      chain,
+      topic,
+      abi,
+    });
+
+    console.log(response.toJSON());
+    setResult(response.toJSON());
+    setShowResult(true);
+    document.querySelector("#walletAddress").value = "";
+  };
 
   return (
-    <></>
-    // <section className={styles.main}>
-    //   {/* <form
-    //     className={styles.getTokenForm}
-    //     name="create-profile-form"
-    //     method="POST"
-    //     action="#"
-    //   >
-    //     <label className={styles.label} htmlFor="walletAddress">
-    //       Add ERC20 Wallet Address
-    //     </label>
-    //     <input
-    //       className={styles.walletAddress}
-    //       type="text"
-    //       id="walletAddress"
-    //       name="walletAddress"
-    //       maxLength="120"
-    //       required
-    //     />
-    //   </form>
-    //   <button className={styles.form_btn} onClick={handleSubmit}>
-    //     Submit
-    //   </button> */}
-    //   <section className={styles.result}>
-    //     {showResult &&
-    //       result.map((token) => {
-    //         return (
-    //           <section
-    //             className={styles.tokenContainer}
-    //             key={result.indexOf(3)}
-    //           ></section>
-    //         );
-    //       })}
-    //   </section>
-    // </section>
+    <section className={styles.main}>
+      <form
+        className={styles.getTokenForm}
+        name="create-profile-form"
+        method="POST"
+        action="#"
+      >
+        <label className={styles.label} htmlFor="walletAddress">
+          Add ERC20 Wallet Address
+        </label>
+        <input
+          className={styles.walletAddress}
+          type="text"
+          id="walletAddress"
+          name="walletAddress"
+          maxLength="120"
+          required
+        />
+      </form>
+      <button className={styles.form_btn} onClick={handleSubmit}>
+        Submit
+      </button>
+      <section className={styles.result}>
+        {showResult &&
+          result.map((token) => {
+            return (
+              <section
+                className={styles.tokenContainer}
+                key={result.indexOf(3)}
+              ></section>
+            );
+          })}
+      </section>
+    </section>
   );
 }

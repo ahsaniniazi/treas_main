@@ -1,39 +1,30 @@
-import { Box, Typography } from "@mui/material";
-import { useRouter } from "next/router";
+import { RoundedCorner, RoundedCornerOutlined, RouteRounded } from "@mui/icons-material";
+import { Box, Radio, Typography } from "@mui/material";
+import { fontFamily } from "@mui/system";
 import React from "react";
-import { Legend, RadialBar, RadialBarChart } from "recharts";
-import Web3 from "web3";
-const Moralis = require("moralis").default;
-const { EvmChain } = require("@moralisweb3/common-evm-utils");
+import { RadialBarChart, RadialBar, Legend } from "recharts";
 
 
-const Data = [
+const RadialData = [
     {
         name: "BTC",
         uv: 32,
-        fill: "purple",
-        bj: "#000000"
+        fill: "#C0EEF5"
     },
     {
         name: "ETH",
         uv: 44.0,
-        fill: "#fd7e14",
-        bj: "#000000"
-
+        fill: "#FFBA69"
     },
     {
         name: "USDT",
         uv: 16.0,
-        fill: "#45B39D",
-        bj: "#000000"
-
+        fill: "#C2EED8"
     },
     {
         name: "Other",
         uv: 8.0,
-        fill: "#dc3545",
-        bj: "#000000"
-
+        fill: "#FF9780"
     },
 ];
 
@@ -43,106 +34,42 @@ const style = {
     lineHeight: "24px"
 
 };
-
-
 export default function RAdial() {
-    const router = useRouter()
-    // console.log(router?.query.id)
-    // console.log(window?.location?.pathname)
-    // 
-
-    function convertToInternationalCurrencySystem(props: number) {
-
-        // Nine Zeroes for Billions
-        return Math.abs(Number(props)) >= 1.0e+9
-
-            ? (Math.abs(Number(props)) / 1.0e+9).toFixed(1) + "B"
-            // Six Zeroes for Millions 
-            : Math.abs(Number(props)) >= 1.0e+6
-
-                ? (Math.abs(Number(props)) / 1.0e+6).toFixed(1) + "M"
-                // Three Zeroes for Thousands
-                : Math.abs(Number(props)) >= 1.0e+3
-
-                    ? (Math.abs(Number(props)) / 1.0e+3).toFixed(1) + "K"
-
-                    : Math.abs(Number(props));
-    }
-
-    const [result, setResult] = React.useState<any>([]);
-    // const [address, setAddress] = React.useState("");
-
-    let address = router?.query.id;
-
-    const handleSubmit = async () => {
-        const chain = EvmChain.ETHEREUM;
-
-        const response = await Moralis.EvmApi.token.getWalletTokenBalances({
-            address,
-            chain,
-        });
-
-        // console.log(response)
-        const res = await response.toJSON();
-        console.log(res);
-
-        const api_price = await fetch("https://api.coinpaprika.com/v1/tickers")
-        const priceData = await api_price.json()
-
-
-        const tokenWithPrice = res.map((token: any) => {
-            const convert = Web3.utils.fromWei(token.balance, 'ether');
-            const balance = convertToInternationalCurrencySystem(Number(convert));
-            // console.log(convert)
-
-
-            const isFind = priceData.find((tokenPrice: any) => tokenPrice.symbol === token.symbol)
-            if (isFind) {
-                const mergedPrice = { ...token, ...isFind, balance }
-                return mergedPrice
-            }
-            else {
-                return token
-
-            }
-        })
-
-        console.log({ data: tokenWithPrice });
-
-
-        setResult(tokenWithPrice);
-
-    }
-    console.log(result)
-    const initilaizeMorallis = async () => {
-        await Moralis.start({
-            apiKey: "IKOjk5iKeUSeiiA0ZtO5Yp7QIULfszWqnudfZesEl0SCz743iH7tHH7dxnM1RwkB",
-        });
-    }
-
-    React.useEffect(() => {
-        initilaizeMorallis()
-        handleSubmit()
-    }, [router?.query.id])
-
     return (
         <React.Fragment>
-            <Box sx={{ display: "flex", direction: "column" }}>
+            {/* <Box display="flex" marginTop="120px" flexDirection="column" >
+                <Box display="flex" flexDirection="row" >
+
+                    <Box className='rotate-[-6.12deg]  bg-[#C2EED8] 
+                         h-[20px] w-[55px] '>
+                        <Typography
+                            variant='h5'
+                            gutterBottom
+                            component='div'
+                            className='text-14px font-normal text-[#000000] 
+                        font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-6px]'
+                        >
+                            treas
+                        </Typography>
+                    </Box>
+                    <Typography variant='h3' className='pl-[2px] mt-[-4px] font-[Libre Baskerville] font-normal text-[#000000] text-[24px]'>
+                        ury </Typography>
+                </Box>
+                <Typography
+                    variant='h3'
+                    sx={{ fontSize: "24px", fontFamily: "Libre Baskerville", fontWeight: "400" }}>
+                    $818,714</Typography>
+            </Box> */}
+
+            <Box sx={{ display: "flex", direction: "column", verticalAlign: "center" }}>
 
                 <RadialBarChart
-                    width={250}
+                    width={230}
                     height={300}
-                    cx={130}
-                    cy={150}
                     innerRadius={125}
                     outerRadius={70}
-                    barSize={1.5}
-                    data={
-                        result.slice(0, 4).map((item: any, idx: number) => {
-                            return { ...item, fill: Data[idx].fill }
-                        })}
-
-
+                    barSize={3}
+                    data={RadialData}
 
 
                 >
@@ -150,15 +77,18 @@ export default function RAdial() {
                     <RadialBar
 
                         label={{ position: "insideStart", fill: "transparent" }}
+                        background={{
+                            fill: "black"
+                        }}
+                        // barSize={3}
 
-                        // clockWise
-                        dataKey="balance"
-                        fill="balance"
-                        background={{ fill: "black" }}
+                        dataKey="uv"
 
                     />
+
                     <Legend
-                        iconSize={10}
+                        iconSize={8}
+                        iconType="circle"
                         width={120}
                         height={140}
                         layout="radial"
@@ -170,19 +100,13 @@ export default function RAdial() {
                     </Legend>
 
                 </RadialBarChart>
-
                 <Box marginTop="300px" textAlign="center" >
-                    <Typography sx={{ color: "#383874", fontSize: "15px", fontWeight: "600" }}>32.0%</Typography>
-                    <Typography sx={{ color: "#383874", fontSize: "15px", fontWeight: "600" }}>44.0%</Typography>
-                    <Typography sx={{ color: "#383874", fontSize: "15px", fontWeight: "600" }}>16.0%</Typography>
-                    <Typography sx={{ color: "#383874", fontSize: "15px", fontWeight: "600" }}>8.0%</Typography>
+                    <Typography className="text-[15px] text-[#383874] font-semibold	">32.0%</Typography>
+                    <Typography className="text-[15px] text-[#383874] font-semibold	">44.0%</Typography>
+                    <Typography className="text-[15px] text-[#383874] font-semibold	">16.0%</Typography>
+                    <Typography className="text-[15px] text-[#383874] font-semibold	">8.0%</Typography>
                 </Box>
-
             </Box>
-
-
-
         </React.Fragment>
-
     );
 }

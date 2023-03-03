@@ -9,9 +9,9 @@ import NFT_Head from '../Bar_Head'
 import Footer from '../Footer'
 import Header from '../Header'
 import SearchResult from '../Account_Details'
+import Token from '../token'
 import Date_fetch from '../Date_fetch'
-import { Box } from '@mui/system'
-
+import Static from '../coin_static'
 
 
 
@@ -22,15 +22,19 @@ export default function Home() {
         <React.Fragment>
 
             <Header />
-            <Box marginLeft={10} marginRight={10}>
+
+            <Container >
                 <SearchResult />
                 <NFT_Head />
                 <Chart />
                 <Treasury_label />
                 <Heading />
-                <Graph_Table />
-            </Box>
-            <Date_fetch />
+                {/* <Graph_Table /> */}
+                <Static />
+            </Container>
+
+            {/* <Date_fetch /> */}
+            {/* <Token /> */}
             <Footer />
         </React.Fragment>
 
