@@ -101,21 +101,21 @@ export default function NFT_Head() {
                         className='bg-[#ffffffe6]'
 
                     >
-                        <Box sx={{ ...style, width: 700, height: 500 }} borderColor="#979797">
+                        <Box sx={{ ...style, width: 700, height: 500, borderColor: "#979797", borderWidth: "1px" }} >
                             <Box border="1px"
                                 position="absolute" top="-22px" right="-20px" >
                                 <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
                                     className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
                             </Box>
                             <Box marginLeft={20} marginBottom={5} marginTop={5}>
-                                <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
-                                    height={40} width={230} >
+                                <Box sx={{ ...commonStyles, borderColor: '#D1D0D6', borderRadius: "5px" }} display="flex" alignItems="center"
+                                    height={40} width={250} >
 
-                                    <Typography className=' ml-[20px] p-[10px]  text-[12px]
-                     font-semibold text-center'  >JUL. <br /> 2022 </Typography> <EastIcon />
+                                    <Typography className=' ml-[15px] p-[10px]  text-[12px]
+                     font-semibold text-center'  >JUL. 2022 </Typography> <EastIcon />
 
                                     <Typography className=' ml-[20px] p-[10px] text-[12px] text-center
-                     font-semibold'  >MAR.<br /> 2023   </Typography> <KeyboardArrowDownIcon className='pr-[5px]' />
+                     font-semibold'  >MAR. 2023   </Typography> <KeyboardArrowDownIcon className='pr-[5px]' />
                                 </Box>
                             </Box>
                             <Typography className='text-[30px] pt-[45px] pl-[45px] font-[Libre Baskerville] '>
@@ -147,7 +147,7 @@ export default function NFT_Head() {
                         aria-describedby="parent-modal-description"
                         className='bg-[#ffffffe6]'
                     >
-                        <Box sx={{ ...style, width: 700, height: 500 }} borderColor="#979797">
+                        <Box sx={{ ...style, width: 700, height: 500, borderColor: "#979797", borderWidth: "1px" }}>
                             <Box border="1px"
                                 position="absolute" top="-22px" right="-20px" >
                                 <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
@@ -189,7 +189,7 @@ export default function NFT_Head() {
                     className='bg-[#ffffffe6]'
 
                 >
-                    <Box sx={{ ...style, width: 700, height: 500 }} borderColor="#979797">
+                    <Box sx={{ ...style, width: 700, height: 500, borderColor: "#979797", borderWidth: "1px" }} >
                         <Box border="1px"
                             position="absolute" top="-22px" right="-20px" >
                             <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
@@ -243,6 +243,7 @@ export default function NFT_Head() {
                             anchorEl={anchorEl}
                             open={open}
                             onClose={handleClose}
+
 
 
                         >

@@ -1,12 +1,34 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { Button, Container, Modal } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import InputBase from '@mui/material/InputBase';
+import { styled } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import { Button, Container } from '@mui/material';
 import Image from 'next/image';
+import * as React from 'react';
+
+
+const style = {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 595,
+    bgcolor: 'background.paper',
+    border: "border-solid border-1 #979797",
+    pt: 2,
+    px: 4,
+    pb: 3,
+};
+
+
+const commonStyles = {
+    m: 1,
+    border: 1,
+
+};
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -47,14 +69,26 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function PrimarySearchAppBar() {
     React.useState<null | HTMLElement>(null);
+    const [opensearch, setSearch] = React.useState(false);
+
+    const handleOpenSearch = () => {
+        setSearch(true);
+    };
+
+    const handleClose = () => {
+
+
+        setSearch(false);
+
+
+    };
 
     return (
         <>
             <Box display="flex" justifyContent="space-around" borderBottom="none"
 
             >
-                {/* [#ace0e6] [#d8e4e6]*/}
-                {/* className='h-60 bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#A4D8DD] */}
+
                 <AppBar position="static" className=' bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#b2e4e9]
             shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#A4D8DD] appearance-none  ' >
                     <Container className="pl-[0px] pr-[0px]">
@@ -83,7 +117,58 @@ export default function PrimarySearchAppBar() {
                                         fullWidth
 
                                     />
-                                    <Image src="image/image 131.svg" alt="" width={25} height={25} className="cursor-pointer mr-[15px]" />
+                                    <Image src="image/image 131.svg"
+                                        alt="" width={25} height={25} className="cursor-pointer mr-[15px]"
+                                        onClick={handleOpenSearch} />
+                                    <Modal
+                                        open={opensearch}
+                                        onClose={handleClose}
+                                        aria-labelledby="parent-modal-title"
+                                        aria-describedby="parent-modal-description"
+                                        className='bg-[#ffffffe6]'
+
+                                    >
+                                        <Box sx={{ ...style, width: 700, height: 500, borderColor: "#979797", borderWidth: "1px" }} >
+                                            <Box border="1px"
+                                                position="absolute" top="-22px" right="-20px" >
+                                                <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
+                                                    className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
+                                            </Box>
+                                            <Box marginLeft={20} marginBottom={5} marginTop={5} >
+                                                <Box sx={{ ...commonStyles, borderColor: '#D1D0D6', borderRadius: "15px" }} display="flex" alignItems="center"
+                                                    height={40} width={230} >
+
+                                                    <SearchIconWrapper >
+                                                        <Image src="image/image 118.svg" alt='' width={15} height={15} />
+                                                    </SearchIconWrapper>
+                                                    <StyledInputBase
+                                                        placeholder="Search"
+                                                        inputProps={{ 'aria-label': 'search' }}
+                                                        className='text-[#979797] font-medium '
+                                                        fullWidth
+
+                                                    />
+                                                </Box>
+                                            </Box>
+                                            <Typography className='text-[30px] pt-[45px] pl-[45px] font-[Libre Baskerville] '>
+                                                Search your treas
+                                            </Typography>
+                                            <Typography className='text-[20px] pt-[12px] pl-[45px] text-[#64626A]'>
+                                                Scan any ETH treas
+                                            </Typography>
+
+                                            <Typography className='text-[20px] pl-[45px] text-[#64626A]'>
+                                                If you want to scan other blockchains, add and manage multiple wallets create your account for free.
+                                            </Typography>
+
+                                            <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846] cursor-pointer'>
+                                                Create your treas
+                                                <KeyboardArrowRightIcon className='text-[#FF6846] cursor-pointer' onClick={handleClose} />
+                                            </Typography>
+
+
+                                        </Box>
+                                    </Modal>
                                 </Search>
                             </Box>
                             <Box />

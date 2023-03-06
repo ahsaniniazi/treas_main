@@ -26,56 +26,73 @@ const style = {
 const Bardata = [
     {
         name: "JUL. 22",
-        uv: 200,
-        pv: 800,
+        uv: 400,
+        pv: 180,
+        cmt: 250,
 
     },
     {
         name: "AUG. 22",
-        uv: 300,
-        pv: 967,
+        uv: 500,
+        pv: 220,
+        cmt: 250,
+
 
     },
     {
         name: "SEPT. 22",
-        uv: 400,
-        pv: 1098,
+        uv: 380,
+        pv: 420,
+        cmt: 220,
+
 
     },
     {
         name: "OCT. 22",
-        uv: 1000,
-        pv: 1200,
+        uv: 420,
+        pv: 350,
+        cmt: 430,
+
 
     },
     {
         name: "NOV. 22",
-        uv: 700,
-        pv: 1108,
+        uv: 500,
+        pv: 700,
+        cmt: 150,
+
 
     },
     {
         name: "DEC. 22",
-        uv: 900,
-        pv: 680,
+        uv: 600,
+        pv: 300,
+        cmt: 560,
+
 
     },
     {
         name: "JAN. 22",
-        uv: 500,
-        pv: 680,
+        uv: 600,
+        pv: 300,
+        cmt: 630,
+
+
 
     },
     {
         name: "FEB. 22",
-        uv: 800,
-        pv: 680,
+        uv: 900,
+        pv: 300,
+        cmt: 800,
+
 
     },
     {
         name: "MAR. 22",
-        uv: 1000,
-        pv: 680,
+        uv: 800,
+        pv: 100,
+        cmt: 800,
 
     }
 ];
@@ -174,9 +191,9 @@ export default function Chart() {
 
                     >
                         <Tooltip />
-                        <Bar dataKey="uv" barSize={30} fill="#C2EED8" />
-                        <Bar dataKey="uv" barSize={30} fill="#FF9781" />
-                        <Line type="monotone" dataKey="uv" stroke="#000000" strokeWidth={3} />
+                        <Bar dataKey="uv" barSize={23} fill="#C2EED8" radius={20} />
+                        <Bar dataKey="pv" barSize={23} fill="#FF9781" radius={20} />
+                        <Line type="monotone" dataKey="cmt" stroke="#000000" strokeWidth={3} />
                     </ComposedChart>
                 </Container>
             </Box >

@@ -9,18 +9,24 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 
 const commonStyles = {
-    m: 1,
+
     border: 0,
     boxShadow: 'none', '.MuiOutlinedInput-notchedOutline': { border: 0 }
+
 
 };
 
 export default function Heading() {
+    const [age, setAge] = React.useState('');
+
+    const handleChange = (event: SelectChangeEvent) => {
+        setAge(event.target.value);
+    };
 
 
 
     return (
-        <Box paddingBottom="18px" marginTop="85px">
+        <Box marginTop="85px">
             <Stack direction='row' justifyContent='space-between' >
                 <Typography className='text-[25px] font-medium text-[#212529]	'>Holdings details</Typography>
                 <Stack direction='row' justifyContent='space-between' >
@@ -34,23 +40,29 @@ export default function Heading() {
                     <FormControl className='outline-none'>
 
                         <Select
+                            value={age}
+                            onChange={handleChange}
+                            displayEmpty
+                            inputProps={{ 'aria-label': 'Without label' }}
                             sx={{
                                 height: 30,
                                 padding: 0,
                                 ...commonStyles
                             }}
                         >
-                            <MenuItem value="" >1d</MenuItem>
-                            <MenuItem >1d</MenuItem>
-                            <MenuItem >1w</MenuItem>
-                            <MenuItem >1m</MenuItem>
-                            <MenuItem >6m</MenuItem>
-                            <MenuItem >1y</MenuItem>
+                            <MenuItem value="" >
+                                <Box display="flex" flexDirection="row">
+                                    <Typography marginLeft="10px"> 1w</Typography>
+                                </Box>
+                            </MenuItem>
+                            <MenuItem value={10} >1d</MenuItem>
+                            <MenuItem value={20}>1m</MenuItem>
+                            <MenuItem value={30}>6m</MenuItem>
+                            <MenuItem value={40}>1y</MenuItem>
                         </Select>
                     </FormControl>
 
                 </Stack>
-
             </Stack>
         </Box >
     );

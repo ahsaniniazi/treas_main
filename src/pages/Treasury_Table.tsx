@@ -1,14 +1,13 @@
-import { BorderStyle } from '@mui/icons-material';
+import { BorderBottom } from '@mui/icons-material';
 import { Box, FormControl, MenuItem, Select, SelectChangeEvent, Typography } from '@mui/material';
-import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { borderBottomColor, borderRightColor } from '@mui/system';
+import { color } from '@mui/system';
 import Image from 'next/image';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import * as React from 'react';
 
 function createData(
@@ -37,7 +36,7 @@ const rows = [
     createData("#53A57C", "#F5F6F9", "Inflows", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
     createData("#ffffff", "", "", '', "", "Unlock your treasury with labels", "", "",
-        "", "", "", ""),
+        "", "", "Know more about label", ">"),
     createData("#FF6846", "#F5F6F9", "OutFlows", '123,434', "123,434", "123,434", " 123,434", "123,434",
         "123,434", "123,434", "123,434", "123,434"),
     createData("#000", "#F5F6F9", "treas end of the month", '123,434', "123,434", "123,434", " 123,434", "123,434",
@@ -66,7 +65,7 @@ export default function DenseTable() {
 
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
             <TableHead >
-                <TableRow sx={{ m: 0, lineHeight: 8, display: "flex" }}
+                <TableRow sx={{ lineHeight: 8, display: "flex" }}
                 >
                     <TableCell className='pl-[0px] pr-[30px] text-[#D1D0D6] border-0 '>
 
@@ -169,124 +168,233 @@ export default function DenseTable() {
             </TableHead>
 
             <TableBody className='leading-8' >
-                {rows.map((row) => (
-                    <TableRow sx={{ display: "flex", '&:nth-child(3) td,&:nth-child(7) td, &:last-child td': { border: 0 } }}
-                        key={row.JUL}
-                    // sx={{ '&:6th-child td, &:6th-child th': { border: 0 } }}
-                    >
-
-
-                        <TableCell align='center' className='flex border-x border-y 
-                            border-solid border-[##D1D0D6] rounded-md text-left text-[14px] text-[#000]
-                             font-semibold mt-[10px]  w-[290px] mr-[10px]   '
-                            sx={{ background: row.background }} >
-
-                            <Box sx={{ width: "22px", height: "22px", borderRadius: "5px" }} bgcolor={row.color}
-                                marginRight="18px" >
+                {rows.map((row, index) => {
+                    return index === 2 ?
+                        (<Box sx={{ display: "flex", justifyContent: "space-evenly", height: "116px", alignItems: "center" }} >
+                            <Box sx={{ fontSize: "38px", display: "flex" }}>
+                                Unlock your
+                                <Box display="flex"  >
+                                    <Box className='rotate-[-6.12deg]  bg-[#FFDEA7] 
+                         h-[38px] w-[107px] '>
+                                        <Typography
+                                            variant='h3'
+                                            gutterBottom
+                                            component='div'
+                                            className=' font-normal text-[#000000] 
+                                font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-12px]'
+                                        >
+                                            treas
+                                        </Typography>
+                                    </Box>
+                                    <Typography variant='h3' className='pt-[-20px] font-[Libre Baskerville] font-normal text-[#000000] text-[40px]'>
+                                        ury </Typography>
+                                </Box> with labels
                             </Box>
-                            {row.Network}
+                            <Box display="flex" justifyContent="center" >
+                                <Typography className='text-[15px] text-[#FF6846] cursor-pointer'>
+                                    Know more about label
+                                    <KeyboardArrowRightIcon className="cursor-pointer" />
+                                </Typography>
+                            </Box>
+                        </Box>)
+
+                        : index === 9 ? (<Box sx={{ display: "flex", justifyContent: "space-evenly", height: "116px", alignItems: "center" }} >
+
+                            <Box sx={{ fontSize: "38px" }}>
+                                Define your own KPIs and supercharge your treasury
+                            </Box>
+
+                        </Box>)
+                            :
+                            (
+                                <TableRow sx={{
+                                    display: "flex", ' &:nth-child(7) td': { border: 0 }
+                                    , ' &:nth-child(7) td:first-child':
+                                    {
+                                        border: 1, borderColor: "#D3D3D3",
+                                        backgroundColor: "#F5F6F9", marginBottom: "-12px",
+
+                                    },
+                                    ' &:nth-child(10) td': {
+                                        borderTop: 0, marginTop: "0px", height: "38px",
+                                        paddingTop: "10px"
+                                    }
+                                    , ' &:nth-child(10) td:first-child': {
+                                        borderRight: 0, borderColor: "#D3D3D3",
+                                        backgroundColor: "#FFFFFF",
+                                        width: "290px",
+                                    },
+                                    ' &:nth-child(10) td:nth-child(2)': {
+                                        borderLeft: 0,
+
+                                    },
+                                    ' &:nth-child(10) th:nth-child(4)': {
+                                        borderLeft: 0,
+                                        fontSize: "38px",
+                                        columnSpan: "2"
+
+                                    }
+                                    ,
+                                    ' &:nth-child(10) td:nth-child(7)': {
+                                        borderRight: 0,
+                                    }
+                                    ,
+                                    ' &:nth-child(10) td:nth-child(8)': {
+                                        borderLeft: 0,
+                                        marginLeft: "-230px"
+                                    },
+                                    ' &:nth-child(3) td': {
+                                        borderTop: 0, marginTop: "0px", height: "116px",
+                                    }
+                                    , ' &:nth-child(3) td:first-child': {
+                                        borderRight: 0, borderColor: "#D3D3D3",
+                                        backgroundColor: "#FFFFFF",
+                                        width: "290px",
+                                        marginRight: "10px",
+
+                                    },
+                                    ' &:nth-child(3) td:nth-child(2)': {
+                                        borderLeft: 0,
+                                    }
+                                    ,
+                                    ' &:nth-child(3) td:nth-child(7)': {
+                                        borderRight: 0,
+
+                                    }
+                                    ,
+                                    ' &:nth-child(3) th:nth-child(4)': {
+                                        borderLeft: 0,
+                                        fontSize: "38px",
+                                        columnSpan: "2"
+
+                                    }
+                                    ,
+                                    ' &:nth-child(3) td:nth-child(8)': {
+                                        borderLeft: 0,
+                                        marginLeft: "-182px"
+
+                                    }
 
 
-                        </TableCell>
-
-                        <TableCell align='center' className=' border-l border-y 
-                            border-solid border-[#D3D3D3] rounded-l-md text-center text-[12px] text-[#000]
-                             font-light mt-[10px]  '
-                            sx={{ background: row.background, minWidth: 90 }}>
+                                }}
+                                    key={row.JUL}
+                                >
 
 
-                            {row.JUL}
+                                    <TableCell align='center' className='flex border-x border-y 
+                                    border-solid border-[#D1D0D6] rounded-md text-left text-[14px] text-[#000]
+                                     font-semibold mt-[10px]  w-[290px] mr-[10px]   '
+                                        sx={{ background: row.background }} >
 
-                        </TableCell>
-
-                        <TableCell align='center' className=' border-y 
-                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
-                             font-light mt-[10px]  '
-                            sx={{ background: row.background, minWidth: 90 }}>
-
-
-                            {row.AUG}
-
-                        </TableCell>
-                        <TableCell align='center' className=' border-y 
-                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
-                             font-light mt-[10px]  '
-                            sx={{ background: row.background, minWidth: 90 }}>
+                                        <Box sx={{ width: "22px", height: "22px", borderRadius: "5px" }} bgcolor={row.color}
+                                            marginRight="18px" >
+                                        </Box>
+                                        {row.Network}
 
 
-                            {row.SEPT}
+                                    </TableCell>
 
-                        </TableCell>
-                        <TableCell align='center' className=' border-y 
-                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
-                             font-light mt-[10px] '
-                            sx={{ background: row.background, minWidth: 90 }}>
-
-                            {row.OCT}
-
-                        </TableCell>
-                        <TableCell align='center' className=' border-y 
-                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
-                             font-light mt-[10px]  '
-                            sx={{ background: row.background, minWidth: 90 }}>
+                                    <TableCell align='center' className=' border-l border-y 
+                                    border-solid border-[#D3D3D3] rounded-l-md text-center text-[12px] text-[#000]
+                                     font-light mt-[10px]  '
+                                        sx={{ background: row.background, minWidth: 90 }}>
 
 
-                            {row.NOV}
+                                        {row.JUL}
 
-                        </TableCell>
-                        <TableCell align='center' className=' border-r border-y 
-                            border-solid border-[#D3D3D3] rounded-r-md 
-                              text-center text-[12px] text-[#000]
-                             font-light mt-[10px] mr-[8px] 
-                             
-                             '
-                            sx={{
-                                background: row.background, minWidth: 90
+                                    </TableCell>
 
-                            }}>
+                                    <TableCell align='center' className=' border-y 
+                                    border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                                     font-light mt-[10px]  '
+                                        sx={{ background: row.background, minWidth: 90 }}>
 
 
+                                        {row.AUG}
 
-                            {row.DEC}
-
-
-                        </TableCell>
-
-                        <TableCell align='center' className='border-l border-y 
-                            border-solid border-[#D3D3D3] rounded-l-md text-center text-[12px] text-[#000]
-                             font-light mt-[10px]  '
-                            sx={{
-                                background: row.background, minWidth: 90
-
-                            }}>
+                                    </TableCell>
+                                    <TableCell align='center' className=' border-y 
+                                    border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                                     font-light mt-[10px]  '
+                                        sx={{ background: row.background, minWidth: 90 }}>
 
 
-                            {row.JAN}
+                                        {row.SEPT}
 
-                        </TableCell>
-                        <TableCell align='center' className=' border-y 
-                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
-                             font-light mt-[10px]  '
-                            sx={{ background: row.background, minWidth: 90 }}>
+                                    </TableCell>
 
+                                    <TableCell align='center' className=' border-y 
+                                    border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                                     font-light mt-[10px] '
+                                        sx={{ background: row.background, minWidth: 90 }}>
 
-                            {row.FEB}
+                                        {row.OCT}
 
-                        </TableCell>
-                        <TableCell align='center' className='border-r border-y 
-                            border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
-                             font-light mt-[10px] '
-                            sx={{
-                                background: row.background, minWidth: 90
-
-                            }}>
+                                    </TableCell>
+                                    <TableCell align='center' className=' border-y 
+                                    border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                                     font-light mt-[10px]  '
+                                        sx={{ background: row.background, minWidth: 90 }}>
 
 
-                            {row.MAR}
+                                        {row.NOV}
 
-                        </TableCell>
-                    </TableRow>
-                ))}
+                                    </TableCell>
+                                    <TableCell align='center' className=' border-r border-y 
+                                    border-solid border-[#D3D3D3] rounded-r-md 
+                                      text-center text-[12px] text-[#000]
+                                     font-light mt-[10px] mr-[8px] 
+                                     
+                                     '
+                                        sx={{
+                                            background: row.background, minWidth: 90
+
+                                        }}>
+
+
+
+                                        {row.DEC}
+
+
+                                    </TableCell>
+
+                                    <TableCell align='center' className='border-l border-y 
+                                    border-solid border-[#D3D3D3] rounded-l-md text-center text-[12px] text-[#000]
+                                     font-light mt-[10px]  '
+                                        sx={{
+                                            background: row.background, minWidth: 90
+
+                                        }}>
+
+
+                                        {row.JAN}
+
+                                    </TableCell>
+                                    <TableCell align='center' className=' border-y 
+                                    border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
+                                     font-light mt-[10px]  '
+                                        sx={{ background: row.background, minWidth: 90 }}>
+
+
+                                        {row.FEB}
+
+                                    </TableCell>
+                                    <TableCell align='center' className='border-r border-y 
+                                    border-solid border-[#D3D3D3] rounded-r-md text-center text-[12px] text-[#000]
+                                     font-light mt-[10px] '
+                                        sx={{
+                                            background: row.background, minWidth: 90
+
+                                        }}>
+
+
+                                        {row.MAR}
+
+                                    </TableCell>
+                                </TableRow>)
+
+
+                })}
             </TableBody>
         </Table >
 

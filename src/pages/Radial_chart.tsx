@@ -37,7 +37,7 @@ const style = {
 export default function RAdial() {
     return (
         <React.Fragment>
-            {/* <Box display="flex" marginTop="120px" flexDirection="column" >
+            <Box display="flex" marginTop="120px" flexDirection="column" position="absolute" marginLeft={9}>
                 <Box display="flex" flexDirection="row" >
 
                     <Box className='rotate-[-6.12deg]  bg-[#C2EED8] 
@@ -59,7 +59,7 @@ export default function RAdial() {
                     variant='h3'
                     sx={{ fontSize: "24px", fontFamily: "Libre Baskerville", fontWeight: "400" }}>
                     $818,714</Typography>
-            </Box> */}
+            </Box>
 
             <Box sx={{ display: "flex", direction: "column", verticalAlign: "center" }}>
 
