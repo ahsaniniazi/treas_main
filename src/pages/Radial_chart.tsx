@@ -37,17 +37,22 @@ const style = {
 export default function RAdial() {
     return (
         <React.Fragment>
-            {/* <Box display="flex" marginTop="120px" flexDirection="column" >
+            <Box display="flex"
+                marginTop={{xs:"150px", md:'130px'}}
+                position={'absolute'}
+                marginLeft={{ xs: '70px', md: 9, lg: 9 }}
+                flexDirection="column" >
                 <Box display="flex" flexDirection="row" >
 
                     <Box className='rotate-[-6.12deg]  bg-[#C2EED8] 
-                         h-[20px] w-[55px] '>
+                         h-[20px] w-[53px] '>
                         <Typography
                             variant='h5'
                             gutterBottom
                             component='div'
                             className='text-14px font-normal text-[#000000] 
-                        font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-6px]'
+                        font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-5px]
+                        max-xs:mt-[-6px]'
                         >
                             treas
                         </Typography>
@@ -57,9 +62,9 @@ export default function RAdial() {
                 </Box>
                 <Typography
                     variant='h3'
-                    sx={{ fontSize: "24px", fontFamily: "Libre Baskerville", fontWeight: "400" }}>
+                    sx={{ fontSize: "24px", fontFamily: "Libre Baskerville", fontWeight: "400", color:'#000000' }}>
                     $818,714</Typography>
-            </Box> */}
+            </Box>
 
             <Box sx={{ display: "flex", direction: "column", verticalAlign: "center" }}>
 
@@ -85,7 +90,6 @@ export default function RAdial() {
                         dataKey="uv"
 
                     />
-
                     <Legend
                         iconSize={8}
                         iconType="circle"
@@ -96,7 +100,6 @@ export default function RAdial() {
                         wrapperStyle={style}
 
                     >
-
                     </Legend>
 
                 </RadialBarChart>
@@ -107,6 +110,6 @@ export default function RAdial() {
                     <Typography className="text-[15px] text-[#383874] font-semibold	">8.0%</Typography>
                 </Box>
             </Box>
-        </React.Fragment>
+        </React.Fragment >
     );
 }
