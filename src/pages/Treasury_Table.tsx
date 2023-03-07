@@ -188,12 +188,16 @@ export default function DenseTable() {
                             (<Box sx={{
                                 display: "flex", justifyContent: "space-evenly",
                                 height: "116px", alignItems: "center",
-                                width: "1118px"
+                                width: "1118px",
+
+
 
                             }} className="border-b border-x 
                             border-1px border-[#D3D3D3] rounded-b-md">
                                 <Box sx={{
-                                    fontSize: "38px", display: 'flex', marginLeft: "60px"
+                                    fontSize: "38px", display: 'flex', fontWeight: "400", marginLeft: "140px",
+                                    fontFamily: "Inter"
+
                                 }} className='text-[#000000]'>
                                     Unlock your
                                     <Box display="flex" className='text-[#000000] mr-[10px]' >
@@ -250,7 +254,7 @@ export default function DenseTable() {
                             }} className="border-b border-x 
                              border-1px border-[#D3D3D3] rounded-b-md" >
 
-                                <Box sx={{ fontSize: "15PX", display: "flex" }}>
+                                <Box sx={{ fontSize: "15PX", display: "flex", marginLeft: "170px", fontFamily: "Inter" }}>
                                     Define your own KPIs and supercharge your
                                     <Box sx={{
                                         rotate: "-6.12deg",
@@ -369,10 +373,10 @@ export default function DenseTable() {
                                             className='flex border-x border-y 
                                     border-solid border-[#D1D0D6] rounded-md text-left text-[14px] text-[#000]
                                      font-semibold mt-[10px]  w-[290px] mr-[10px]   '
-                                            sx={{ background: row.background, display: "flex" }} >
+                                            sx={{ background: row.background, display: "flex", fontFamily: "Inter" }} >
 
                                             <Box sx={{ width: "22px", height: "22px", borderRadius: "5px" }} bgcolor={row.color}
-                                                marginRight="18px" >
+                                                marginRight="22px" >
                                             </Box>
                                             {row.Network}
 

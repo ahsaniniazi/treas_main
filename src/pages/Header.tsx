@@ -157,7 +157,7 @@ export default function PrimarySearchAppBar() {
                                     <Box width={600}>
                                         <Search sx={{
                                             height: "40px", display: "flex", appearance: "none",
-                                            borderRadius: "15px", backgroundColor: "#ffffff38]"
+                                            borderRadius: "15px", backgroundColor: "#ffffff38"
                                         }} className='max-xs:w-[280px]'>
                                             <SearchIconWrapper>
                                                 <Image src="image/image 118.svg" alt='' width={16} height={16} />

@@ -106,25 +106,25 @@ function Row(props: { row: ReturnType<typeof createData> }) {
         <React.Fragment>
             <TableRow>
 
-                <TableCell component="th" scope="row" >
+                <TableCell sx={{ border: 0 }} >
                     <Box display="flex" alignItems="center">
                         <Image src={row.image} alt="fund me" width={40} height={40} />
-                        <Typography marginLeft="10px" className=" text-[18px] font-medium text-[#000000] 
-                        max-xs:text-[12px]
-                        ">{row.name}</Typography>
-                        <Typography marginLeft="5px" marginTop="4px" className=" text-[#8A8A8A] text-[13px] font-thin 
-                        max-xs:text-[9px]
-                        ">
+                        <Typography marginLeft="10px" sx={{ fontSize: { xs: '12px', md: '18px', lg: "18px" }, fontFamily: "Inter", fontWeight: "500", border: 0 }}>
+                            {row.name}</Typography>
+                        <Typography marginLeft="5px" marginTop="4px"
+                            sx={{ fontSize: { xs: '9px', md: '13px', lg: "13px" }, color: "#8A8A8A", fontFamily: "Inter", fontWeight: "100", border: 0 }}
+
+                        >
                             {row.symbol}</Typography>
                     </Box>
                 </TableCell>
 
-                <TableCell sx={{ fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "400" }} align="center">{row.amount}</TableCell>
-                <TableCell align="center">{row.price}</TableCell>
-                <TableCell sx={{ color: "#FF6846", fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "500" }} align="center"> <KeyboardArrowDownIcon />
+                <TableCell sx={{ fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "400", border: 0 }} align="center">{row.amount}</TableCell>
+                <TableCell align="center" sx={{ fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "400", border: 0 }}>{row.price}</TableCell>
+                <TableCell sx={{ color: "#FF6846", fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "400", border: 0 }} align="center"> <KeyboardArrowDownIcon />
                     {row.change}</TableCell>
-                <TableCell sx={{ fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "400" }} align="center">{row.total}</TableCell>
-                <TableCell sx={{ color: "#53A57C", fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "400" }} align="center"><KeyboardArrowUpIcon />
+                <TableCell sx={{ fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "400", border: 0 }} align="center">{row.total}</TableCell>
+                <TableCell sx={{ color: "#53A57C", fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "400", border: 0 }} align="center"><KeyboardArrowUpIcon />
                     {row.holdings}</TableCell>
                 <TableCell >
                     <IconButton
@@ -279,7 +279,7 @@ function Row(props: { row: ReturnType<typeof createData> }) {
                     </Collapse>
                 </TableCell>
             </TableRow>
-        </React.Fragment>
+        </React.Fragment >
     );
 }
 
@@ -303,41 +303,41 @@ export default function CollapsibleTable() {
                                 align='left'
                                 className='border-y border-solid border-[#000000]'
                             >
-                                <Typography className="ml-[40px] max-xs:text-[12px]">   NAME </Typography>
+                                <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter", marginLeft: "40px" }}>   NAME </Typography>
                             </TableCell>
                             <TableCell
                                 align='center'
                                 className='border-y border-solid border-[#000000]'
                             >
-                                <Typography className='max-xs:text-[12px]'>   AMOUNT </Typography>
+                                <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter" }}>   AMOUNT </Typography>
 
                             </TableCell>
                             <TableCell
                                 align='center'
                                 className='border-y border-solid border-[#000000]'
                             >
-                                <Typography className='max-xs:text-[12px]'>   PRICE </Typography>
+                                <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter" }}>   PRICE </Typography>
 
                             </TableCell>
                             <TableCell
                                 align='center'
                                 className='border-y border-solid border-[#000000] '
                             >
-                                <Typography className='max-xs:text-[12px]'>   24H CHANGE </Typography>
+                                <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter" }}>   24H CHANGE </Typography>
 
                             </TableCell>
                             <TableCell
                                 align='center'
                                 className='border-y border-solid border-[#000000]'
                             >
-                                <Typography className='max-xs:text-[12px]'>  TOTAL</Typography>
+                                <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter" }}>  TOTAL</Typography>
 
                             </TableCell>
                             <TableCell
                                 align='center'
                                 className='border-y border-solid border-[#000000]'
                             >
-                                <Typography className='max-xs:text-[12px]'>  CURRENT HOLDINGS P/L</Typography>
+                                <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter" }}>  CURRENT HOLDINGS P/L</Typography>
 
 
                             </TableCell>
@@ -360,7 +360,8 @@ export default function CollapsibleTable() {
                 <Box>
                     <Typography
                         variant='h3'
-                        className='text-[56px] max-xs:text-[34px] text-black'>Empowered
+                        sx={{ fontSize: { xs: '34px', md: '56px', lg: "56px" }, fontFamily: "Inter" }}
+                    >Empowered
                     </Typography>
                 </Box>
                 <Box display="flex" marginLeft={2} >
@@ -380,11 +381,11 @@ export default function CollapsibleTable() {
                                 fontSize: "56px",
                                 fontWeight: "400",
                                 color: "#000000",
-                                fontFamily: "Libre Baskerville",
+                                fontFamily: "Inter",
                                 position: "sticky",
                                 rotate: "7.12deg",
                                 paddingTop: "2px",
-                                marginTop: "-34px"
+                                marginTop: "-32px"
 
 
                             }}
@@ -397,7 +398,7 @@ export default function CollapsibleTable() {
                             fontSize: "56px",
                             fontWeight: "400",
                             color: "#000000",
-                            fontFamily: "Libre Baskerville",
+                            fontFamily: "Inter",
                         }}>
                         ury </Typography></Box>
             </Box>
@@ -405,9 +406,9 @@ export default function CollapsibleTable() {
                 paddingBottom="30px"
                 marginBottom={{ xs: '46px', md: 0, lg: 0 }}
                 marginTop="20px" >
-                <Typography className='text-[15px] text-[#FF6846] cursor-pointer
+                <Typography className='text-[15px] text-[#FF6846] cursor-pointer Inter
                 '>Create your treas
-                    <KeyboardArrowRightIcon className="cursor-pointer" />
+
                 </Typography>
             </Box>
         </Box >

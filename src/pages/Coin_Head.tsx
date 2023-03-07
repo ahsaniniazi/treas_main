@@ -22,7 +22,7 @@ export default function Heading() {
 
 
     return (
-        <Box paddingBottom={{ xs: '0px', md: '18px', lg: "18px" }}
+        <Box paddingBottom={{ xs: '0px', md: "10px" }}
             marginTop={{ xs: '34px', md: "85px", lg: '85px' }}>
             <Stack direction='row'
 
@@ -33,7 +33,7 @@ export default function Heading() {
                 <Stack direction='row'
                     alignItems={'center'}
                     justifyContent='space-between' >
-                    <Typography className='max-xs:hidden text-[19px] font-medium text-[#212529] pr-[10px]
+                    <Typography className='max-xs:hidden text-[25px] font-medium text-[#212529] pr-[10px]
                     max-xs:text-[10px] max-xs:pr-0 
                     '>Holdings variation</Typography>
                     <Typography className='md:hidden font-medium text-[#212529]

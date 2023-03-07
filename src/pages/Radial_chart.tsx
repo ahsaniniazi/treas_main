@@ -115,11 +115,12 @@ export default function RAdial() {
                         iconType="circle"
                         width={120}
                         height={140}
-                        layout="radial"
-                        verticalAlign="middle"
+                        layout="vertical"
+                        // verticalAlign="middle"
                         wrapperStyle={style}
 
                     >
+
                     </Legend>
 
                 </RadialBarChart>
