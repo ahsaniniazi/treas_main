@@ -32,8 +32,8 @@ export default function NFT_Head() {
 
                                 backgroundColor: "#FFFFFF",
                                 rotate: "-6.12deg",
-                                height: { xs: "30px", md: "50px" },
-                                width: { xs: "85px", md: "127px" },
+                                height: { xs: "30px", md: "42px" },
+                                width: { xs: "85px", md: "115px" },
                                 marginTop: "12px",
                                 marginBottom: "3px"
 
@@ -49,14 +49,12 @@ export default function NFT_Head() {
                                         fontFamily: "Libre Baskerville",
                                         position: "sticky",
                                         rotate: "6.12deg",
-                                        marginTop: "-10px"
+                                        marginTop: "-27px"
 
                                     }}
                                     gutterBottom
                                     component='div'
-                                    className='text-[60px] font-normal text-[#000000] 
-                                font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-10px]
-                                max-xs:text-[40px]'
+
                                 >
                                     treas
                                 </Typography>

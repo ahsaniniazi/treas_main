@@ -149,25 +149,33 @@ export default function DenseTable() {
 
                         </TableCell>
 
-                        <TableCell align='center' className='border-y border-solid border-[#000000] '
-                            sx={{ marginY: 1, minWidth: 90 }}
+                        <TableCell align='center'
+                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
                         >JUL. 22</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ marginY: 1, minWidth: 90 }}>AUG. 22</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ marginY: 1, minWidth: 90 }}>SEP. 22</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ marginY: 1, minWidth: 90 }}>OCT. 22</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ marginY: 1, minWidth: 90 }}>NOV. 22</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ marginY: 1, minWidth: 90 }} >DEC. 22</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ marginY: 1, minWidth: 90 }} >JAN. 23</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ marginY: 1, minWidth: 90 }}>FEB. 23</TableCell>
-                        <TableCell align='center' className='border-y border-solid border-[#000000]'
-                            sx={{ marginY: 1, minWidth: 90 }}>MAR. 23</TableCell>
+                        <TableCell align='center'
+                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                        >AUG. 22</TableCell>
+                        <TableCell align='center'
+                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                        >SEP. 22</TableCell>
+                        <TableCell align='center'
+                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                        >OCT. 22</TableCell>
+                        <TableCell align='center'
+                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                        >NOV. 22</TableCell>
+                        <TableCell align='center'
+                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                        >DEC. 22</TableCell>
+                        <TableCell align='center'
+                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                        >JAN. 23</TableCell>
+                        <TableCell align='center'
+                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                        >FEB. 23</TableCell>
+                        <TableCell align='center'
+                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                        >MAR. 23</TableCell>
 
 
                     </TableRow>
@@ -261,7 +269,7 @@ export default function DenseTable() {
                                             color: "#000000",
                                             fontFamily: "Libre Baskerville",
                                             position: "sticky",
-                                            rotate: "10.12deg",
+                                            rotate: "7.12deg",
                                             marginTop: { xs: "-3px", md: "-7px" },
                                             // marginRight: "5px"
 

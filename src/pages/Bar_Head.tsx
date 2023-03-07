@@ -126,7 +126,7 @@ export default function NFT_Head() {
                      font-semibold text-center cursor-pointer text-black
                      max-xs:text-[7px] max-xs:pl-0 max-xs:ml-[5px] max-xs:pr-[5px]
                      '  >JUL.  2022 </Typography>
-                        <EastIcon className='cursor-pointer max-xs:w-[10px] text-black' />
+                        <EastIcon className='cursor-pointer max-xs:w-[10px] text-black pr-[5px]' />
 
                         <Typography className=' ml-[20px] pr-[10px]  text-[12px] text-center
                      font-semibold cursor-pointer
@@ -140,6 +140,7 @@ export default function NFT_Head() {
                         aria-labelledby="parent-modal-title"
                         aria-describedby="parent-modal-description"
                         className='bg-[#ffffffe6]'
+                        sx={{ border: "1", borderColor: "#979797" }}
 
                     >
                         <Box sx={{
@@ -162,10 +163,10 @@ export default function NFT_Head() {
                                     <Typography className=' ml-[20px] p-[10px]  text-[12px]
                      font-semibold text-center text-black
                      
-                     '  >JUL. <br /> 2022 </Typography> <EastIcon className='text-black' />
+                     '  >JUL.  2022 </Typography> <EastIcon className='text-black' />
 
                                     <Typography className=' ml-[20px] p-[10px] text-[12px] text-center text-black
-                     font-semibold'  >MAR.<br /> 2023   </Typography> <KeyboardArrowDownIcon className='pr-[5px]' />
+                     font-semibold'  >MAR. 2023   </Typography> <KeyboardArrowDownIcon className='pr-[5px]' />
                                 </Box>
                             </Box>
                             <Typography className='text-[30px] pt-[45px] pl-[45px] font-[Libre Baskerville] 

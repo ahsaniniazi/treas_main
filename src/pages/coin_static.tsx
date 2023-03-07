@@ -367,7 +367,7 @@ export default function CollapsibleTable() {
                     <Box sx={{
                         height: { xs: "23px", md: "38px" },
                         width: { xs: "76px", md: "107px" },
-                        marginTop: "12px",
+                        marginTop: "31px",
                         backgroundColor: "#FF9781",
                         rotate: "-6.12deg",
                     }}
@@ -384,7 +384,7 @@ export default function CollapsibleTable() {
                                 position: "sticky",
                                 rotate: "7.12deg",
                                 paddingTop: "2px",
-                                marginTop: "-12px"
+                                marginTop: "-34px"
 
 
                             }}

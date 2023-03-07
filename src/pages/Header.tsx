@@ -329,7 +329,7 @@ export default function PrimarySearchAppBar() {
 
                                 <Box display={{ xs: 'none', md: "flex", lg: 'flex' }}
                                     flexDirection={{ xs: 'column', md: 'row', lg: 'row' }}
-                                    marginLeft={10}
+                                    marginLeft="70px"
                                 >
 
 
