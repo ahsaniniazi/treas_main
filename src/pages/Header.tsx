@@ -101,14 +101,14 @@ export default function PrimarySearchAppBar() {
                                         marginTop: "50px",
                                         backgroundColor: "#FFDEA7",
                                         marginBottom: "50px",
-                                        width: "105px",
+                                        width: "107px",
                                         height: "38px"
                                     }}
                                         alignSelf={{ xs: 'start' }}
                                     >
                                         <Typography sx={{
                                             fontSize: { xs: "40px", md: "60px" }, fontWeight: "400", color: "#000000",
-                                            fontFamily: "Libre Baskerville", marginTop: "-12px", rotate: "7.12deg"
+                                            fontFamily: "Libre Baskerville", marginTop: "-22px", rotate: "7.12deg"
                                         }}
                                             variant='h3'
                                             gutterBottom
@@ -292,7 +292,7 @@ export default function PrimarySearchAppBar() {
                                         <Button sx={{
                                             color: "#000000",
                                             fontSize: "14px",
-                                            fontStyle: "bold",
+                                            fontWeight: "700",
                                             borderColor: "#8E8C95"
                                         }}
 
@@ -304,6 +304,7 @@ export default function PrimarySearchAppBar() {
                                             color: "#000000",
                                             fontSize: "14px",
                                             fontStyle: "bold",
+                                            fontWeight: "700",
                                             borderColor: "#8E8C95"
                                         }}
                                         >Solutions</Button>
@@ -313,7 +314,7 @@ export default function PrimarySearchAppBar() {
                                         <Button sx={{
                                             color: "#000000",
                                             fontSize: "14px",
-                                            fontStyle: "bold",
+                                            fontWeight: "700",
                                             background: "transparent",
                                             borderWidth: "2px",
                                             borderStyle: "solid",
@@ -335,7 +336,7 @@ export default function PrimarySearchAppBar() {
                                     <Button sx={{
                                         color: "#000000",
                                         fontSize: "14px",
-                                        fontStyle: "bold",
+                                        fontWeight: "700",
                                         borderColor: "#8E8C95",
                                         marginRight: "10px"
                                     }}
@@ -346,7 +347,7 @@ export default function PrimarySearchAppBar() {
                                     <Button sx={{
                                         color: "#000000",
                                         fontSize: "14px",
-                                        fontStyle: "bold",
+                                        fontWeight: "700",
                                         borderColor: "#8E8C95",
                                         marginRight: "10px"
                                     }}
@@ -357,7 +358,7 @@ export default function PrimarySearchAppBar() {
                                     <Button sx={{
                                         color: "#000000",
                                         fontSize: "14px",
-                                        fontStyle: "bold",
+                                        fontWeight: "700",
                                         background: "transparent",
                                         borderWidth: "2px",
                                         borderStyle: "solid",
