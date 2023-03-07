@@ -101,12 +101,14 @@ export default function PrimarySearchAppBar() {
                                         h-[38px] w-[105px] '
                                         alignSelf={{ xs: 'start' }}
                                     >
-                                        <Typography
+                                        <Typography sx={{
+                                            fontSize: "60px", fontWeight: "400", color: "#000000",
+                                            fontFamily: "Libre Baskerville", marginTop: "-12px", rotate: "7.12deg"
+                                        }}
                                             variant='h3'
                                             gutterBottom
                                             component='div'
-                                            className='text-60px font-normal text-[#000000] font-[Libre Baskerville] mt-[-12px] rotate-[7.12deg]
-                                            '
+
                                         >
                                             treas
                                         </Typography>
