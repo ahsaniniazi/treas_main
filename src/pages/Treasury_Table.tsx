@@ -88,56 +88,56 @@ export default function DenseTable() {
                                             <Typography marginLeft="10px"> All Networks </Typography>
                                         </Box>
                                     </MenuItem>
-                                    <MenuItem value={10} className="text-[12px] text- flex justify-between ">
+                                    <MenuItem value={10} sx={{ fontSize: "12px", display: "flex", justifyContent: "space-between", fontWeight: "700" }} >
 
-                                        <Typography className='text-[14px] font-bold'> All Networks </Typography>
-                                        <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }} > All Networks </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> 1223,3 $US </Typography>
                                     </MenuItem>
-                                    <MenuItem value={20} className="text-[12px] flex justify-between font-bold">
+                                    <MenuItem value={20} sx={{ fontSize: "12px", display: "flex", justifyContent: "space-between", fontWeight: "700" }}>
                                         <Image src="image/currency_icon/Ethereum.svg" alt="fun me" width={30} height={30} />
-                                        <Typography className='text-[14px] font-bold'> Etehreum </Typography>
-                                        <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> Etehreum </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> 1223,3 $US </Typography>
                                     </MenuItem>
-                                    <MenuItem value={20} className="text-[12px] flex justify-between font-bold">
+                                    <MenuItem value={20} sx={{ fontSize: "12px", display: "flex", justifyContent: "space-between", fontWeight: "700" }}>
                                         <Image src="image/currency_icon/BSC.svg" alt="fun me" width={30} height={30} />
-                                        <Typography className='text-[14px] font-bold'> BSC </Typography>
-                                        <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> BSC </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> 1223,3 $US </Typography>
                                     </MenuItem>
-                                    <MenuItem value={40} className="text-[12px] flex justify-between ">
+                                    <MenuItem value={40} sx={{ fontSize: "12px", display: "flex", justifyContent: "space-between", fontWeight: "700" }}>
                                         <Image src="image/currency_icon/Moonriver.svg" alt="fun me" width={30} height={30} />
-                                        <Typography className='text-[14px] font-bold'> Moonriver </Typography>
-                                        <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> Moonriver </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> 1223,3 $US </Typography>
                                     </MenuItem>
 
-                                    <MenuItem value={50} className="text-[12px] flex justify-between ">
+                                    <MenuItem value={50} sx={{ fontSize: "12px", display: "flex", justifyContent: "space-between", fontWeight: "700" }}>
                                         <Image src="image/currency_icon/Polygon.svg" alt="fun me" width={30} height={30} />
-                                        <Typography className='text-[14px] font-bold'> Polygon </Typography>
-                                        <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> Polygon </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> 1223,3 $US </Typography>
                                     </MenuItem>
-                                    <MenuItem value={60} className="text-[12px] flex justify-between ">
+                                    <MenuItem value={60} sx={{ fontSize: "12px", display: "flex", justifyContent: "space-between", fontWeight: "700" }}>
                                         <Image src="image/currency_icon/Avalanche.svg" alt="fun me" width={30} height={30} />
-                                        <Typography className='text-[14px] font-bold'> Avalanche </Typography>
-                                        <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> Avalanche </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> 1223,3 $US </Typography>
                                     </MenuItem>
-                                    <MenuItem value={70} className="text-[12px] flex justify-between ">
+                                    <MenuItem value={70} sx={{ fontSize: "12px", display: "flex", justifyContent: "space-between", fontWeight: "700" }}>
                                         <Image src="image/currency_icon/Fantom.svg" alt="fun me" width={30} height={30} />
-                                        <Typography className='text-[14px] font-bold'> Fantom </Typography>
-                                        <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> Fantom </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> 1223,3 $US </Typography>
                                     </MenuItem>
-                                    <MenuItem value={80} className="text-[12px] flex justify-between ">
+                                    <MenuItem value={80} sx={{ fontSize: "12px", display: "flex", justifyContent: "space-between", fontWeight: "700" }}>
                                         <Image src="image/currency_icon/Arbitrum.svg" alt="fun me" width={30} height={30} />
-                                        <Typography className='text-[14px] font-bold'> Arbitrum </Typography>
-                                        <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> Arbitrum </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> 1223,3 $US </Typography>
                                     </MenuItem>
-                                    <MenuItem value={90} className="text-[12px] flex justify-between ">
+                                    <MenuItem value={90} sx={{ fontSize: "12px", display: "flex", justifyContent: "space-between", fontWeight: "700" }}>
                                         <Image src="image/currency_icon/Gnosis Chain.svg" alt="fun me" width={30} height={30} />
-                                        <Typography className='text-[14px] font-bold'> Gnosis Chain </Typography>
-                                        <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> Gnosis Chain </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> 1223,3 $US </Typography>
                                     </MenuItem>
-                                    <MenuItem value={99} className="text-[12px] flex justify-between ">
+                                    <MenuItem value={99} sx={{ fontSize: "12px", display: "flex", justifyContent: "space-between", fontWeight: "700" }}>
                                         <Image src="image/currency_icon/Aurora.svg" alt="fun me" width={30} height={30} />
-                                        <Typography className='text-[14px] font-bold'>Aurora</Typography>
-                                        <Typography className='text-[14px] font-bold'> 1223,3 $US </Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}>Aurora</Typography>
+                                        <Typography sx={{ fontSize: "14px", fontWeight: "700" }}> 1223,3 $US </Typography>
                                     </MenuItem>
                                 </Select>
                             </FormControl>
@@ -313,10 +313,12 @@ export default function DenseTable() {
                                     >
 
 
-                                        <TableCell align='center' className='flex border-x border-y 
+                                        <TableCell align='center'
+
+                                            className='flex border-x border-y 
                                     border-solid border-[#D1D0D6] rounded-md text-left text-[14px] text-[#000]
                                      font-semibold mt-[10px]  w-[290px] mr-[10px]   '
-                                            sx={{ background: row.background }} >
+                                            sx={{ background: row.background, display: "flex" }} >
 
                                             <Box sx={{ width: "22px", height: "22px", borderRadius: "5px" }} bgcolor={row.color}
                                                 marginRight="18px" >
@@ -329,7 +331,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-l border-y 
                                     border-solid border-[#D3D3D3] rounded-l-md text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
-                                            sx={{ background: row.background, minWidth: 90 }}>
+                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
 
 
                                             {row.JUL}
@@ -339,7 +341,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-y 
                                     border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
-                                            sx={{ background: row.background, minWidth: 90 }}>
+                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
 
 
                                             {row.AUG}
@@ -348,7 +350,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-y 
                                     border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
-                                            sx={{ background: row.background, minWidth: 90 }}>
+                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
 
 
                                             {row.SEPT}
@@ -358,7 +360,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-y 
                                     border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
                                      font-light mt-[10px] '
-                                            sx={{ background: row.background, minWidth: 90 }}>
+                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
 
                                             {row.OCT}
 
@@ -366,7 +368,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-y 
                                     border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
-                                            sx={{ background: row.background, minWidth: 90 }}>
+                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
 
 
                                             {row.NOV}
@@ -379,7 +381,7 @@ export default function DenseTable() {
                                      
                                      '
                                             sx={{
-                                                background: row.background, minWidth: 90
+                                                background: row.background, minWidth: 90, display: "flex"
 
                                             }}>
 
@@ -394,7 +396,7 @@ export default function DenseTable() {
                                     border-solid border-[#D3D3D3] rounded-l-md text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
                                             sx={{
-                                                background: row.background, minWidth: 90
+                                                background: row.background, minWidth: 90, display: "flex"
 
                                             }}>
 
@@ -405,7 +407,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-y 
                                     border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
-                                            sx={{ background: row.background, minWidth: 90 }}>
+                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
 
 
                                             {row.FEB}
@@ -415,7 +417,7 @@ export default function DenseTable() {
                                     border-solid border-[#D3D3D3] rounded-r-md text-center text-[12px] text-[#000]
                                      font-light mt-[10px] '
                                             sx={{
-                                                background: row.background, minWidth: 90
+                                                background: row.background, minWidth: 90, display: "flex"
 
                                             }}>
 
