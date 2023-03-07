@@ -87,8 +87,7 @@ export default function PrimarySearchAppBar() {
     return (
         <>
             <Box display="flex" justifyContent="space-between" borderBottom="none">
-                {/* [#ace0e6] [#d8e4e6]*/}
-                {/* className='h-60 bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#A4D8DD] */}
+
                 <AppBar position="static" className=' bg-gradient-to-r from-[#BDD9DD] via-[#e2dff5] to-[#b2e4e9]
             shadow-2xl shadow-[#499EB6] md:shadow-2xl md:shadow-[#A4D8DD] appearance-none  ' >
                     <Container className="pl-[0px] pr-[0px] max-xs:pl-[12px]">
@@ -97,12 +96,18 @@ export default function PrimarySearchAppBar() {
                                 <Box display={'flex'} alignItems={'center'}
                                     flexDirection={{ xs: 'column', md: 'row', lg: 'row' }}
                                 >
-                                    <Box className='flex rotate-[-6.12deg] mt-[50px] bg-[#FFDEA7] mb-[50px]
-                                        h-[38px] w-[105px] '
+                                    <Box sx={{
+                                        display: "flex", rotate: "-6.12deg",
+                                        marginTop: "50px",
+                                        backgroundColor: "#FFDEA7",
+                                        marginBottom: "50px",
+                                        width: "105px",
+                                        height: "38px"
+                                    }}
                                         alignSelf={{ xs: 'start' }}
                                     >
                                         <Typography sx={{
-                                            fontSize: "60px", fontWeight: "400", color: "#000000",
+                                            fontSize: { xs: "40px", md: "60px" }, fontWeight: "400", color: "#000000",
                                             fontFamily: "Libre Baskerville", marginTop: "-12px", rotate: "7.12deg"
                                         }}
                                             variant='h3'
@@ -150,15 +155,17 @@ export default function PrimarySearchAppBar() {
                                         </button>
                                     </div>
                                     <Box width={600}>
-                                        <Search sx={{ height: "40px" }} className='flex
-                                            appearance-none rounded-[15px] bg-[#ffffff38]  max-xs:w-[280px]'>
+                                        <Search sx={{
+                                            height: "40px", display: "flex", appearance: "none",
+                                            borderRadius: "15px", backgroundColor: "#ffffff38]"
+                                        }} className='max-xs:w-[280px]'>
                                             <SearchIconWrapper>
                                                 <Image src="image/image 118.svg" alt='' width={16} height={16} />
                                             </SearchIconWrapper>
                                             <StyledInputBase
+                                                sx={{ color: "#3B3A40", fontStyle: "bold" }}
                                                 placeholder="Scan any treas ETH wallet address or ENS name"
                                                 inputProps={{ 'aria-label': 'search' }}
-                                                className='text-[#3B3A40] font-bold '
                                                 fullWidth
 
                                             />
@@ -182,7 +189,8 @@ export default function PrimarySearchAppBar() {
                                                     position="absolute" top="-22px" right="-20px" >
                                                     <Image src="image/back icon.svg" alt="Fund me" width={40}
                                                         height={40} onClick={handleClose}
-                                                        className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
+                                                        className="bg-[#fff] border rounded-full
+                                                         relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
                                                 </Box>
                                                 <Box marginLeft={{ xs: 0, md: 20 }}
                                                     marginBottom={{ xs: 0, md: 5 }}
@@ -206,24 +214,57 @@ export default function PrimarySearchAppBar() {
                                                         />
                                                     </Box>
                                                 </Box>
-                                                <Typography className='text-[30px] pt-[45px] pl-[45px] font-[Libre Baskerville] 
-                            max-xs:pl-0 max-xs:text-[16px] text-black'>
+                                                <Typography sx={{
+                                                    fontSize: { xs: "16px", md: "30px" },
+                                                    paddingTop: { xs: "45px", md: "45px" },
+                                                    paddingLeft: { xs: "0px", md: "45px" },
+                                                    fontFamily: "Libre Baskerville",
+                                                    color: "#000000"
+
+                                                }}
+
+                                                >
                                                     Search your treas
                                                 </Typography>
-                                                <Typography className='text-[20px] pt-[12px] pl-[45px] text-[#64626A]
-                            max-xs:pl-0 max-xs:text-[12px]'>
+                                                <Typography sx={{
+                                                    fontSize: { xs: "12px", md: "20px" },
+                                                    paddingTop: { xs: "45px", md: "45px" },
+                                                    paddingLeft: { xs: "0px", md: "45px" },
+                                                    fontFamily: "Libre Baskerville",
+                                                    color: "#64626A"
+                                                }}
+                                                >
                                                     Scan any ETH treas
                                                 </Typography>
 
-                                                <Typography className='text-[20px] pl-[45px] text-[#64626A]
-                            max-xs:pl-0 max-xs:text-[12px]'>
+                                                <Typography
+                                                    sx={{
+                                                        fontSize: { xs: "12px", md: "20px" },
+                                                        paddingTop: { xs: "45px", md: "45px" },
+                                                        paddingLeft: { xs: "0px", md: "45px" },
+                                                        fontFamily: "Libre Baskerville",
+                                                        color: "#64626A"
+                                                    }}
+                                                >
                                                     If you want to scan other blockchains, add and manage multiple wallets create your account for free.
                                                 </Typography>
 
-                                                <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846] cursor-pointer
-                            max-xs:pl-0 max-xs:text-[12px]'>
+                                                <Typography sx={{
+                                                    fontSize: { xs: "12px", md: "18px" },
+                                                    paddingTop: { xs: "20px", md: "20px" },
+                                                    paddingLeft: { xs: "0px", md: "45px" },
+                                                    fontFamily: "Libre Baskerville",
+                                                    color: "#FF6846",
+                                                    cursor: "pointer"
+
+                                                }}
+                                                >
                                                     Create your treas
-                                                    <KeyboardArrowRightIcon className='text-[#FF6846] cursor-pointer' onClick={handleClose} />
+                                                    <KeyboardArrowRightIcon sx={{
+                                                        color: "#FF6846",
+                                                        cursor: "pointer"
+                                                    }}
+                                                        onClick={handleClose} />
                                                 </Typography>
 
 
@@ -248,21 +289,38 @@ export default function PrimarySearchAppBar() {
                                         }}
                                         tabIndex={-1}
                                     >
-                                        <Button className='text-[#000000] 
-                                text-[14px] font-bold  border-[#8E8C95]'
+                                        <Button sx={{
+                                            color: "#000000",
+                                            fontSize: "14px",
+                                            fontStyle: "bold",
+                                            borderColor: "#8E8C95"
+                                        }}
+
                                         >Learn</Button>
 
 
 
-                                        <Button className='text-[#000000] 
-                                text-[14px] font-bold  border-[#8E8C95]'
+                                        <Button sx={{
+                                            color: "#000000",
+                                            fontSize: "14px",
+                                            fontStyle: "bold",
+                                            borderColor: "#8E8C95"
+                                        }}
                                         >Solutions</Button>
 
 
 
-                                        <Button className='text-[#000000] 
-                                text-[14px] font-bold bg-transparent border-[#8E8C95] border-2 border-solid
-                                rounded  opacity-[0.48]'
+                                        <Button sx={{
+                                            color: "#000000",
+                                            fontSize: "14px",
+                                            fontStyle: "bold",
+                                            background: "transparent",
+                                            borderWidth: "2px",
+                                            borderStyle: "solid",
+                                            borderRadius: "5px",
+                                            borderColor: "#8E8C95",
+                                            opacity: "0.48"
+                                        }}
                                         >Access Treas</Button>
                                     </div>
                                 </div>
@@ -274,21 +332,39 @@ export default function PrimarySearchAppBar() {
                                 >
 
 
-                                    <Button className='text-[#000000] 
-                                text-[14px] font-bold  border-[#8E8C95] mr-[10px] '
+                                    <Button sx={{
+                                        color: "#000000",
+                                        fontSize: "14px",
+                                        fontStyle: "bold",
+                                        borderColor: "#8E8C95",
+                                        marginRight: "10px"
+                                    }}
                                     >Learn</Button>
 
 
 
-                                    <Button className='text-[#000000] 
-                                text-[14px] font-bold  border-[#8E8C95] mr-[10px] '
+                                    <Button sx={{
+                                        color: "#000000",
+                                        fontSize: "14px",
+                                        fontStyle: "bold",
+                                        borderColor: "#8E8C95",
+                                        marginRight: "10px"
+                                    }}
                                     >Solutions</Button>
 
 
 
-                                    <Button className='text-[#000000] 
-                                text-[14px] font-bold bg-[#FFFFFF] border-[#8E8C95] border-2 border-solid
-                                rounded  opacity-[0.48]'
+                                    <Button sx={{
+                                        color: "#000000",
+                                        fontSize: "14px",
+                                        fontStyle: "bold",
+                                        background: "transparent",
+                                        borderWidth: "2px",
+                                        borderStyle: "solid",
+                                        borderRadius: "5px",
+                                        borderColor: "#8E8C95",
+                                        opacity: "0.48"
+                                    }}
                                     >Access Treas</Button>
 
 
