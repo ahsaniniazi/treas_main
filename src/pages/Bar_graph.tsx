@@ -116,8 +116,8 @@ export default function Chart() {
         <React.Fragment>
 
             <Box display="flex" flexDirection={{ xs: 'column', md: 'row', lg: 'row' }}>
-                <Box display="flex" flexDirection="row" alignSelf={'end'} alignItems={'center'}
-                    className='md:hidden'>
+                <Box display={{ xs: 'flex', md: "none", lg: "none" }} flexDirection="row" alignSelf={'end'} alignItems={'center'}
+                >
 
                     <Box className='rotate-[-6.12deg]  bg-[#C2EED8] 
                     h-[20px] w-[55px] max-xs:h-[10px] max-xs:w-[26px]'>

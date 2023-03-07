@@ -184,19 +184,40 @@ export default function DenseTable() {
                                 }} className='text-[#000000]'>
                                     Unlock your
                                     <Box display="flex" className='text-[#000000] mr-[10px]' >
-                                        <Box className='rotate-[-6.12deg]  bg-[#C2EED8] 
-                         h-[38px] w-[107px]  ml-[10px] '>
-                                            <Typography
+                                        <Box sx={{
+                                            rotate: "-6.12deg",
+                                            marginLeft: "10px",
+                                            backgroundColor: "#C2EED8",
+                                            height: "38px",
+                                            width: "107px",
+                                        }}
+                                        >
+                                            <Typography sx={{
+                                                fontWeight: "400",
+                                                color: "#000000",
+                                                fontFamily: "Libre Baskerville",
+                                                position: "sticky",
+                                                rotate: "6.12deg",
+                                                marginTop: "-12px"
+                                            }}
                                                 variant='h3'
                                                 gutterBottom
                                                 component='div'
-                                                className=' font-normal text-[#000000] 
-                                font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-12px] '
+
                                             >
                                                 treas
                                             </Typography>
                                         </Box>
-                                        <Typography variant='h3' className='pl-[2px] mt-[-5px] font-[Libre Baskerville] font-normal text-[#000000] text-[40px]'>
+                                        <Typography variant='h3'
+                                            sx={{
+                                                paddingLeft: "2px",
+                                                marginTop: "-5px",
+                                                fontFamily: "Libre Baskerville",
+                                                fontWeight: "400",
+                                                color: "#000000",
+                                                fontSize: "40px"
+                                            }}
+                                        >
                                             ury </Typography>
                                     </Box> with labels
                                 </Box>
@@ -218,15 +239,32 @@ export default function DenseTable() {
 
                                 <Box sx={{ fontSize: "15PX", display: "flex" }}>
                                     Define your own KPIs and supercharge your
-                                    <Box className='rotate-[-6.12deg]  bg-[#C2EED8] 
+                                    <Box sx={{
+                                        rotate: "-6.12deg",
+                                        marginTop: { xs: "-3px", md: "10px" },
+                                        marginLeft: "5px",
+                                        backgroundColor: "#C2EED8",
+                                        height: { xs: "10px", md: "18px" },
+                                        width: { xs: "26px", md: "35px" },
+
+                                    }}
+
+                                        className='rotate-[-6.12deg]  bg-[#C2EED8] 
                     h-[18px] w-[35px] mt-[10px] ml-[5px] max-xs:h-[10px] max-xs:w-[26px]'>
-                                        <Typography
+                                        <Typography sx={{
+                                            fontSize: { xs: "12px", md: "15px" },
+                                            fontWeight: "400",
+                                            color: "#000000",
+                                            fontFamily: "Libre Baskerville",
+                                            position: "sticky",
+                                            rotate: "6.12deg",
+                                            marginTop: { xs: "-3px", md: "-2px" },
+
+                                        }}
                                             variant='h3'
                                             gutterBottom
                                             component='div'
-                                            className='text-[15px] font-normal text-[#000000] 
-                            font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-2px] 
-                            max-xs:text-[12px] max-xs:mt-[-3px]'
+
                                         >
                                             treas
                                         </Typography>
