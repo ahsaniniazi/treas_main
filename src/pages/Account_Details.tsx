@@ -47,7 +47,7 @@ export default function NFT_Head() {
                         <Box>
                             <Image src="image/image 129.svg" alt="fund me" width={56} height={56} />
                         </Box>
-                        <Box display="flex" className='md:hidden'>
+                        <Box display={{ xs: 'flex', md: "none", lg: "none" }} >
 
                             <Image src="image/image 132.svg" alt='Fund Me' width={25} height={25}
                                 onClick={handleOpen} />
@@ -86,7 +86,7 @@ export default function NFT_Head() {
 
                 </Box>
 
-                <Box display={{ xs: 'none', md: "flex" }} justifyContent="space-around" alignItems="center" sx={{
+                <Box display={{ xs: 'none', md: "flex", lg: "flex" }} justifyContent="space-around" alignItems="center" sx={{
                 }} >
 
                     <Image src="image/image 132.svg" alt='Fund Me' width={25} height={25}

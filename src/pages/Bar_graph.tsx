@@ -119,21 +119,45 @@ export default function Chart() {
                 <Box display={{ xs: 'flex', md: "none", lg: "none" }} flexDirection="row" alignSelf={'end'} alignItems={'center'}
                 >
 
-                    <Box className='rotate-[-6.12deg]  bg-[#C2EED8] 
-                    h-[20px] w-[55px] max-xs:h-[10px] max-xs:w-[26px]'>
-                        <Typography
+                    <Box sx={{
+                        rotate: "-6.12deg",
+                        backgroundColor: "#C2EED8",
+                        height: { xs: "10px", md: "20px" },
+                        width: { xs: "26px", md: "55px" },
+
+                    }}
+
+                    >
+                        <Typography sx={{
+                            fontSize: { xs: "12px", md: "24px" },
+                            fontWeight: "400",
+                            color: "#000000",
+                            fontFamily: "Libre Baskerville",
+                            position: "sticky",
+                            rotate: "6.12deg",
+                            marginTop: { xs: "-3px", md: "-6px" },
+
+                        }}
                             variant='h5'
                             gutterBottom
                             component='div'
-                            className='text-[24px] font-normal text-[#000000] 
-                            font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-6px]
-                            max-xs:text-[12px] max-xs:mt-[-3px]'
+
                         >
                             treas
                         </Typography>
                     </Box>
-                    <Typography variant='h3' className='pl-[2px] mt-[-4px] mr-[10px] font-[Libre Baskerville] font-normal text-[#000000] text-[24px]
-                        max-xs:text-[12px] max-xs:mr-[5px] max-xs:mt-0'>
+                    <Typography variant='h3'
+                        sx={{
+                            paddingLeft: "2px",
+                            marginTop: { xs: "0px", md: "-4px" },
+                            marginRight: { xs: "5px", md: "10px" },
+                            fontFamily: "Libre Baskerville",
+                            fontWeight: "400",
+                            color: "#000000",
+                            fontSize: { xs: "12px", md: "24px" },
+
+                        }}
+                    >
                         export </Typography>
                     <UploadFile className="text-black" onClick={handleHistory} ></UploadFile>
                 </Box>
@@ -153,15 +177,32 @@ export default function Chart() {
                                     variant='h5'
                                     gutterBottom
                                     component='div'
-                                    className='text-[24px] font-normal text-[#000000] 
-                                    font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-6px]
-                                    max-xs:text-[12px] max-xs:mt-[-3px]'
+                                    sx={{
+                                        fontSize: { xs: "12px", md: "24px" },
+                                        fontWeight: "400",
+                                        color: "#000000",
+                                        fontFamily: "Libre Baskerville",
+                                        position: "sticky",
+                                        rotate: "6.12deg",
+                                        marginTop: { xs: "-3px", md: "-6px" },
+
+                                    }}
                                 >
                                     treas
                                 </Typography>
                             </Box>
-                            <Typography variant='h3' className='pl-[2px] mt-[-4px] mr-[10px] font-[Libre Baskerville] font-normal text-[#000000] text-[24px]
-                            max-xs:text-[12px] max-xs:mr-[5px] max-xs:mt-0'>
+                            <Typography variant='h3'
+
+                                sx={{
+                                    paddingLeft: "2px",
+                                    marginTop: { xs: "0px", md: "-4px" },
+                                    marginRight: { xs: "5px", md: "10px" },
+                                    fontFamily: "Libre Baskerville",
+                                    fontWeight: "400",
+                                    color: "#000000",
+                                    fontSize: { xs: "12px", md: "24px" },
+
+                                }}>
                                 export </Typography>
                             <UploadFile className="text-black" onClick={handleHistory} ></UploadFile>
                         </Box>
