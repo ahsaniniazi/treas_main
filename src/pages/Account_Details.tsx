@@ -86,7 +86,8 @@ export default function NFT_Head() {
 
                 </Box>
 
-                <Box display="flex" justifyContent="space-around" alignItems="center" className='max-xs:hidden'>
+                <Box display={{ xs: 'none', md: "flex" }} justifyContent="space-around" alignItems="center" sx={{
+                }} >
 
                     <Image src="image/image 132.svg" alt='Fund Me' width={25} height={25}
                         onClick={handleOpen} />

@@ -44,20 +44,40 @@ export default function RAdial() {
                 flexDirection="column" >
                 <Box display="flex" flexDirection="row" >
 
-                    <Box className='rotate-[-6.12deg]  bg-[#C2EED8] 
-                         h-[20px] w-[53px] '>
-                        <Typography
+                    <Box sx={{
+                        rotate: "-6.12deg",
+                        backgroundColor: "#C2EED8",
+                        height: "20px",
+                        width: "53px",
+                    }}
+                    >
+                        <Typography sx={{
+                            fontSize: "14px",
+                            fontWeight: "400",
+                            color: "#000000",
+                            fontFamily: "Libre Baskerville",
+                            position: "sticky",
+                            rotate: "6.12deg",
+                            marginTop: { xs: "-6px", md: "-5px" }
+
+                        }}
                             variant='h5'
                             gutterBottom
                             component='div'
-                            className='text-14px font-normal text-[#000000] 
-                        font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-5px]
-                        max-xs:mt-[-6px]'
                         >
                             treas
                         </Typography>
                     </Box>
-                    <Typography variant='h3' className='pl-[2px] mt-[-4px] font-[Libre Baskerville] font-normal text-[#000000] text-[24px]'>
+                    <Typography sx={{
+                        paddingLeft: "2px",
+                        marginTop: "-4px",
+                        fontFamily: "Libre Baskerville",
+                        fontWeight: "400",
+                        color: "#000000",
+                        fontSize: "24px",
+                    }}
+                        variant='h3'
+                    >
                         ury </Typography>
                 </Box>
                 <Typography

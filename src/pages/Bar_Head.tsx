@@ -75,22 +75,43 @@ export default function NFT_Head() {
                 <Box display="flex" justifyContent="space-evenly" alignItems={'center'}>
 
                     <Box display="flex" alignItems={'center'}>
-                        <Box className='rotate-[-6.12deg]  bg-[#FFDEA7] 
-                         h-[20px] w-[55px] mt-[12px] 
-                         max-xs:w-[27px] max-xs:mt-0'>
-                            <Typography
+                        <Box sx={{
+                            rotate: "-6.12deg",
+                            backgroundColor: "#FFDEA7",
+                            height: "20px",
+                            width: { xs: "27px", md: "55px" },
+                            marginTop: { xs: "0px", md: "12px" },
+
+
+
+                        }}>
+                            <Typography sx={{
+                                rotate: "6.12deg",
+                                fontSize: { xs: "12px", md: "25px" },
+                                fontWeight: "400",
+                                color: "#000000",
+                                fontFamily: "Libre Baskerville",
+                                position: "sticky",
+                                height: "20px",
+                                width: "55px",
+                                marginTop: { xs: "0px", md: "-10px" },
+                            }}
                                 variant='h3'
                                 gutterBottom
                                 component='div'
-                                className='text-[25px] font-normal text-[#000000] 
-                                font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-10px]
-                                max-xs:text-[12px] max-xs:mt-0 '
                             >
                                 treas
                             </Typography>
                         </Box>
-                        <Typography variant='h3' className='pl-[0px] font-[Libre Baskerville] font-normal text-[#000000] text-[25px]
-                         max-xs:text-[12px]'>
+                        <Typography variant='h3' sx={{
+                            paddingLeft: "0px",
+                            fontFamily: "Libre Baskerville",
+                            fontWeight: "400",
+                            color: "#000000",
+                            fontsize: { xs: "12px", md: "25px" },
+
+                        }}
+                        >
                             ury </Typography></Box>
                     <Box sx={{
                         ...commonStyles, borderColor: '#D1D0D6', borderStyle: "solid", borderWidth: "2px", borderRadius: "5px",
