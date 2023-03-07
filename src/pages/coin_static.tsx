@@ -119,12 +119,12 @@ function Row(props: { row: ReturnType<typeof createData> }) {
                     </Box>
                 </TableCell>
 
-                <TableCell sx={{ fontSize: {xs:'12px', md:'16px' , lg:"16px"}, fontWeight: "400" }} align="center">{row.amount}</TableCell>
+                <TableCell sx={{ fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "400" }} align="center">{row.amount}</TableCell>
                 <TableCell align="center">{row.price}</TableCell>
-                <TableCell sx={{ color: "#FF6846", fontSize: {xs:'12px', md:'16px' , lg:"16px"}, fontWeight: "500" }} align="center"> <KeyboardArrowDownIcon />
+                <TableCell sx={{ color: "#FF6846", fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "500" }} align="center"> <KeyboardArrowDownIcon />
                     {row.change}</TableCell>
-                <TableCell sx={{ fontSize: {xs:'12px', md:'16px' , lg:"16px"}, fontWeight: "400" }} align="center">{row.total}</TableCell>
-                <TableCell sx={{ color: "#53A57C", fontSize: {xs:'12px', md:'16px' , lg:"16px"}, fontWeight: "400" }} align="center"><KeyboardArrowUpIcon />
+                <TableCell sx={{ fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "400" }} align="center">{row.total}</TableCell>
+                <TableCell sx={{ color: "#53A57C", fontSize: { xs: '12px', md: '16px', lg: "16px" }, fontWeight: "400" }} align="center"><KeyboardArrowUpIcon />
                     {row.holdings}</TableCell>
                 <TableCell >
                     <IconButton
@@ -293,8 +293,8 @@ const rows = [
 export default function CollapsibleTable() {
     return (
         <Box>
-            <Box 
-            overflow={{xs:'scroll'}} className='scrollStyle'
+            <Box
+                overflow={{ xs: 'scroll' }} className='scrollStyle'
             >
                 <Table aria-label="collapsible table" >
                     <TableHead>
@@ -364,28 +364,47 @@ export default function CollapsibleTable() {
                     </Typography>
                 </Box>
                 <Box display="flex" marginLeft={2} >
-                    <Box className='rotate-[-6.12deg]  bg-[#FF9781] 
-                         h-[38px] w-[107px] mt-[12px] 
-                         max-xs:h-[23px] max-xs:w-[76px]'>
+                    <Box sx={{
+                        height: { xs: "23px", md: "38px" },
+                        width: { xs: "76px", md: "107px" },
+                        marginTop: "12px",
+                        backgroundColor: "#FF9781",
+                        rotate: "-6.12deg",
+                    }}
+                    >
                         <Typography
-                            variant='h3'
+
                             gutterBottom
                             component='div'
-                            className='text-[48px] font-normal text-[#000000] 
-                                font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-12px]
-                                max-xs:text-[34px]'
+                            sx={{
+                                fontSize: "56px",
+                                fontWeight: "400",
+                                color: "#000000",
+                                fontFamily: "Libre Baskerville",
+                                position: "sticky",
+                                rotate: "7.12deg",
+                                paddingTop: "2px",
+                                marginTop: "-12px"
+
+
+                            }}
                         >
                             treas
                         </Typography>
                     </Box>
-                    <Typography variant='h3' className='pl-[0px] pt-[5px] font-[Libre Baskerville] font-normal text-[#000000] text-[40px]
-                    max-xs:text-[34px] max-xs:pt-0'>
+                    <Typography
+                        sx={{
+                            fontSize: "56px",
+                            fontWeight: "400",
+                            color: "#000000",
+                            fontFamily: "Libre Baskerville",
+                        }}>
                         ury </Typography></Box>
             </Box>
-            <Box display="flex" justifyContent="center" 
-            paddingBottom="30px"
-            marginBottom={{xs:'46px', md:0 , lg:0}}
-            marginTop="20px" >
+            <Box display="flex" justifyContent="center"
+                paddingBottom="30px"
+                marginBottom={{ xs: '46px', md: 0, lg: 0 }}
+                marginTop="20px" >
                 <Typography className='text-[15px] text-[#FF6846] cursor-pointer
                 '>Create your treas
                     <KeyboardArrowRightIcon className="cursor-pointer" />

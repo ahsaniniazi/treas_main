@@ -28,11 +28,30 @@ export default function NFT_Head() {
                         flexDirection={{ xs: 'row', md: "column", lg: 'column' }} >
                         <Box display={'flex'}
                             flexDirection={{ xs: 'column-reverse', md: 'column', lg: 'column' }}>
-                            <Box className='rotate-[-6.12deg]  bg-[#FFFFFF] 
-                         h-[50px] w-[127px] mt-[12px] mb-3
-                         max-xs:h-[30px] max-xs:w-[85px]'>
+                            <Box sx={{
+
+                                backgroundColor: "#FFFFFF",
+                                rotate: "-6.12deg",
+                                height: { xs: "30px", md: "50px" },
+                                width: { xs: "85px", md: "127px" },
+                                marginTop: "12px",
+                                marginBottom: "3px"
+
+
+                            }}
+
+                            >
                                 <Typography
-                                    variant='h3'
+                                    sx={{
+                                        fontSize: { xs: "40px", md: "60px" },
+                                        fontWeight: "400",
+                                        color: "#000000",
+                                        fontFamily: "Libre Baskerville",
+                                        position: "sticky",
+                                        rotate: "6.12deg",
+                                        marginTop: "-10px"
+
+                                    }}
                                     gutterBottom
                                     component='div'
                                     className='text-[60px] font-normal text-[#000000] 

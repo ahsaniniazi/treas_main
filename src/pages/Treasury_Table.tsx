@@ -69,7 +69,12 @@ export default function DenseTable() {
                 <TableHead >
                     <TableRow sx={{ lineHeight: 8, display: "flex" }}
                     >
-                        <TableCell className='pl-[0px] pr-[30px] text-[#D1D0D6] border-0 '>
+                        <TableCell sx={{
+                            paddingLeft: "0px",
+                            paddingRight: "30px",
+                            color: "#D1D0D6",
+                            border: 0
+                        }} >
 
                             <FormControl className=" 
                          border-solid border-[#D3D3D3] rounded-md w-[270px]">
