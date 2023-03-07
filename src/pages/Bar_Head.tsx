@@ -79,7 +79,7 @@ export default function NFT_Head() {
                             rotate: "-6.12deg",
                             backgroundColor: "#FFDEA7",
                             height: "20px",
-                            width: { xs: "27px", md: "55px" },
+                            width: { xs: "27px", md: "60px" },
                             marginTop: { xs: "0px", md: "12px" },
 
 
@@ -87,28 +87,28 @@ export default function NFT_Head() {
                         }}>
                             <Typography sx={{
                                 rotate: "6.12deg",
-                                fontSize: { xs: "12px", md: "25px" },
+                                fontSize: { xs: "12px", md: "32px" },
                                 fontWeight: "400",
                                 color: "#000000",
                                 fontFamily: "Libre Baskerville",
                                 position: "sticky",
                                 height: "20px",
                                 width: "55px",
-                                marginTop: { xs: "0px", md: "-10px" },
+                                marginTop: { xs: "0px", md: "-18px" },
                             }}
-                                variant='h3'
-                                gutterBottom
-                                component='div'
+
+
                             >
                                 treas
                             </Typography>
                         </Box>
-                        <Typography variant='h3' sx={{
+                        <Typography variant='h5' sx={{
                             paddingLeft: "0px",
                             fontFamily: "Libre Baskerville",
                             fontWeight: "400",
                             color: "#000000",
                             fontsize: { xs: "12px", md: "25px" },
+                            marginTop: "5px"
 
                         }}
                         >

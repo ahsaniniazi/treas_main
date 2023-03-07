@@ -47,12 +47,12 @@ export default function RAdial() {
                     <Box sx={{
                         rotate: "-6.12deg",
                         backgroundColor: "#C2EED8",
-                        height: "20px",
-                        width: "53px",
+                        height: "15px",
+                        width: "35px",
                     }}
                     >
                         <Typography sx={{
-                            fontSize: "14px",
+                            fontSize: "19px",
                             fontWeight: "400",
                             color: "#000000",
                             fontFamily: "Libre Baskerville",
@@ -61,7 +61,7 @@ export default function RAdial() {
                             marginTop: { xs: "-6px", md: "-5px" }
 
                         }}
-                            variant='h5'
+                            variant='h3'
                             gutterBottom
                             component='div'
                         >
@@ -70,13 +70,13 @@ export default function RAdial() {
                     </Box>
                     <Typography sx={{
                         paddingLeft: "2px",
-                        marginTop: "-4px",
+                        marginTop: "-8px",
                         fontFamily: "Libre Baskerville",
                         fontWeight: "400",
                         color: "#000000",
-                        fontSize: "24px",
+                        fontSize: "19px",
                     }}
-                        variant='h3'
+
                     >
                         ury </Typography>
                 </Box>

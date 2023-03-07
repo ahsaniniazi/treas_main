@@ -189,7 +189,7 @@ export default function DenseTable() {
                                             marginLeft: "10px",
                                             backgroundColor: "#C2EED8",
                                             height: "38px",
-                                            width: "107px",
+                                            width: "92px",
                                         }}
                                         >
                                             <Typography sx={{
@@ -245,23 +245,23 @@ export default function DenseTable() {
                                         marginLeft: "5px",
                                         backgroundColor: "#C2EED8",
                                         height: { xs: "10px", md: "18px" },
-                                        width: { xs: "26px", md: "35px" },
+                                        width: { xs: "26px", md: "38px" },
 
                                     }}
 
-                                        className='rotate-[-6.12deg]  bg-[#C2EED8] 
-                    h-[18px] w-[35px] mt-[10px] ml-[5px] max-xs:h-[10px] max-xs:w-[26px]'>
+                                    >
                                         <Typography sx={{
-                                            fontSize: { xs: "12px", md: "15px" },
+                                            fontSize: { xs: "12px", md: "19px" },
                                             fontWeight: "400",
                                             color: "#000000",
                                             fontFamily: "Libre Baskerville",
                                             position: "sticky",
-                                            rotate: "6.12deg",
-                                            marginTop: { xs: "-3px", md: "-2px" },
+                                            rotate: "10.12deg",
+                                            marginTop: { xs: "-3px", md: "-7px" },
+                                            // marginRight: "5px"
 
                                         }}
-                                            variant='h3'
+
                                             gutterBottom
                                             component='div'
 

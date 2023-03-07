@@ -451,20 +451,37 @@ export default function CollapsibleTable() {
                     <Box className='rotate-[-7.12deg]  bg-[#FF9781]
          h-[52px] w-[107px] '>
                         <Typography
-                            variant='h3'
+                            sx={{
+                                fontSize: "56px",
+                                fontWeight: "400",
+                                color: "#000000",
+                                fontFamily: "Libre Baskerville",
+                                position: "sticky",
+                                rotate: "7.12deg",
+                                paddingTop: "2px"
+
+                            }}
+
                             gutterBottom
                             component='div'
-                            className='text-56px font-normal text-[#000000]
-                font-[Libre Baskerville] sticky rotate-[7.12deg] pt-[2px]'
+
                         >
                             treas
                         </Typography>
                     </Box>
 
                     <Typography
-                        variant='h3'
-                        className='text-56px font-[Libre Baskerville] font-normal text-[#000000]
-                 '>
+                        sx={{
+                            fontSize: "56px",
+                            fontWeight: "400",
+                            color: "#000000",
+                            fontFamily: "Libre Baskerville",
+
+
+                        }}
+
+
+                    >
                         ury
                     </Typography>
                 </Box>

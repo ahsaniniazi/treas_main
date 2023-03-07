@@ -29,7 +29,7 @@ export default function NFT_Head() {
                         <Box display={'flex'}
                             flexDirection={{ xs: 'column-reverse', md: 'column', lg: 'column' }}>
                             <Box className='rotate-[-6.12deg]  bg-[#FFFFFF] 
-                         h-[50px] w-[130px] mt-[12px] mb-3
+                         h-[50px] w-[127px] mt-[12px] mb-3
                          max-xs:h-[30px] max-xs:w-[85px]'>
                                 <Typography
                                     variant='h3'

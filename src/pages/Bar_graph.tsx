@@ -123,7 +123,7 @@ export default function Chart() {
                         rotate: "-6.12deg",
                         backgroundColor: "#C2EED8",
                         height: { xs: "10px", md: "20px" },
-                        width: { xs: "26px", md: "55px" },
+                        width: { xs: "26px", md: "48px" },
 
                     }}
 
@@ -172,7 +172,7 @@ export default function Chart() {
                         <Box display="flex" flexDirection="row" alignItems={'center'} className='max-xs:hidden'>
 
                             <Box className='rotate-[-6.12deg]  bg-[#C2EED8] 
-                                h-[20px] w-[55px] max-xs:h-[10px] max-xs:w-[26px]'>
+                                h-[20px] w-[48px] max-xs:h-[10px] max-xs:w-[26px]'>
                                 <Typography
                                     variant='h5'
                                     gutterBottom
