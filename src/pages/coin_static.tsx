@@ -109,17 +109,22 @@ function Row(props: { row: ReturnType<typeof createData> }) {
                 <TableCell component="th" scope="row" >
                     <Box display="flex" alignItems="center">
                         <Image src={row.image} alt="fund me" width={40} height={40} />
-                        <Typography marginLeft="10px" className=" text-[18px] font-medium text-[#000000] ">{row.name}</Typography>
-                        <Typography marginLeft="5px" marginTop="4px" className=" text-[#8A8A8A] text-[13px] font-thin ">
+                        <Typography marginLeft="10px" className=" text-[18px] font-medium text-[#000000] 
+                        max-xs:text-[12px]
+                        ">{row.name}</Typography>
+                        <Typography marginLeft="5px" marginTop="4px" className=" text-[#8A8A8A] text-[13px] font-thin 
+                        max-xs:text-[9px]
+                        ">
                             {row.symbol}</Typography>
                     </Box>
                 </TableCell>
-                <TableCell sx={{ fontSize: "16px", fontWeight: "400" }} align="center">{row.amount}</TableCell>
+
+                <TableCell sx={{ fontSize: {xs:'12px', md:'16px' , lg:"16px"}, fontWeight: "400" }} align="center">{row.amount}</TableCell>
                 <TableCell align="center">{row.price}</TableCell>
-                <TableCell sx={{ color: "#FF6846", fontSize: "16px", fontWeight: "500" }} align="center"> <KeyboardArrowDownIcon />
+                <TableCell sx={{ color: "#FF6846", fontSize: {xs:'12px', md:'16px' , lg:"16px"}, fontWeight: "500" }} align="center"> <KeyboardArrowDownIcon />
                     {row.change}</TableCell>
-                <TableCell sx={{ fontSize: "16px", fontWeight: "400" }} align="center">{row.total}</TableCell>
-                <TableCell sx={{ color: "#53A57C", fontSize: "16px", fontWeight: "400" }} align="center"><KeyboardArrowUpIcon />
+                <TableCell sx={{ fontSize: {xs:'12px', md:'16px' , lg:"16px"}, fontWeight: "400" }} align="center">{row.total}</TableCell>
+                <TableCell sx={{ color: "#53A57C", fontSize: {xs:'12px', md:'16px' , lg:"16px"}, fontWeight: "400" }} align="center"><KeyboardArrowUpIcon />
                     {row.holdings}</TableCell>
                 <TableCell >
                     <IconButton
@@ -288,86 +293,101 @@ const rows = [
 export default function CollapsibleTable() {
     return (
         <Box>
-            <Table aria-label="collapsible table">
-                <TableHead>
-                    <TableRow>
-                        <TableCell
-                            align='left'
-                            className='border-y border-solid border-[#000000]'
-                        >
-                            <Typography className="ml-[40px]">   NAME </Typography>
-                        </TableCell>
-                        <TableCell
-                            align='center'
-                            className='border-y border-solid border-[#000000]'
-                        >
-                            <Typography>   AMOUNT </Typography>
+            <Box 
+            overflow={{xs:'scroll'}} className='scrollStyle'
+            >
+                <Table aria-label="collapsible table" >
+                    <TableHead>
+                        <TableRow>
+                            <TableCell
+                                align='left'
+                                className='border-y border-solid border-[#000000]'
+                            >
+                                <Typography className="ml-[40px] max-xs:text-[12px]">   NAME </Typography>
+                            </TableCell>
+                            <TableCell
+                                align='center'
+                                className='border-y border-solid border-[#000000]'
+                            >
+                                <Typography className='max-xs:text-[12px]'>   AMOUNT </Typography>
 
-                        </TableCell>
-                        <TableCell
-                            align='center'
-                            className='border-y border-solid border-[#000000]'
-                        >
-                            <Typography>   PRICE </Typography>
+                            </TableCell>
+                            <TableCell
+                                align='center'
+                                className='border-y border-solid border-[#000000]'
+                            >
+                                <Typography className='max-xs:text-[12px]'>   PRICE </Typography>
 
-                        </TableCell>
-                        <TableCell
-                            align='center'
-                            className='border-y border-solid border-[#000000] '
-                        >
-                            <Typography>   24H CHANGE </Typography>
+                            </TableCell>
+                            <TableCell
+                                align='center'
+                                className='border-y border-solid border-[#000000] '
+                            >
+                                <Typography className='max-xs:text-[12px]'>   24H CHANGE </Typography>
 
-                        </TableCell>
-                        <TableCell
-                            align='center'
-                            className='border-y border-solid border-[#000000]'
-                        >
-                            <Typography>  TOTAL</Typography>
+                            </TableCell>
+                            <TableCell
+                                align='center'
+                                className='border-y border-solid border-[#000000]'
+                            >
+                                <Typography className='max-xs:text-[12px]'>  TOTAL</Typography>
 
-                        </TableCell>
-                        <TableCell
-                            align='center'
-                            className='border-y border-solid border-[#000000]'
-                        >
-                            <Typography>  CURRENT HOLDINGS P/L</Typography>
+                            </TableCell>
+                            <TableCell
+                                align='center'
+                                className='border-y border-solid border-[#000000]'
+                            >
+                                <Typography className='max-xs:text-[12px]'>  CURRENT HOLDINGS P/L</Typography>
 
 
-                        </TableCell>
-                        <TableCell align='left'
-                            className='border-y border-solid border-[#000000]' />
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows.map((row) => (
-                        <Row key={row.name} row={row} />
-                    ))}
-                </TableBody>
-            </Table>
+                            </TableCell>
+                            <TableCell align='left'
+                                className='border-y border-solid border-[#000000]' />
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {rows.map((row) => (
+                            <Row key={row.name} row={row} />
+                        ))}
+                    </TableBody>
+                </Table>
+            </Box>
 
-            <Box display="flex" justifyContent="center" paddingTop="375px" >
-
-                <Typography
-                    variant='h3'
-                    className='text-[56px]'>Empowered
-                </Typography>
+            <Box display="flex" justifyContent="center"
+                paddingTop={{ xs: '96px', md: "375px", lg: "375px" }}
+                alignItems={'center'}
+                flexDirection={{ xs: 'column', md: 'row', lg: 'row' }}>
+                <Box>
+                    <Typography
+                        variant='h3'
+                        className='text-[56px] max-xs:text-[34px] text-black'>Empowered
+                    </Typography>
+                </Box>
                 <Box display="flex" marginLeft={2} >
                     <Box className='rotate-[-6.12deg]  bg-[#FF9781] 
-                         h-[38px] w-[107px] mt-[12px] '>
+                         h-[38px] w-[107px] mt-[12px] 
+                         max-xs:h-[23px] max-xs:w-[76px]'>
                         <Typography
                             variant='h3'
                             gutterBottom
                             component='div'
-                            className='text-25px font-normal text-[#000000] 
-                                font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-12px]'
+                            className='text-[48px] font-normal text-[#000000] 
+                                font-[Libre Baskerville] sticky rotate-[6.12deg] mt-[-12px]
+                                max-xs:text-[34px]'
                         >
                             treas
                         </Typography>
                     </Box>
-                    <Typography variant='h3' className='pl-[0px] pt-[5px] font-[Libre Baskerville] font-normal text-[#000000] text-[40px]'>
+                    <Typography variant='h3' className='pl-[0px] pt-[5px] font-[Libre Baskerville] font-normal text-[#000000] text-[40px]
+                    max-xs:text-[34px] max-xs:pt-0'>
                         ury </Typography></Box>
             </Box>
-            <Box display="flex" justifyContent="center" paddingBottom="30px" marginTop="20px" >
-                <Typography className='text-[15px] text-[#FF6846] cursor-pointer'>Create your treas
+            <Box display="flex" justifyContent="center" 
+            paddingBottom="30px"
+            marginBottom={{xs:'46px', md:0 , lg:0}}
+            marginTop="20px" >
+                <Typography className='text-[15px] text-[#FF6846] cursor-pointer
+                '>Create your treas
                     <KeyboardArrowRightIcon className="cursor-pointer" />
                 </Typography>
             </Box>

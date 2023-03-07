@@ -22,10 +22,15 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <React.Fragment>
+      <div className='bg-[#FFFFFF]'>
 
       <Header />
 
-      <Box paddingTop="20px" paddingLeft="136px" paddingRight="50px">
+      <Box 
+      paddingTop="20px" 
+      paddingLeft={{ xs:'28px' , md:"136px", lg: '136px'}} 
+      paddingRight={{ xs:'20px' , md:"136px", lg: '136px'}}
+      >
 
         <SearchResult />
         <NFT_Head />
@@ -39,6 +44,7 @@ export default function Home() {
       {/* <Date_fetch /> */}
       {/* <Token /> */}
       <Footer />
+      </div>
     </React.Fragment>
 
   )
