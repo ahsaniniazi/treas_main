@@ -60,7 +60,7 @@ export default function NFT_Head() {
                         marginLeft={{ xs: '0px', md: "28px", lg: '28px' }}
                     >
                         <Typography sx={{
-                            color: "#0000000",
+                            color: "black",
                             fontFamily: "Libre Baskerville",
                             fontWeight: "700",
                             fontSize: { xs: "12px", md: "25px" }

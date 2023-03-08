@@ -69,8 +69,8 @@ export default function RAdial() {
                         </Typography>
                     </Box>
                     <Typography sx={{
-                        paddingLeft: "2px",
-                        marginTop: "-8px",
+
+                        marginTop: "-9px",
                         fontFamily: "Libre Baskerville",
                         fontWeight: "400",
                         color: "#000000",

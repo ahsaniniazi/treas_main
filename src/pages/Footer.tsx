@@ -4,6 +4,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 
+
 const commonStyles = {
     m: 1,
     border: 1,
@@ -15,6 +16,7 @@ export default function NFT_Head() {
     return (
         <React.Fragment>
             <Box>
+
                 <Box display="flex" justifyContent="space-between"
                     flexDirection={{ xs: 'column-reverse', md: 'row', lg: 'row' }}
                     paddingLeft={{ xs: '20px', md: '113px', lg: '113px' }}
@@ -22,18 +24,22 @@ export default function NFT_Head() {
                     paddingTop={{ xs: '20px', md: '81px', lg: '81px' }}
                     paddingBottom={{ xs: '11px', md: '80px', lg: '80px' }}
                     sx={{ backgroundColor: "#000" }}>
+
                     <Box display="flex"
                         justifyContent={{ xs: 'space-between', md: 'start' }}
                         alignItems={{ xs: 'self-end', md: 'self-start' }}
-                        flexDirection={{ xs: 'row', md: "column", lg: 'column' }} >
+                        flexDirection={{ xs: 'row', md: "column", lg: 'column' }}
+                    >
+
                         <Box display={'flex'}
                             flexDirection={{ xs: 'column-reverse', md: 'column', lg: 'column' }}>
+
                             <Box sx={{
 
                                 backgroundColor: "#FFFFFF",
                                 rotate: "-6.12deg",
                                 height: { xs: "30px", md: "42px" },
-                                width: { xs: "85px", md: "115px" },
+                                width: { xs: "75px", md: "112px" },
                                 marginTop: "12px",
                                 marginBottom: "3px"
 
@@ -41,6 +47,8 @@ export default function NFT_Head() {
                             }}
 
                             >
+
+
                                 <Typography
                                     sx={{
                                         fontSize: { xs: "40px", md: "60px" },
@@ -49,7 +57,7 @@ export default function NFT_Head() {
                                         fontFamily: "Libre Baskerville",
                                         position: "sticky",
                                         rotate: "6.12deg",
-                                        marginTop: "-27px"
+                                        marginTop: { xs: "-20px", md: "-30px" }
 
                                     }}
                                     gutterBottom
@@ -59,6 +67,7 @@ export default function NFT_Head() {
                                     treas
                                 </Typography>
                             </Box>
+
                             <Box paddingBottom={6} paddingTop={3} display={'flex'}>
                                 <LinkedInIcon className='text-[#FFFFFF] text-[30px] p-[5px] border border-[#E8E7E83d] rounded-full mr-[16px]' />
                                 <TwitterIcon className='text-[#FFFFFF] text-[30px] p-[5px] border border-[#E8E7E83d] rounded-full mr-[16px]' />
@@ -68,7 +77,10 @@ export default function NFT_Head() {
                         <Box marginBottom={{ xs: '15px' }}>
                             <Typography className='text-[#8E8C95] text-[12px]' >@2022</Typography>
                         </Box>
+
                     </Box>
+
+
                     <Box display="flex"
                         justifyContent="space-between"
                         gap={{ xs: 5, md: 10, lg: 10 }}
@@ -109,6 +121,6 @@ export default function NFT_Head() {
                     </Box>
                 </Box>
             </Box>
-        </React.Fragment>
+        </React.Fragment >
     );
 }

@@ -385,15 +385,15 @@ export default function CollapsibleTable() {
                 <Box>
                     <Typography
                         variant='h3'
-                        sx={{ fontSize: { xs: '34px', md: '56px', lg: "56px" }, fontFamily: "Inter" }}
+                        sx={{ fontSize: { xs: '34px', md: '56px', lg: "56px" }, fontFamily: "Inter", color: "black" }}
                     >Empowered
                     </Typography>
                 </Box>
                 <Box display="flex" marginLeft={2} >
                     <Box sx={{
-                        height: { xs: "23px", md: "38px" },
+                        height: { xs: "30px", md: "38px" },
                         width: { xs: "76px", md: "107px" },
-                        marginTop: "31px",
+                        marginTop: { xs: "31px", md: "31px" },
                         backgroundColor: "#FF9781",
                         rotate: "-6.12deg",
                     }}
@@ -403,14 +403,14 @@ export default function CollapsibleTable() {
                             gutterBottom
                             component='div'
                             sx={{
-                                fontSize: "56px",
+                                fontSize: { xs: "40px", md: "56px" },
                                 fontWeight: "400",
                                 color: "#000000",
                                 fontFamily: "Inter",
                                 position: "sticky",
                                 rotate: "7.12deg",
                                 paddingTop: "2px",
-                                marginTop: "-32px"
+                                marginTop: { xs: "-20px", md: "-32px" }
 
 
                             }}
@@ -420,10 +420,11 @@ export default function CollapsibleTable() {
                     </Box>
                     <Typography
                         sx={{
-                            fontSize: "56px",
+                            fontSize: { xs: "40px", md: "56px" },
                             fontWeight: "400",
                             color: "#000000",
                             fontFamily: "Inter",
+                            marginTop: { xs: "13px", md: "0px" }
                         }}>
                         ury </Typography></Box>
             </Box>
@@ -431,8 +432,8 @@ export default function CollapsibleTable() {
                 paddingBottom="30px"
                 marginBottom={{ xs: '46px', md: 0, lg: 0 }}
                 marginTop="20px" >
-                <Typography className='text-[15px] text-[#FF6846] cursor-pointer Inter
-                '>Create your treas
+                <Typography className='text-[15px] text-[#FF6846] cursor-pointer Inter'
+                >Create your treas
 
                 </Typography>
             </Box>

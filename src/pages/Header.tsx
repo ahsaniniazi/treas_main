@@ -101,14 +101,14 @@ export default function PrimarySearchAppBar() {
                                         marginTop: "50px",
                                         backgroundColor: "#FFDEA7",
                                         marginBottom: "50px",
-                                        width: "107px",
-                                        height: "38px"
+                                        width: { xs: "76", md: "107px", lg: "107px" },
+                                        height: { xs: "30px", md: "38px", lg: "38px" }
                                     }}
                                         alignSelf={{ xs: 'start' }}
                                     >
                                         <Typography sx={{
                                             fontSize: { xs: "40px", md: "60px" }, fontWeight: "400", color: "#000000",
-                                            fontFamily: "Libre Baskerville", marginTop: "-22px", rotate: "7.12deg"
+                                            fontFamily: "Libre Baskerville", marginTop: { xs: "-12px", md: "-22px", lg: "-22px" }, rotate: "7.12deg"
                                         }}
                                             variant='h3'
                                             gutterBottom
@@ -156,7 +156,7 @@ export default function PrimarySearchAppBar() {
                                     </div>
                                     <Box width={600}>
                                         <Search sx={{
-                                            height: "40px", display: "flex", appearance: "none",
+                                            height: { xs: "30px", md: "40px" }, display: "flex", appearance: "none",
                                             borderRadius: "15px", backgroundColor: "#ffffff38"
                                         }} className='max-xs:w-[280px]'>
                                             <SearchIconWrapper>
@@ -376,7 +376,7 @@ export default function PrimarySearchAppBar() {
                 </AppBar >
 
             </Box >
-            <Typography sx={{ border: "none", marginTop: "-16px" }} width="100%"
+            <Typography sx={{ border: "none", marginTop: "-16px", }} width="100%"
                 className='h-10 bg-gradient-to-r from-[#c7e3e6] via-[#e2dff5] to-[#b2e4e9]
          shadow-2xl shadow-[#c7e6e6] md:shadow-2xl md:shadow-[#499EB6] blur appearance-none' >
 

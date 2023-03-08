@@ -51,7 +51,7 @@ export default function Heading() {
                         width: { xs: '12px', md: '28px' }
                     }}></KeyboardArrowUpIcon>
                     <Typography sx={{
-                        display: { xs: "none", md: "flex" },
+                        display: { xs: "flex", md: "flex" },
                         fontSize: { xs: "10px", md: "19px" }, fontWeight: "500", color: "#53A57C",
 
                     }}

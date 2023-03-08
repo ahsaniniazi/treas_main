@@ -60,7 +60,7 @@ export default function DenseTable() {
     };
 
     return (
-        <Box overflow={'scroll'} className='scrollStyle'>
+        <Box overflow={'scroll'} className='scrollStyle' >
             <Table sx={{
                 minWidth: 650, overflowX: { xs: 'scroll', md: 'hidden', lg: 'hidden' },
                 overflowY: { xs: 'hidden', md: 'hidden', lg: 'hidden' }
@@ -150,31 +150,31 @@ export default function DenseTable() {
                         </TableCell>
 
                         <TableCell align='center'
-                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                            sx={{ marginY: 1, minWidth: 95, borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
                         >JUL. 22</TableCell>
                         <TableCell align='center'
-                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                            sx={{ marginY: 1, minWidth: 95, borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
                         >AUG. 22</TableCell>
                         <TableCell align='center'
-                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                            sx={{ marginY: 1, minWidth: 95, borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
                         >SEP. 22</TableCell>
                         <TableCell align='center'
-                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                            sx={{ marginY: 1, minWidth: 95, borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
                         >OCT. 22</TableCell>
                         <TableCell align='center'
-                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                            sx={{ marginY: 1, minWidth: 95, borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
                         >NOV. 22</TableCell>
                         <TableCell align='center'
-                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                            sx={{ marginY: 1, minWidth: 95, borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
                         >DEC. 22</TableCell>
                         <TableCell align='center'
-                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                            sx={{ marginY: 1, minWidth: 95, borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
                         >JAN. 23</TableCell>
                         <TableCell align='center'
-                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                            sx={{ marginY: 1, minWidth: 95, borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
                         >FEB. 23</TableCell>
                         <TableCell align='center'
-                            sx={{ marginY: 1, minWidth: 90, borderTop: "1px", borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
+                            sx={{ marginY: 1, minWidth: 95, borderBottom: "1px", borderStyle: "solid", borderColor: "#000000" }}
                         >MAR. 23</TableCell>
 
 
@@ -188,7 +188,7 @@ export default function DenseTable() {
                             (<Box sx={{
                                 display: "flex", justifyContent: "space-evenly",
                                 height: "116px", alignItems: "center",
-                                width: "1118px",
+                                marginRight: "6px"
 
 
 
@@ -251,12 +251,12 @@ export default function DenseTable() {
                             : index === 9 ? (<Box sx={{
                                 display: "flex", justifyContent: "space-evenly",
                                 height: "38px", alignItems: "center",
-                                width: "1118px"
+                                marginRight: "6px"
 
                             }} className="border-b border-x 
                              border-1px border-[#D3D3D3] rounded-b-md" >
 
-                                <Box sx={{ fontSize: "15PX", display: "flex", marginLeft: "170px", fontFamily: "Inter" }}>
+                                <Box sx={{ fontSize: "15PX", display: "flex", marginLeft: "170px", fontFamily: "Inter", color: "black" }}>
                                     Define your own KPIs and supercharge your
                                     <Box sx={{
                                         rotate: "-6.12deg",
@@ -388,7 +388,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-l border-y 
                                     border-solid border-[#D3D3D3] rounded-l-md text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
-                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
+                                            sx={{ background: row.background, minWidth: 95, display: "flex" }}>
 
 
                                             {row.JUL}
@@ -398,7 +398,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-y 
                                     border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
-                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
+                                            sx={{ background: row.background, minWidth: 95, display: "flex" }}>
 
 
                                             {row.AUG}
@@ -407,7 +407,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-y 
                                     border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
-                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
+                                            sx={{ background: row.background, minWidth: 95, display: "flex" }}>
 
 
                                             {row.SEPT}
@@ -417,7 +417,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-y 
                                     border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
                                      font-light mt-[10px] '
-                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
+                                            sx={{ background: row.background, minWidth: 95, display: "flex" }}>
 
                                             {row.OCT}
 
@@ -425,7 +425,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-y 
                                     border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
-                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
+                                            sx={{ background: row.background, minWidth: 95, display: "flex" }}>
 
 
                                             {row.NOV}
@@ -438,7 +438,7 @@ export default function DenseTable() {
                                      
                                      '
                                             sx={{
-                                                background: row.background, minWidth: 90, display: "flex"
+                                                background: row.background, minWidth: 95, display: "flex"
 
                                             }}>
 
@@ -453,7 +453,7 @@ export default function DenseTable() {
                                     border-solid border-[#D3D3D3] rounded-l-md text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
                                             sx={{
-                                                background: row.background, minWidth: 90, display: "flex"
+                                                background: row.background, minWidth: 95, display: "flex"
 
                                             }}>
 
@@ -464,7 +464,7 @@ export default function DenseTable() {
                                         <TableCell align='center' className=' border-y 
                                     border-solid border-[#D3D3D3] text-center text-[12px] text-[#000]
                                      font-light mt-[10px]  '
-                                            sx={{ background: row.background, minWidth: 90, display: "flex" }}>
+                                            sx={{ background: row.background, minWidth: 95, display: "flex" }}>
 
 
                                             {row.FEB}
@@ -474,7 +474,7 @@ export default function DenseTable() {
                                     border-solid border-[#D3D3D3] rounded-r-md text-center text-[12px] text-[#000]
                                      font-light mt-[10px] '
                                             sx={{
-                                                background: row.background, minWidth: 90, display: "flex"
+                                                background: row.background, minWidth: 95, display: "flex"
 
                                             }}>
 

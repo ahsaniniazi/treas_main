@@ -24,26 +24,26 @@ export default function Home() {
     <React.Fragment>
       <div className='bg-[#FFFFFF]'>
 
-      <Header />
+        <Header />
 
-      <Box 
-      paddingTop="20px" 
-      paddingLeft={{ xs:'28px' , md:"136px", lg: '136px'}} 
-      paddingRight={{ xs:'20px' , md:"136px", lg: '136px'}}
-      >
+        <Box
+          paddingTop="20px"
+          paddingLeft={{ xs: '28px', md: "136px", lg: '136px' }}
+          paddingRight={{ xs: '20px', md: "136px", lg: '136px' }}
+        >
 
-        <SearchResult />
-        <NFT_Head />
-        <Chart />
-        <Treasury_label />
-        <Heading />
-        {/* <Graph_Table /> */}
-        <Static />
-      </Box>
+          <SearchResult />
+          <NFT_Head />
+          <Chart />
+          <Treasury_label />
+          <Heading />
+          {/* <Graph_Table /> */}
+          <Static />
+        </Box>
 
-      {/* <Date_fetch /> */}
-      {/* <Token /> */}
-      <Footer />
+        {/* <Date_fetch /> */}
+        {/* <Token /> */}
+        <Footer />
       </div>
     </React.Fragment>
 

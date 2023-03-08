@@ -78,8 +78,8 @@ export default function NFT_Head() {
                         <Box sx={{
                             rotate: "-6.12deg",
                             backgroundColor: "#FFDEA7",
-                            height: "20px",
-                            width: { xs: "27px", md: "60px" },
+                            height: { xs: "15px", md: "20px" },
+                            width: { xs: "30px", md: "60px" },
                             marginTop: { xs: "0px", md: "12px" },
 
 
@@ -87,14 +87,13 @@ export default function NFT_Head() {
                         }}>
                             <Typography sx={{
                                 rotate: "6.12deg",
-                                fontSize: { xs: "12px", md: "32px" },
+                                fontSize: { xs: "15px", md: "32px" },
                                 fontWeight: "400",
                                 color: "#000000",
                                 fontFamily: "Libre Baskerville",
                                 position: "sticky",
-                                height: "20px",
-                                width: "55px",
-                                marginTop: { xs: "0px", md: "-18px" },
+                                width: { xs: "29px", md: "55px" },
+                                marginTop: { xs: "-5px", md: "-18px" },
                             }}
 
 
@@ -102,13 +101,26 @@ export default function NFT_Head() {
                                 treas
                             </Typography>
                         </Box>
-                        <Typography variant='h5' sx={{
+                        <Typography variant={'h5'} sx={{
+                            display: { xs: 'none', md: 'flex', lg: 'flex' },
                             paddingLeft: "0px",
                             fontFamily: "Libre Baskerville",
-                            fontWeight: "400",
+                            fontWeight: "500",
                             color: "#000000",
-                            fontsize: { xs: "12px", md: "25px" },
-                            marginTop: "5px"
+                            fontsize: { xs: "15px", md: "25px", lg: "25px" },
+                            marginTop: { xs: "-10px", md: "7px" }
+
+                        }}
+                        >
+                            ury </Typography>
+                        <Typography sx={{
+                            display: { xs: 'flex', md: 'none', lg: 'none' },
+                            paddingLeft: "0px",
+                            fontFamily: "Libre Baskerville",
+                            fontWeight: "500",
+                            color: "#000000",
+                            fontsize: '15px',
+                            marginTop: '-4px'
 
                         }}
                         >
@@ -149,7 +161,8 @@ export default function NFT_Head() {
                         <KeyboardArrowDownIcon sx={{
                             paddingRight: { xs: "0px", md: "5px" },
                             cursor: "pointer",
-                            color: "black"
+                            color: "black",
+                            width: { xs: '10px', md: '30px', lg: '30x' }
                         }}
                         />
                     </Box>
@@ -275,7 +288,7 @@ export default function NFT_Head() {
                             width: { xs: 270, md: 700 },
                             height: { xs: 400, md: 500 }
                         }} borderColor="#979797">
-                            <Box border="1px" borderColor="#979797"
+                            <Box border="1px"
                                 position="absolute" top="-22px" right="-20px" >
                                 <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
                                     className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
@@ -519,6 +532,6 @@ export default function NFT_Head() {
                 </Box>
             </Box>
 
-        </React.Fragment>
+        </React.Fragment >
     );
 }
