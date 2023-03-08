@@ -198,6 +198,7 @@ export default function DenseTable() {
                                     fontSize: "38px", display: 'flex', fontWeight: "400", marginLeft: "140px",
                                     fontFamily: "Inter"
 
+
                                 }} className='text-[#000000]'>
                                     Unlock your
                                     <Box display="flex" className='text-[#000000] mr-[10px]' >
@@ -206,13 +207,13 @@ export default function DenseTable() {
                                             marginLeft: "10px",
                                             backgroundColor: "#C2EED8",
                                             height: "38px",
-                                            width: "92px",
+                                            width: "90px",
                                         }}
                                         >
                                             <Typography sx={{
                                                 fontWeight: "400",
                                                 color: "#000000",
-                                                fontFamily: "Libre Baskerville",
+                                                fontFamily: "Inter",
                                                 position: "sticky",
                                                 rotate: "6.12deg",
                                                 marginTop: "-12px"
@@ -227,16 +228,17 @@ export default function DenseTable() {
                                         </Box>
                                         <Typography variant='h3'
                                             sx={{
-                                                paddingLeft: "2px",
+                                                paddingBottom: "4px",
                                                 marginTop: "-5px",
-                                                fontFamily: "Libre Baskerville",
+                                                fontFamily: "Inter",
                                                 fontWeight: "400",
                                                 color: "#000000",
                                                 fontSize: "40px"
                                             }}
                                         >
                                             ury </Typography>
-                                    </Box> with labels
+                                    </Box>
+                                    <Box marginTop="4px"> with labels </Box>
                                 </Box>
                                 <Box display="flex" justifyContent="center" marginLeft={20}  >
                                     <Typography className='text-[15px] text-[#FF6846] cursor-pointer'>

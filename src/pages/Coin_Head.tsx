@@ -22,19 +22,19 @@ export default function Heading() {
 
 
     return (
-        <Box paddingBottom={{ xs: '0px', md: "10px" }}
+        <Box paddingBottom={{ xs: '0px', md: "5px" }}
             marginTop={{ xs: '34px', md: "85px", lg: '85px' }}>
             <Stack direction='row'
 
                 justifyContent='space-between' >
-                <Typography sx={{ fontSize: { xs: "14px", md: "25px" }, fontWeight: "500", color: "#212529", }}
+                <Typography sx={{ fontSize: { xs: "14px", md: "22px" }, fontWeight: "500", color: "#212529", }}
                 >Holdings details</Typography>
                 <Stack direction='row'
                     alignItems={'center'}
                     justifyContent='space-between' >
                     <Typography sx={{
                         display: { xs: "none", md: "flex" },
-                        fontSize: { xs: "10px", md: "25px" }, fontWeight: "500", color: "#212529",
+                        fontSize: { xs: "10px", md: "22px" }, fontWeight: "500", color: "#212529",
                         paddingRight: { xs: "0px", md: "10px" }
                     }}
 
@@ -53,7 +53,7 @@ export default function Heading() {
                     <Typography sx={{
                         display: { xs: "none", md: "flex" },
                         fontSize: { xs: "10px", md: "19px" }, fontWeight: "500", color: "#53A57C",
-                        paddingRight: { xs: "0px", md: "10px" }
+
                     }}
 
                     >+1,54%</Typography>
@@ -75,7 +75,7 @@ export default function Heading() {
                             <MenuItem value="" >
                                 <Box display="flex" flexDirection="row">
                                     <Typography
-                                        marginLeft={{ xs: 0, md: "10px" }}
+                                        marginLeft={{ xs: 0, md: "3px" }}
                                     >1w</Typography>
                                 </Box>
                             </MenuItem>

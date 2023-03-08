@@ -122,17 +122,36 @@ export default function NFT_Head() {
                         height={{ xs: 20, md: 40, lg: 40 }}
                         width={{ xs: 116, md: 245, lg: 245 }}
                         onClick={handleOpendate}>
-                        <Typography className='pl-[8px] ml-[10px] pr-[10px]  text-[12px]
-                     font-semibold text-center cursor-pointer text-black
-                     max-xs:text-[7px] max-xs:pl-0 max-xs:ml-[5px] max-xs:pr-[5px]
-                     '  >JUL.  2022 </Typography>
+                        <Typography sx={{
+                            paddingLeft: { xs: "0px", md: "8px" },
+                            marginLeft: { xs: "5px", md: "10px" },
+                            paddingRight: { xs: "5px", md: "10px" },
+                            fontSize: { xs: "7px", md: "12px" },
+                            fontWeight: "600",
+                            textAlign: "center",
+                            cursor: "pointer",
+                            color: "black"
+                        }}
+                        >JUL.  2022 </Typography>
                         <EastIcon className='cursor-pointer max-xs:w-[10px] text-black pr-[5px]' />
 
-                        <Typography className=' ml-[20px] pr-[10px]  text-[12px] text-center
-                     font-semibold cursor-pointer
-                     max-xs:text-[7px] max-xs:ml-[5px] max-xs:pr-[5px] text-black
-                     '  >MAR.  2023   </Typography>
-                        <KeyboardArrowDownIcon className='pr-[5px] cursor-pointer max-xs:w-[12px] max-xs:pr-0 text-black' />
+                        <Typography sx={{
+                            marginLeft: { xs: "5px", md: "20px" },
+                            paddingRight: { xs: "5px", md: "10px" },
+                            fontSize: { xs: "7px", md: "12px" },
+                            textAlign: "center",
+                            fontWeight: "600",
+                            cursor: "pointer",
+                            color: "black"
+                        }}
+
+                        >MAR.  2023   </Typography>
+                        <KeyboardArrowDownIcon sx={{
+                            paddingRight: { xs: "0px", md: "5px" },
+                            cursor: "pointer",
+                            color: "black"
+                        }}
+                        />
                     </Box>
                     <Modal
                         open={opendate}
@@ -148,7 +167,7 @@ export default function NFT_Head() {
                             width: { xs: 280, md: 700 },
                             height: { xs: 350, md: 500 }
                         }} borderColor="#979797">
-                            <Box border="1px"
+                            <Box border="1px" borderColor="#979797"
                                 position="absolute" top="-22px" right="-20px" >
                                 <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
                                     className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
@@ -160,31 +179,72 @@ export default function NFT_Head() {
                                     height={40}
                                     width={{ xs: 200, md: 230 }} >
 
-                                    <Typography className=' ml-[20px] p-[10px]  text-[12px]
-                     font-semibold text-center text-black
-                     
-                     '  >JUL.  2022 </Typography> <EastIcon className='text-black' />
+                                    <Typography sx={{
+                                        marginLeft: { xs: "5px", md: "20px" },
+                                        padding: { xs: "1px", md: "10px" },
+                                        fontSize: { xs: "7px", md: "12px" },
+                                        fontWeight: "600",
+                                        textAlign: "center",
+                                        color: "black",
+                                        cursor: "pointer",
+                                    }}
+                                    >JUL.  2022 </Typography> <EastIcon className='text-black' />
 
-                                    <Typography className=' ml-[20px] p-[10px] text-[12px] text-center text-black
-                     font-semibold'  >MAR. 2023   </Typography> <KeyboardArrowDownIcon className='pr-[5px]' />
+                                    <Typography sx={{
+                                        marginLeft: { xs: "5px", md: "20px" },
+                                        padding: { xs: "1px", md: "10px" },
+                                        fontSize: { xs: "7px", md: "12px" },
+                                        fontWeight: "600",
+                                        textAlign: "center",
+                                        color: "black",
+                                        cursor: "pointer",
+                                    }}
+                                    >MAR. 2023   </Typography> <KeyboardArrowDownIcon sx={{ paddingRight: "5px" }} />
                                 </Box>
                             </Box>
-                            <Typography className='text-[30px] pt-[45px] pl-[45px] font-[Libre Baskerville] 
-                            max-xs:pl-0 max-xs:text-[16px] text-black'>
+                            <Typography sx={{
+                                fontSize: { xs: "16px", md: "30px" },
+                                paddingTop: "45px",
+                                paddingLeft: { xs: "0px", md: "45px" },
+                                fontFamily: "Inter",
+                                cursor: "pointer",
+                                color: "black"
+                            }}
+                            >
                                 Your treas over time
                             </Typography>
-                            <Typography className='text-[20px] pt-[12px] pl-[45px] text-[#64626A]
-                            max-xs:pl-0 max-xs:text-[12px]'>
+                            <Typography sx={{
+                                fontSize: { xs: "12px", md: "20px" },
+                                paddingTop: "12px",
+                                paddingLeft: { xs: "0px", md: "45px" },
+                                fontFamily: "Inter",
+                                cursor: "pointer",
+                                color: "#64626A"
+                            }}
+                            >
                                 Scan any ETH treas
                             </Typography>
 
-                            <Typography className='text-[20px] pl-[45px] text-[#64626A]
-                            max-xs:pl-0 max-xs:text-[12px]'>
+                            <Typography sx={{
+                                fontSize: { xs: "12px", md: "20px" },
+                                paddingLeft: { xs: "0px", md: "45px" },
+                                fontFamily: "Inter",
+                                cursor: "pointer",
+                                color: "#64626A"
+                            }}
+                            >
                                 If you want to scan other blockchains, add and manage multiple wallets create your account for free.
                             </Typography>
 
-                            <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846] cursor-pointer
-                            max-xs:pl-0 max-xs:text-[12px]'>
+                            <Typography sx={{
+                                fontSize: { xs: "12px", md: "18px" },
+                                paddingTop: "20px",
+                                paddingLeft: { xs: "0px", md: "45px" },
+                                fontFamily: "Inter",
+                                cursor: "pointer",
+                                color: "#FF6846"
+                            }}
+                            >
                                 Create your treas
                                 <KeyboardArrowRightIcon className='text-[#FF6846] cursor-pointer' onClick={handleClose} />
                             </Typography>
@@ -192,10 +252,16 @@ export default function NFT_Head() {
 
                         </Box>
                     </Modal>
-                    <Box onClick={handleNft}><Typography className='  ml-[70px] p-[10px] text-[#979797] text-[20px] cursor-pointer
-                    max-xs:text-[13px] max-xs:ml-[0px] max-xs:p-[5px]
-                    '> NFTs
-                    </Typography></Box>
+                    <Box onClick={handleNft}>
+                        <Typography sx={{
+                            marginLeft: { xs: "0px", md: "70px" },
+                            padding: { xs: "5px", md: "10px" },
+                            fontSize: { xs: "13px", md: "20px" },
+                            cursor: "pointer",
+                            color: "#979797"
+                        }}
+                        > NFTs
+                        </Typography></Box>
 
                     <Modal
                         open={opennft}
@@ -209,7 +275,7 @@ export default function NFT_Head() {
                             width: { xs: 270, md: 700 },
                             height: { xs: 400, md: 500 }
                         }} borderColor="#979797">
-                            <Box border="1px"
+                            <Box border="1px" borderColor="#979797"
                                 position="absolute" top="-22px" right="-20px" >
                                 <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
                                     className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
@@ -219,22 +285,49 @@ export default function NFT_Head() {
                                 marginTop={5}>
                                 <Image src="image/NFT.svg" alt="Fund me" width={90} height={90} />
                             </Box>
-                            <Typography className='text-[30px] pt-[45px] pl-[45px] text-[#000000]
-                            max-xs:pl-0 max-xs:text-[16px]'>
+                            <Typography sx={{
+                                fontSize: { xs: "16px", md: "30px" },
+                                paddingTop: "45px",
+                                paddingLeft: { xs: "0px", md: "45px" },
+                                fontFamily: "Inter",
+                                cursor: "pointer",
+                                color: "black"
+                            }}
+                            >
                                 Count on your NFTs
                             </Typography>
-                            <Typography className='text-[20px] pt-[12px] pl-[45px] text-[#64626A]
-                            max-xs:pl-0 max-xs:text-[12px]'>
+                            <Typography sx={{
+                                fontSize: { xs: "12px", md: "20px" },
+                                paddingTop: "12px",
+                                paddingLeft: { xs: "0px", md: "45px" },
+                                fontFamily: "Inter",
+                                cursor: "pointer",
+                                color: "#64626A"
+                            }}
+                            >
                                 Scan any ETH treas
                             </Typography>
 
-                            <Typography className='text-[20px] pl-[45px] text-[#64626A]
-                            max-xs:pl-0 max-xs:text-[12px]'>
+                            <Typography sx={{
+                                fontSize: { xs: "12px", md: "20px" },
+                                paddingLeft: { xs: "0px", md: "45px" },
+                                fontFamily: "Inter",
+                                cursor: "pointer",
+                                color: "#64626A"
+                            }}
+                            >
                                 If you want to scan other blockchains, add and manage multiple wallets create your account for free.
                             </Typography>
 
-                            <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846] cursor-pointer
-                            max-xs:pl-0 max-xs:text-[12px]'>
+                            <Typography sx={{
+                                fontSize: { xs: "12px", md: "18px" },
+                                paddingTop: "20px",
+                                paddingLeft: { xs: "0px", md: "45px" },
+                                fontFamily: "Inter",
+                                cursor: "pointer",
+                                color: "#FF6846"
+                            }}
+                            >
                                 Create your treas
                                 <KeyboardArrowRightIcon className='text-[#FF6846] cursor-pointer' onClick={handleClose} />
                             </Typography>
@@ -244,10 +337,16 @@ export default function NFT_Head() {
                     </Modal>
 
 
-                    <Box onClick={handleHistory}><Typography className='   ml-[70px] p-[10px] text-[#979797] text-[20px] cursor-pointer
-                    max-xs:text-[13px] max-xs:ml-[0px] max-xs:p-[5px]
-                    '>
-                        History </Typography></Box>
+                    <Box onClick={handleHistory}>
+                        <Typography sx={{
+                            marginLeft: { xs: "0px", md: "70px" },
+                            padding: { xs: "5px", md: "10px" },
+                            fontSize: { xs: "13px", md: "20px" },
+                            cursor: "pointer",
+                            color: "#979797"
+                        }}
+                        >
+                            History </Typography></Box>
                 </Box>
 
                 <Modal
@@ -264,7 +363,7 @@ export default function NFT_Head() {
                         height: { xs: 400, md: 500 }
                     }}
                         borderColor="#979797">
-                        <Box border="1px"
+                        <Box border="1px" borderColor="#979797"
                             position="absolute" top="-22px" right="-20px" >
                             <Image src="image/back icon.svg" alt="Fund me" width={40} height={40} onClick={handleClose}
                                 className="bg-[#fff] border rounded-full relative border-[#979797] px-[5px] py-[5px] cursor-pointer" />
@@ -274,22 +373,46 @@ export default function NFT_Head() {
                             marginTop={5}>
                             <Image src="image/IIcon.svg" alt="Fund me" width={90} height={90} />
                         </Box>
-                        <Typography className='text-[30px] pt-[45px] pl-[45px] text-[#000000]
-                        max-xs:pl-0 max-xs:text-[16px] '>
+                        <Typography sx={{
+                            fontSize: { xs: "16px", md: "30px" },
+                            paddingTop: "45px",
+                            paddingLeft: { xs: "0px", md: "45px" },
+                            fontFamily: "Inter",
+                            cursor: "pointer",
+                            color: "black"
+                        }}
+                        >
                             All transactions, Easy
                         </Typography>
-                        <Typography className='text-[20px] pt-[12px] pl-[45px] text-[#64626A]
-                        max-xs:pl-0 max-xs:text-[12px] '>
+                        <Typography sx={{
+                            fontSize: { xs: "12px", md: "20px" },
+                            paddingTop: "12px",
+                            paddingLeft: { xs: "0px", md: "45px" },
+                            fontFamily: "Inter",
+                            cursor: "pointer",
+                            color: "#64626A"
+                        }}>
                             Scan any ETH treas
                         </Typography>
 
-                        <Typography className='text-[20px] pl-[45px] text-[#64626A]
-                        max-xs:pl-0 max-xs:text-[12px] '>
+                        <Typography sx={{
+                            fontSize: { xs: "12px", md: "20px" },
+                            paddingLeft: { xs: "0px", md: "45px" },
+                            fontFamily: "Inter",
+                            cursor: "pointer",
+                            color: "#64626A"
+                        }}>
                             If you want to scan other blockchains, add and manage multiple wallets create your account for free.
                         </Typography>
 
-                        <Typography className='text-[18px] pl-[45px] pt-[20px] text-[#FF6846] cursor-pointer
-                        max-xs:text-[12px] '>
+                        <Typography sx={{
+                            fontSize: { xs: "12px", md: "18px" },
+                            paddingTop: "20px",
+                            paddingLeft: { xs: "0px", md: "45px" },
+                            fontFamily: "Inter",
+                            cursor: "pointer",
+                            color: "#FF6846"
+                        }}>
                             Create your treas
                             <KeyboardArrowRightIcon className='text-[#FF6846] cursor-pointer' onClick={handleClose} />
                         </Typography>

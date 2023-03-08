@@ -1,3 +1,4 @@
+import { BorderLeft } from '@mui/icons-material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
@@ -298,51 +299,75 @@ export default function CollapsibleTable() {
             >
                 <Table aria-label="collapsible table" >
                     <TableHead>
-                        <TableRow sx={{ borderTopWidth: "1px", borderBottomWidth: "1px", borderStyle: "solid" }}>
-                            <TableCell
+                        <TableRow sx={{
+                            borderTopWidth: "1px", borderBottomWidth: "1px", borderStyle: "solid",
+
+                        }}>
+                            <TableCell sx={{
+                                borderTopWidth: "1px", borderBottomWidth: "1px", borderStyle: "solid",
+                                borderColor: "black"
+                            }}
                                 align='left'
-                                className='border-y border-solid border-[#000000]'
+
                             >
                                 <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter", marginLeft: "40px" }}>   NAME </Typography>
                             </TableCell>
-                            <TableCell
+                            <TableCell sx={{
+                                borderTopWidth: "1px", borderBottomWidth: "1px", borderStyle: "solid",
+                                borderColor: "black"
+                            }}
                                 align='center'
-                                className='border-y border-solid border-[#000000]'
+
                             >
                                 <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter" }}>   AMOUNT </Typography>
 
                             </TableCell>
-                            <TableCell
+                            <TableCell sx={{
+                                borderTopWidth: "1px", borderBottomWidth: "1px", borderStyle: "solid",
+                                borderColor: "black"
+                            }}
                                 align='center'
-                                className='border-y border-solid border-[#000000]'
+
                             >
                                 <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter" }}>   PRICE </Typography>
 
                             </TableCell>
-                            <TableCell
+                            <TableCell sx={{
+                                borderTopWidth: "1px", borderBottomWidth: "1px", borderStyle: "solid",
+                                borderColor: "black"
+                            }}
                                 align='center'
-                                className='border-y border-solid border-[#000000] '
+
                             >
                                 <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter" }}>   24H CHANGE </Typography>
 
                             </TableCell>
-                            <TableCell
+                            <TableCell sx={{
+                                borderTopWidth: "1px", borderBottomWidth: "1px", borderStyle: "solid",
+                                borderColor: "black"
+                            }}
                                 align='center'
-                                className='border-y border-solid border-[#000000]'
+
                             >
                                 <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter" }}>  TOTAL</Typography>
 
                             </TableCell>
-                            <TableCell
+                            <TableCell sx={{
+                                borderTopWidth: "1px", borderBottomWidth: "1px", borderStyle: "solid",
+                                borderColor: "black"
+                            }}
                                 align='center'
-                                className='border-y border-solid border-[#000000]'
+
                             >
                                 <Typography sx={{ fontSize: "15px", fontWeight: "300", fontFamily: "Inter" }}>  CURRENT HOLDINGS P/L</Typography>
 
 
                             </TableCell>
                             <TableCell align='left'
-                                className='border-y border-solid border-[#000000]' />
+                                sx={{
+                                    borderTopWidth: "1px", borderBottomWidth: "1px", borderStyle: "solid",
+                                    borderColor: "black"
+                                }} />
                         </TableRow>
                     </TableHead>
                     <TableBody>

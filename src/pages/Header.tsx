@@ -185,7 +185,7 @@ export default function PrimarySearchAppBar() {
                                                 width: { xs: 280, md: 700 },
                                                 height: { xs: 350, md: 500 }
                                             }} borderColor="#979797">
-                                                <Box border="1px"
+                                                <Box border="1px" borderColor="#979797"
                                                     position="absolute" top="-22px" right="-20px" >
                                                     <Image src="image/back icon.svg" alt="Fund me" width={40}
                                                         height={40} onClick={handleClose}
