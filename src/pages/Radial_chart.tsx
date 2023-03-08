@@ -42,13 +42,14 @@ export default function RAdial() {
                 position={'absolute'}
                 marginLeft={{ xs: '70px', md: 9, lg: 9 }}
                 flexDirection="column" >
-                <Box display="flex" flexDirection="row" >
+                <Box display="flex" flexDirection="row" alignItems="center">
 
                     <Box sx={{
                         rotate: "-6.12deg",
                         backgroundColor: "#C2EED8",
                         height: "15px",
-                        width: { xs: "44px", md: "35px", lg: "35px" },
+
+                        // width: { xs: "44px", md: "35px", lg: "35px" },
                     }}
                     >
                         <Typography sx={{
@@ -56,12 +57,12 @@ export default function RAdial() {
                             fontWeight: "400",
                             color: "#000000",
                             fontFamily: "Libre Baskerville",
-                            position: "sticky",
+                            // position: "sticky",
                             rotate: "6.12deg",
                             marginTop: { xs: "-6px", md: "-5px" }
 
                         }}
-                            variant='h3'
+
                             gutterBottom
                             component='div'
                         >
@@ -70,7 +71,7 @@ export default function RAdial() {
                     </Box>
                     <Typography sx={{
 
-                        marginTop: "-9px",
+                        // marginTop: "-9px",
                         fontFamily: "Libre Baskerville",
                         fontWeight: "400",
                         color: "#000000",

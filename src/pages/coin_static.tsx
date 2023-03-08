@@ -380,7 +380,7 @@ export default function CollapsibleTable() {
 
             <Box display="flex" justifyContent="center"
                 paddingTop={{ xs: '96px', md: "375px", lg: "375px" }}
-                alignItems={'center'}
+                alignItems="center"
                 flexDirection={{ xs: 'column', md: 'row', lg: 'row' }}>
                 <Box>
                     <Typography
@@ -389,11 +389,11 @@ export default function CollapsibleTable() {
                     >Empowered
                     </Typography>
                 </Box>
-                <Box display="flex" marginLeft={2} >
+                <Box display="flex" marginLeft={2} alignItems="center" >
                     <Box sx={{
                         height: { xs: "30px", md: "38px" },
-                        width: { xs: "85px", md: "107px", lg: "107px" },
-                        marginTop: { xs: "31px", md: "31px" },
+                        // width: { xs: "85px", md: "107px", lg: "107px" },
+                        marginTop: { xs: "17px", md: "17px" },
                         backgroundColor: "#FF9781",
                         rotate: "-6.12deg",
                     }}
@@ -407,10 +407,10 @@ export default function CollapsibleTable() {
                                 fontWeight: "400",
                                 color: "#000000",
                                 fontFamily: "Inter",
-                                position: "sticky",
+                                // position: "sticky",
                                 rotate: "7.12deg",
-                                paddingTop: "2px",
-                                marginTop: { xs: "-20px", md: "-32px" }
+                                // paddingTop: "2px",
+                                marginTop: { xs: "-20px", md: "-31px" }
 
 
                             }}

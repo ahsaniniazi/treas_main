@@ -79,7 +79,7 @@ export default function NFT_Head() {
                             rotate: "-6.12deg",
                             backgroundColor: "#FFDEA7",
                             height: { xs: "15px", md: "20px" },
-                            width: { xs: "37px", md: "60px" },
+                            // width: { xs: "37px", md: "60px" },
                             marginTop: { xs: "0px", md: "12px" },
 
 
@@ -91,8 +91,8 @@ export default function NFT_Head() {
                                 fontWeight: "400",
                                 color: "#000000",
                                 fontFamily: "Libre Baskerville",
-                                position: "sticky",
-                                width: { xs: "29px", md: "55px" },
+                                // position: "sticky",
+                                // width: { xs: "29px", md: "55px" },
                                 marginTop: { xs: "-5px", md: "-18px" },
                             }}
 
@@ -101,13 +101,13 @@ export default function NFT_Head() {
                                 treas
                             </Typography>
                         </Box>
-                        <Typography variant={'h5'} sx={{
+                        <Typography sx={{
                             display: { xs: 'none', md: 'flex', lg: 'flex' },
                             paddingLeft: "0px",
                             fontFamily: "Libre Baskerville",
-                            fontWeight: "500",
+                            fontWeight: "400",
                             color: "#000000",
-                            fontsize: { xs: "15px", md: "32px", lg: "32px" },
+                            fontSize: { xs: "15px", md: "32px", lg: "32px" },
                             marginTop: { xs: "-10px", md: "7px" }
 
                         }}
@@ -117,9 +117,9 @@ export default function NFT_Head() {
                             display: { xs: 'flex', md: 'none', lg: 'none' },
                             paddingLeft: "0px",
                             fontFamily: "Libre Baskerville",
-                            fontWeight: "500",
+                            fontWeight: "400",
                             color: "#000000",
-                            fontsize: '15px',
+                            fontSize: '15px',
                             marginTop: '-4px'
 
                         }}

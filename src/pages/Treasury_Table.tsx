@@ -187,7 +187,7 @@ export default function DenseTable() {
                         return index === 2 ?
                             (<Box sx={{
                                 display: "flex", justifyContent: "space-evenly",
-                                height: "116px", alignItems: "center",
+                                height: "116px",
                                 marginRight: "6px"
 
 
@@ -196,25 +196,26 @@ export default function DenseTable() {
                             border-1px border-[#D3D3D3] rounded-b-md">
                                 <Box sx={{
                                     fontSize: "38px", display: 'flex', fontWeight: "400", marginLeft: "140px",
+                                    alignItems: "center",
                                     fontFamily: "Inter"
 
 
                                 }} className='text-[#000000]'>
                                     Unlock your
-                                    <Box display="flex" className='text-[#000000] mr-[10px]' >
+                                    <Box display="flex" alignItems="center" className='text-[#000000] mr-[10px]' >
                                         <Box sx={{
                                             rotate: "-6.12deg",
                                             marginLeft: "10px",
                                             backgroundColor: "#C2EED8",
                                             height: "38px",
-                                            width: { xs: "85px", md: "75px", lg: "75px" },
+                                            // width: { xs: "85px", md: "75px", lg: "75px" },
                                         }}
                                         >
                                             <Typography sx={{
                                                 fontWeight: "400",
                                                 color: "#000000",
                                                 fontFamily: "Inter",
-                                                position: "sticky",
+                                                // position: "sticky",
                                                 rotate: "6.12deg",
                                                 marginTop: "-12px",
                                                 fontSize: "38px"
@@ -229,21 +230,21 @@ export default function DenseTable() {
                                                 treas
                                             </Typography>
                                         </Box>
-                                        <Typography variant='h3'
+                                        <Typography
                                             sx={{
                                                 paddingBottom: "4px",
-                                                marginTop: "-5px",
+                                                // marginTop: "-5px",
                                                 fontFamily: "Inter",
                                                 fontWeight: "400",
                                                 color: "#000000",
-                                                fontSize: "40px"
+                                                fontSize: "38px"
                                             }}
                                         >
                                             ury </Typography>
                                     </Box>
                                     <Box marginTop="4px"> with labels </Box>
                                 </Box>
-                                <Box display="flex" justifyContent="center" marginLeft={20}  >
+                                <Box display="flex" justifyContent="center" marginLeft={20} alignItems="center" >
                                     <Typography className='text-[15px] text-[#FF6846] cursor-pointer'>
                                         Know more about label
                                         <KeyboardArrowRightIcon className="cursor-pointer" />
@@ -259,28 +260,31 @@ export default function DenseTable() {
                             }} className="border-b border-x 
                              border-1px border-[#D3D3D3] rounded-b-md" >
 
-                                <Box sx={{ fontSize: "15PX", display: "flex", marginLeft: "170px", fontFamily: "Inter", color: "black" }}>
+                                <Box sx={{
+                                    fontSize: "19PX", display: "flex", marginLeft: "170px",
+                                    fontFamily: "Inter", color: "black", alignItems: "center"
+                                }}>
                                     Define your own KPIs and supercharge your
                                     <Box sx={{
                                         rotate: "-6.12deg",
-                                        marginTop: { xs: "-3px", md: "10px" },
+                                        marginTop: { xs: "-3px", md: "2px" },
                                         marginLeft: "5px",
                                         backgroundColor: "#C2EED8",
                                         height: { xs: "10px", md: "18px" },
-                                        width: { xs: "26px", md: "38px" },
+                                        // width: { xs: "26px", md: "38px" },
 
                                     }}
 
                                     >
                                         <Typography sx={{
-                                            fontSize: { xs: "12px", md: "19px" },
+                                            fontSize: { xs: "15px", md: "19px" },
                                             fontWeight: "400",
                                             color: "#000000",
                                             fontFamily: "Libre Baskerville",
-                                            position: "sticky",
+                                            // position: "sticky",
                                             rotate: "7.12deg",
                                             marginTop: { xs: "-3px", md: "-7px" },
-                                            // marginRight: "5px"
+                                            marginRight: "5px"
 
                                         }}
 
@@ -291,7 +295,7 @@ export default function DenseTable() {
                                             treas
                                         </Typography>
                                     </Box>
-                                    <Typography marginTop="6px">
+                                    <Typography >
 
                                         ury
                                     </Typography>

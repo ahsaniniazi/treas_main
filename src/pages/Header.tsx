@@ -101,14 +101,17 @@ export default function PrimarySearchAppBar() {
                                         marginTop: "50px",
                                         backgroundColor: "#FFDEA7",
                                         marginBottom: "50px",
-                                        width: { xs: "76", md: "107px", lg: "107px" },
+                                        // width: { xs: "70px", md: "107px", lg: "107px" },
                                         height: { xs: "30px", md: "38px", lg: "38px" }
                                     }}
                                         alignSelf={{ xs: 'start' }}
                                     >
                                         <Typography sx={{
-                                            fontSize: { xs: "40px", md: "60px" }, fontWeight: "400", color: "#000000",
-                                            fontFamily: "Libre Baskerville", marginTop: { xs: "-12px", md: "-22px", lg: "-22px" }, rotate: "7.12deg"
+                                            fontSize: { xs: "40px", md: "60px" },
+                                            fontWeight: "400", color: "#000000",
+                                            fontFamily: "Libre Baskerville",
+                                            marginTop: { xs: "-12px", md: "-22px", lg: "-22px" },
+                                            rotate: "7.12deg"
                                         }}
                                             variant='h3'
                                             gutterBottom

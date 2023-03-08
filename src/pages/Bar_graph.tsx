@@ -124,7 +124,7 @@ export default function Chart() {
                             rotate: "-6.12deg",
                             backgroundColor: "#C2EED8",
                             height: { xs: "10px", md: "20px" },
-                            width: { xs: "28px", md: "48px" },
+                            // width: { xs: "28px", md: "48px" },
 
                         }}
 
@@ -134,12 +134,12 @@ export default function Chart() {
                                 fontWeight: "400",
                                 color: "#000000",
                                 fontFamily: "Libre Baskerville",
-                                position: "sticky",
+                                // position: "sticky",
                                 rotate: "6.12deg",
                                 marginTop: { xs: "-3px", md: "-6px" },
 
                             }}
-                                variant='h5'
+
                                 gutterBottom
                                 component='div'
 
@@ -147,10 +147,10 @@ export default function Chart() {
                                 treas
                             </Typography>
                         </Box>
-                        <Typography variant='h3'
+                        <Typography
                             sx={{
                                 paddingLeft: "2px",
-                                marginTop: { xs: "0px", md: "-4px" },
+                                // marginTop: { xs: "0px", md: "-4px" },
                                 marginRight: { xs: "5px", md: "10px" },
                                 fontFamily: "Libre Baskerville",
                                 fontWeight: "400",
@@ -196,7 +196,7 @@ export default function Chart() {
 
                                     sx={{
                                         paddingLeft: "2px",
-                                        marginTop: { xs: "0px", md: "-4px" },
+                                        // marginTop: { xs: "0px", md: "-4px" },
                                         marginRight: { xs: "5px", md: "10px" },
                                         fontFamily: "Libre Baskerville",
                                         fontWeight: "400",

@@ -39,8 +39,8 @@ export default function NFT_Head() {
                                 backgroundColor: "#FFFFFF",
                                 rotate: "-6.12deg",
                                 height: { xs: "30px", md: "42px" },
-                                width: { xs: "85px", md: "112px", lg: "112px" },
-                                marginTop: "12px",
+                                // width: { xs: "85px", md: "112px", lg: "112px" },
+                                // marginTop: "12px",
                                 marginBottom: "3px"
 
 
@@ -55,9 +55,9 @@ export default function NFT_Head() {
                                         fontWeight: "400",
                                         color: "#000000",
                                         fontFamily: "Libre Baskerville",
-                                        position: "sticky",
+                                        // position: "sticky",
                                         rotate: "6.12deg",
-                                        marginTop: { xs: "-20px", md: "-30px" }
+                                        marginTop: { xs: "-16px", md: "-30px" }
 
                                     }}
                                     gutterBottom
@@ -69,9 +69,9 @@ export default function NFT_Head() {
                             </Box>
 
                             <Box paddingBottom={6} paddingTop={3} display={'flex'}>
-                                <LinkedInIcon className='text-[#FFFFFF] text-[30px] p-[5px] border border-[#E8E7E83d] rounded-full mr-[16px]' />
-                                <TwitterIcon className='text-[#FFFFFF] text-[30px] p-[5px] border border-[#E8E7E83d] rounded-full mr-[16px]' />
-                                <FacebookIcon className='text-[#FFFFFF] text-[30px] p-[5px] border border-[#E8E7E83d] rounded-full mr-[16px]' />
+                                <LinkedInIcon className='text-[#FFFFFF] text-[30px] p-[5px] border border-[#E8E7E83d] rounded-full mr-[12px] max-xs:mr-[8px] max-xs:w-[25px]' />
+                                <TwitterIcon className='text-[#FFFFFF] text-[30px] p-[5px] border border-[#E8E7E83d] rounded-full mr-[12px] max-xs:mr-[8px] max-xs:w-[25px]' />
+                                <FacebookIcon className='text-[#FFFFFF] text-[30px] p-[5px] border border-[#E8E7E83d] rounded-full max-xs:w-[25px]' />
                             </Box>
                         </Box>
                         <Box marginBottom={{ xs: '15px' }}>
