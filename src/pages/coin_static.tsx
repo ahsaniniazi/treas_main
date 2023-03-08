@@ -408,7 +408,7 @@ export default function CollapsibleTable() {
                                 color: "#000000",
                                 fontFamily: "Inter",
                                 // position: "sticky",
-                                rotate: "7.12deg",
+                                rotate: "6.12deg",
                                 // paddingTop: "2px",
                                 marginTop: { xs: "-20px", md: "-31px" }
 

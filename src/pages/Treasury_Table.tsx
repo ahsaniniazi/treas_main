@@ -282,7 +282,7 @@ export default function DenseTable() {
                                             color: "#000000",
                                             fontFamily: "Libre Baskerville",
                                             // position: "sticky",
-                                            rotate: "7.12deg",
+                                            rotate: "6.12deg",
                                             marginTop: { xs: "-5px", md: "-7px" },
                                             // marginRight: "5px"
 
