@@ -255,22 +255,22 @@ export default function DenseTable() {
                             : index === 9 ? (<Box sx={{
                                 display: "flex", justifyContent: "space-evenly",
                                 height: "38px", alignItems: "center",
-                                marginRight: "6px"
+                                // marginRight: "6px"
 
                             }} className="border-b border-x 
                              border-1px border-[#D3D3D3] rounded-b-md" >
 
                                 <Box sx={{
-                                    fontSize: "19PX", display: "flex", marginLeft: "170px",
+                                    fontSize: { xs: "15px", md: "19px" }, display: "flex", marginLeft: "170px",
                                     fontFamily: "Inter", color: "black", alignItems: "center"
                                 }}>
                                     Define your own KPIs and supercharge your
                                     <Box sx={{
                                         rotate: "-6.12deg",
-                                        marginTop: { xs: "-3px", md: "2px" },
+                                        marginTop: { xs: "0px", md: "2px" },
                                         marginLeft: "5px",
                                         backgroundColor: "#C2EED8",
-                                        height: { xs: "10px", md: "18px" },
+                                        height: { xs: "15px", md: "18px" },
                                         // width: { xs: "26px", md: "38px" },
 
                                     }}
@@ -283,8 +283,8 @@ export default function DenseTable() {
                                             fontFamily: "Libre Baskerville",
                                             // position: "sticky",
                                             rotate: "7.12deg",
-                                            marginTop: { xs: "-3px", md: "-7px" },
-                                            marginRight: "5px"
+                                            marginTop: { xs: "-5px", md: "-7px" },
+                                            // marginRight: "5px"
 
                                         }}
 
