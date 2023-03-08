@@ -154,7 +154,7 @@ export default function PrimarySearchAppBar() {
                                             )}
                                         </button>
                                     </div>
-                                    <Box width={600}>
+                                    <Box width={{ xs: "272px", md: "600px", lg: "600px" }}>
                                         <Search sx={{
                                             height: { xs: "30px", md: "40px" }, display: "flex", appearance: "none",
                                             borderRadius: "15px", backgroundColor: "#ffffff38"
@@ -209,8 +209,7 @@ export default function PrimarySearchAppBar() {
                                                             placeholder="Search"
                                                             inputProps={{ 'aria-label': 'search' }}
                                                             className='text-[#979797] font-medium '
-
-                                                            sx={{ width: { xs: "272px", md: "100%" } }}
+                                                            fullWidth
 
                                                         />
                                                     </Box>

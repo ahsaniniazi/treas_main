@@ -39,7 +39,7 @@ export default function NFT_Head() {
                                 backgroundColor: "#FFFFFF",
                                 rotate: "-6.12deg",
                                 height: { xs: "30px", md: "42px" },
-                                width: { xs: "77px", md: "112px", lg: "112px" },
+                                width: { xs: "85px", md: "112px", lg: "112px" },
                                 marginTop: "12px",
                                 marginBottom: "3px"
 

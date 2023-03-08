@@ -124,7 +124,7 @@ export default function Chart() {
                             rotate: "-6.12deg",
                             backgroundColor: "#C2EED8",
                             height: { xs: "10px", md: "20px" },
-                            width: { xs: "26px", md: "48px" },
+                            width: { xs: "28px", md: "48px" },
 
                         }}
 

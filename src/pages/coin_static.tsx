@@ -392,7 +392,7 @@ export default function CollapsibleTable() {
                 <Box display="flex" marginLeft={2} >
                     <Box sx={{
                         height: { xs: "30px", md: "38px" },
-                        width: { xs: "78px", md: "107px", lg: "107px" },
+                        width: { xs: "85px", md: "107px", lg: "107px" },
                         marginTop: { xs: "31px", md: "31px" },
                         backgroundColor: "#FF9781",
                         rotate: "-6.12deg",
@@ -432,7 +432,11 @@ export default function CollapsibleTable() {
                 paddingBottom="30px"
                 marginBottom={{ xs: '46px', md: 0, lg: 0 }}
                 marginTop="20px" >
-                <Typography className='text-[15px] text-[#FF6846] cursor-pointer Inter'
+                <Typography sx={{
+                    fontSize: "15px", color: "#FF6846", cursor: "pointer", fontFamily: "Inter",
+                    display: "flex"
+                }}
+
                 >Create your treas
                     <KeyboardArrowRightIcon sx={{
                         cursor: "pointer",

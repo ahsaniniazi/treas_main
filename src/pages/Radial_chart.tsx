@@ -48,7 +48,7 @@ export default function RAdial() {
                         rotate: "-6.12deg",
                         backgroundColor: "#C2EED8",
                         height: "15px",
-                        width: { xs: "37px", md: "35px", lg: "35px" },
+                        width: { xs: "44px", md: "35px", lg: "35px" },
                     }}
                     >
                         <Typography sx={{

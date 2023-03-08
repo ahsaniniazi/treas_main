@@ -207,7 +207,7 @@ export default function DenseTable() {
                                             marginLeft: "10px",
                                             backgroundColor: "#C2EED8",
                                             height: "38px",
-                                            width: { xs: "78px", md: "75px", lg: "75px" },
+                                            width: { xs: "85px", md: "75px", lg: "75px" },
                                         }}
                                         >
                                             <Typography sx={{
