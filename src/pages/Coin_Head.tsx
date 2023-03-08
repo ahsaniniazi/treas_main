@@ -27,25 +27,36 @@ export default function Heading() {
             <Stack direction='row'
 
                 justifyContent='space-between' >
-                <Typography className='text-[25px] font-medium text-[#212529]
-                max-xs:text-[14px]
-                '>Holdings details</Typography>
+                <Typography sx={{ fontSize: { xs: "14px", md: "25px" }, fontWeight: "500", color: "#212529", }}
+                >Holdings details</Typography>
                 <Stack direction='row'
                     alignItems={'center'}
                     justifyContent='space-between' >
-                    <Typography className='max-xs:hidden text-[25px] font-medium text-[#212529] pr-[10px]
-                    max-xs:text-[10px] max-xs:pr-0 
-                    '>Holdings variation</Typography>
-                    <Typography className='md:hidden font-medium text-[#212529]
-                    max-xs:text-[10px] max-xs:pr-1 
-                    '>variation</Typography>
+                    <Typography sx={{
+                        display: { xs: "none", md: "flex" },
+                        fontSize: { xs: "10px", md: "25px" }, fontWeight: "500", color: "#212529",
+                        paddingRight: { xs: "0px", md: "10px" }
+                    }}
+
+                    >Holdings variation</Typography>
+                    <Typography sx={{
+                        display: { xs: "flex", md: "none" },
+                        fontSize: { xs: "10px", md: "25px" }, fontWeight: "500", color: "#212529",
+                        paddingRight: { xs: "1px", md: "10px" }
+                    }}
+
+                    >variation</Typography>
                     <KeyboardArrowUpIcon sx={{
                         color: "#53A57C",
                         width: { xs: '12px', md: '28px' }
                     }}></KeyboardArrowUpIcon>
-                    <Typography className='text-[19px] font-medium text-[#53A57C]
-                    max-xs:text-[10px]
-                    '>+1,54%</Typography>
+                    <Typography sx={{
+                        display: { xs: "none", md: "flex" },
+                        fontSize: { xs: "10px", md: "19px" }, fontWeight: "500", color: "#53A57C",
+                        paddingRight: { xs: "0px", md: "10px" }
+                    }}
+
+                    >+1,54%</Typography>
 
 
                     <FormControl className='outline-none'>

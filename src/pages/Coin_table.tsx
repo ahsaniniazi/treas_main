@@ -120,7 +120,7 @@ function Row({ row }: any) {
     const thumbnail = row?.userToken?.thumbnail
     return (
         <React.Fragment>
-            <TableRow className="text-[12px] font-light" >
+            <TableRow className="text-[12px] font-light bg-" >
 
                 <TableCell sx={{ display: "flex", alignItems: "center" }} align="left" className=' pb=[20px] text-[18px] font-medium text-[#000000]'>
                     <Image src={thumbnail || "/image/currency_icon/new_currency.jpg"} alt="" width={56} height={40} className="mr-[10px]" />
@@ -379,7 +379,7 @@ export default function CollapsibleTable() {
 
             {result.length > 0 && <Table aria-label='collapsible table'>
                 <TableHead>
-                    <TableRow>
+                    <TableRow >
                         <TableCell
                             align='left'
                             className='border-y border-solid border-[#000000]'
@@ -476,7 +476,6 @@ export default function CollapsibleTable() {
                             fontWeight: "400",
                             color: "#000000",
                             fontFamily: "Libre Baskerville",
-
 
                         }}
 

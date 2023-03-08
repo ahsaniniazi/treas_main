@@ -298,7 +298,7 @@ export default function CollapsibleTable() {
             >
                 <Table aria-label="collapsible table" >
                     <TableHead>
-                        <TableRow>
+                        <TableRow sx={{ borderTopWidth: "1px", borderBottomWidth: "1px", borderStyle: "solid" }}>
                             <TableCell
                                 align='left'
                                 className='border-y border-solid border-[#000000]'
