@@ -164,13 +164,13 @@ export default function Chart() {
                     </Box>
                     <RAdial />
                     <Container>
-                        <Box display="flex" justifyContent="space-between" marginTop={{ xs: '16px' }}>
+                        <Box display={{ xs: 'none', md: "flex", lg: 'flex' }} justifyContent="space-between" marginTop={{ xs: '16px' }}>
                             <Box className='max-xs:hidden'>
                                 <Typography className="font-medium text-[22px] text-black max-xs:text-[12px]" > 1496,518 $US </Typography>
                                 <Typography className="font-medium text-[12px] max-xs:text-[10px] text-[#979797]">10 nov. 2022, 0
                                     3:24</Typography>
                             </Box>
-                            <Box display="flex" flexDirection="row" alignItems={'center'} className='max-xs:hidden'>
+                            <Box display={{ xs: 'none', md: "flex", lg: 'flex' }} flexDirection="row" alignItems={'center'} className='max-xs:hidden'>
 
                                 <Box className='rotate-[-6.12deg]  bg-[#C2EED8] 
                                 h-[20px] w-[48px] max-xs:h-[10px] max-xs:w-[26px]'>
@@ -270,14 +270,14 @@ export default function Chart() {
                             </Modal>
                         </Box>
                         <Box overflow={{ xs: 'scroll' }}
-                            className='scrollStyle' borderBottom={"1px solid black"}>
+                            className='scrollStyle' borderBottom={"1px solid black"}
+                        >
 
                             <ComposedChart
                                 width={860}
                                 height={400}
                                 data={Bardata}
                                 barGap={0}
-
                                 margin={{
                                     top: 20,
 

@@ -207,7 +207,7 @@ export default function DenseTable() {
                                             marginLeft: "10px",
                                             backgroundColor: "#C2EED8",
                                             height: "38px",
-                                            width: "90px",
+                                            width: { xs: "78px", md: "75px", lg: "75px" },
                                         }}
                                         >
                                             <Typography sx={{
@@ -216,9 +216,12 @@ export default function DenseTable() {
                                                 fontFamily: "Inter",
                                                 position: "sticky",
                                                 rotate: "6.12deg",
-                                                marginTop: "-12px"
+                                                marginTop: "-12px",
+                                                fontSize: "38px"
+
+
                                             }}
-                                                variant='h3'
+
                                                 gutterBottom
                                                 component='div'
 

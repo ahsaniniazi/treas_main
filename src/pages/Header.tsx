@@ -209,7 +209,8 @@ export default function PrimarySearchAppBar() {
                                                             placeholder="Search"
                                                             inputProps={{ 'aria-label': 'search' }}
                                                             className='text-[#979797] font-medium '
-                                                            fullWidth
+
+                                                            sx={{ width: { xs: "272px", md: "100%" } }}
 
                                                         />
                                                     </Box>

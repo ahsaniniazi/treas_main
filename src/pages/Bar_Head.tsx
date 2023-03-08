@@ -79,7 +79,7 @@ export default function NFT_Head() {
                             rotate: "-6.12deg",
                             backgroundColor: "#FFDEA7",
                             height: { xs: "15px", md: "20px" },
-                            width: { xs: "30px", md: "60px" },
+                            width: { xs: "32px", md: "60px" },
                             marginTop: { xs: "0px", md: "12px" },
 
 
@@ -107,7 +107,7 @@ export default function NFT_Head() {
                             fontFamily: "Libre Baskerville",
                             fontWeight: "500",
                             color: "#000000",
-                            fontsize: { xs: "15px", md: "25px", lg: "25px" },
+                            fontsize: { xs: "15px", md: "32px", lg: "32px" },
                             marginTop: { xs: "-10px", md: "7px" }
 
                         }}
@@ -145,7 +145,13 @@ export default function NFT_Head() {
                             color: "black"
                         }}
                         >JUL.  2022 </Typography>
-                        <EastIcon className='cursor-pointer max-xs:w-[10px] text-black pr-[5px]' />
+                        <EastIcon sx={{
+                            cursor: "pointer",
+                            color: "black",
+                            paddingRight: "5px",
+                            width: { xs: "10px", md: '30px', lg: '30x' }
+                        }}
+                        />
 
                         <Typography sx={{
                             marginLeft: { xs: "5px", md: "20px" },
@@ -191,7 +197,6 @@ export default function NFT_Head() {
                                 <Box sx={{ ...commonStyles, borderColor: '#D1D0D6' }} display="flex" alignItems="center"
                                     height={40}
                                     width={{ xs: 200, md: 230 }} >
-
                                     <Typography sx={{
                                         marginLeft: { xs: "5px", md: "20px" },
                                         padding: { xs: "1px", md: "10px" },
